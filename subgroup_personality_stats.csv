@@ -1,0 +1,106 @@
+Category,Subgroup,Trait,Sample_Size,Mean,Variance
+Age,18-25,Agreeableness,8488,38.21,49.68
+Age,18-25,Conscientiousness,8488,33.05,50.5
+Age,18-25,Extroversion,8488,29.74,82.88
+Age,18-25,Neuroticism,8488,31.4,68.68
+Age,18-25,Openness,8488,38.65,38.24
+Age,25-35,Agreeableness,3588,38.99,45.22
+Age,25-35,Conscientiousness,3588,34.46,49.78
+Age,25-35,Extroversion,3588,30.61,84.6
+Age,25-35,Neuroticism,3588,30.5,74.2
+Age,25-35,Openness,3588,39.73,36.38
+Age,35-50,Agreeableness,2479,40.0,47.0
+Age,35-50,Conscientiousness,2479,35.94,53.52
+Age,35-50,Extroversion,2479,31.58,82.03
+Age,35-50,Neuroticism,2479,28.97,81.26
+Age,35-50,Openness,2479,40.03,37.17
+Age,50+,Agreeableness,1107,41.14,43.43
+Age,50+,Conscientiousness,1107,36.59,51.12
+Age,50+,Extroversion,1107,32.16,79.24
+Age,50+,Neuroticism,1107,27.36,82.33
+Age,50+,Openness,1107,39.93,42.81
+Age,<18,Agreeableness,3974,36.76,57.47
+Age,<18,Conscientiousness,3974,31.07,49.96
+Age,<18,Extroversion,3974,28.98,89.88
+Age,<18,Neuroticism,3974,32.71,70.01
+Age,<18,Openness,3974,38.71,41.62
+Gender,Female,Agreeableness,11930,39.68,45.47
+Gender,Female,Conscientiousness,11930,33.64,54.57
+Gender,Female,Extroversion,11930,30.53,85.26
+Gender,Female,Neuroticism,11930,32.1,71.06
+Gender,Female,Openness,11930,38.59,39.78
+Gender,Male,Agreeableness,7584,36.56,53.63
+Gender,Male,Conscientiousness,7584,33.23,51.46
+Gender,Male,Extroversion,7584,29.54,84.03
+Gender,Male,Neuroticism,7584,29.15,74.17
+Gender,Male,Openness,7584,39.88,36.88
+Gender,Other,Agreeableness,98,35.21,64.77
+Gender,Other,Conscientiousness,98,31.26,46.5
+Gender,Other,Extroversion,98,24.11,86.9
+Gender,Other,Neuroticism,98,34.27,52.49
+Gender,Other,Openness,98,41.76,31.47
+Race,Arctic,Agreeableness,13,37.38,44.09
+Race,Arctic,Conscientiousness,13,31.54,44.44
+Race,Arctic,Extroversion,13,34.38,65.92
+Race,Arctic,Neuroticism,13,26.38,102.92
+Race,Arctic,Openness,13,39.85,53.14
+Race,Caucasian (Euro),Agreeableness,10529,38.54,55.79
+Race,Caucasian (Euro),Conscientiousness,10529,33.28,54.36
+Race,Caucasian (Euro),Extroversion,10529,30.15,90.66
+Race,Caucasian (Euro),Neuroticism,10529,30.7,76.94
+Race,Caucasian (Euro),Openness,10529,40.28,35.77
+Race,Caucasian (Ind),Agreeableness,1505,38.52,36.36
+Race,Caucasian (Ind),Conscientiousness,1505,33.24,51.44
+Race,Caucasian (Ind),Extroversion,1505,30.2,70.84
+Race,Caucasian (Ind),Neuroticism,1505,32.13,66.88
+Race,Caucasian (Ind),Openness,1505,37.16,37.24
+Race,Caucasian (MidEast),Agreeableness,506,38.42,53.4
+Race,Caucasian (MidEast),Conscientiousness,506,33.66,49.6
+Race,Caucasian (MidEast),Extroversion,506,30.79,77.21
+Race,Caucasian (MidEast),Neuroticism,506,31.78,72.3
+Race,Caucasian (MidEast),Openness,506,38.03,37.83
+Race,Caucasian (NorthAf),Agreeableness,396,38.45,56.93
+Race,Caucasian (NorthAf),Conscientiousness,396,33.33,54.33
+Race,Caucasian (NorthAf),Extroversion,396,30.11,91.08
+Race,Caucasian (NorthAf),Neuroticism,396,30.73,77.54
+Race,Caucasian (NorthAf),Openness,396,38.57,37.87
+Race,Indigenous Aus,Agreeableness,24,35.08,57.38
+Race,Indigenous Aus,Conscientiousness,24,30.33,45.88
+Race,Indigenous Aus,Extroversion,24,31.46,90.95
+Race,Indigenous Aus,Neuroticism,24,30.21,64.78
+Race,Indigenous Aus,Openness,24,39.0,49.22
+Race,Mixed,Agreeableness,1430,38.03,55.73
+Race,Mixed,Conscientiousness,1430,33.01,54.99
+Race,Mixed,Extroversion,1430,30.03,92.09
+Race,Mixed,Neuroticism,1430,30.91,75.33
+Race,Mixed,Openness,1430,39.6,38.26
+Race,NE Asian,Agreeableness,187,36.88,54.21
+Race,NE Asian,Conscientiousness,187,32.66,48.22
+Race,NE Asian,Extroversion,187,29.59,64.3
+Race,NE Asian,Neuroticism,187,31.98,66.33
+Race,NE Asian,Openness,187,37.45,36.93
+Race,Native Amer,Agreeableness,201,38.25,51.2
+Race,Native Amer,Conscientiousness,201,34.75,51.73
+Race,Native Amer,Extroversion,201,30.22,87.94
+Race,Native Amer,Neuroticism,201,29.7,77.1
+Race,Native Amer,Openness,201,37.0,43.87
+Race,Other,Agreeableness,2534,38.95,45.47
+Race,Other,Conscientiousness,2534,34.34,53.2
+Race,Other,Extroversion,2534,30.72,78.48
+Race,Other,Neuroticism,2534,30.93,75.3
+Race,Other,Openness,2534,37.24,41.45
+Race,Pacific,Agreeableness,65,38.22,36.05
+Race,Pacific,Conscientiousness,65,32.97,44.78
+Race,Pacific,Extroversion,65,30.68,79.22
+Race,Pacific,Neuroticism,65,29.29,50.59
+Race,Pacific,Openness,65,37.88,42.95
+Race,SE Asian,Agreeableness,1835,37.52,37.63
+Race,SE Asian,Conscientiousness,1835,33.6,48.04
+Race,SE Asian,Extroversion,1835,28.7,69.72
+Race,SE Asian,Neuroticism,1835,31.96,60.21
+Race,SE Asian,Openness,1835,37.07,35.35
+Race,W African,Agreeableness,259,39.59,44.6
+Race,W African,Conscientiousness,259,34.69,61.2
+Race,W African,Extroversion,259,30.89,84.94
+Race,W African,Neuroticism,259,28.12,76.32
+Race,W African,Openness,259,39.23,40.56
