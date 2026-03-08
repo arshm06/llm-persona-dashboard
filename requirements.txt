@@ -2,3 +2,7 @@ streamlit
 pandas
 plotly
 numpy
+openai
+asyncio
+tqdm
+dotenv

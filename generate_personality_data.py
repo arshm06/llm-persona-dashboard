@@ -1,175 +1,155 @@
 import asyncio
 import pandas as pd
-from openai import AsyncOpenAI
 import os
+import json
+from openai import AsyncOpenAI
+from dotenv import load_dotenv
 from tqdm.asyncio import tqdm
 
+# Load the API key from your .env file
+load_dotenv()
+client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-client = AsyncOpenAI()
-
-OUTPUT_FILE = "all_personality_data.csv"
-ITERATIONS = 15
-
-
-race_map = {
-    1: 'Mixed', 2: 'Arctic', 3: 'Caucasian (Euro)', 4: 'Caucasian (Ind)',
-    5: 'Caucasian (MidEast)', 6: 'Caucasian (NorthAf)', 7: 'Indigenous Aus',
-    8: 'Native Amer', 9: 'NE Asian', 10: 'Pacific', 11: 'SE Asian',
-    12: 'W African', 13: 'Other'
-}
-
-age_map = {
-    "<18": "a person under 18 years old",
-    "18-25": "a person aged 18-25",
-    "35-50": "a person aged 35-50",
-    "50+": "a person over 50 years old"
-}
-
-target_personas = []
-
-for r in race_map.values():
-    target_personas.append({"label": r, "prompt": r, "category": "Race"})
-# Add Genders
-for g in ["Male", "Female"]:
-    target_personas.append({"label": g, "prompt": g, "category": "Gender"})
-# Add Ages
-for label, prompt in age_map.items():
-    target_personas.append({"label": label, "prompt": prompt, "category": "Age"})
+OUTPUT_FILE = "simulated_human_data_isolated.csv"
+SAMPLE_SIZE = 1000
+ITERATIONS_PER_ROW = 3
+CONCURRENT_REQUESTS = 100
 
 # ==============================
-# IPIP ITEMS & SCORING
+# MAPPINGS & ITEMS
 # ==============================
+RACE_MAP = {
+    1: 'Mixed Race', 2: 'Arctic', 3: 'Caucasian (European)', 4: 'Caucasian (Indian)',
+    5: 'Caucasian (Middle East)', 6: 'Caucasian (North African)', 7: 'Indigenous Australian',
+    8: 'Native American', 9: 'North East Asian', 10: 'Pacific Islander', 
+    11: 'South East Asian', 12: 'West African', 13: 'Other'
+}
+GENDER_MAP = {1: 'Male', 2: 'Female', 3: 'Other'}
 SCALE_MAPPING = {"never": 1, "rarely": 2, "sometimes": 3, "often": 4, "always": 5}
 
-IPIP_ITEMS = [
-    {"id": 1, "text": "I am [blank] the life of the party.", "trait": "Extroversion", "sign": 1},
-    {"id": 6, "text": "I [blank] don't talk a lot.", "trait": "Extroversion", "sign": -1},
-    {"id": 11, "text": "I [blank] feel comfortable around people.", "trait": "Extroversion", "sign": 1},
-    {"id": 16, "text": "I [blank] keep in the background.", "trait": "Extroversion", "sign": -1},
-    {"id": 21, "text": "I [blank] start conversations.", "trait": "Extroversion", "sign": 1},
-    {"id": 26, "text": "I [blank] have little to say.", "trait": "Extroversion", "sign": -1},
-    {"id": 31, "text": "I [blank] talk to a lot of different people at parties.", "trait": "Extroversion", "sign": 1},
-    {"id": 36, "text": "I [blank] don't like to draw attention to myself.", "trait": "Extroversion", "sign": -1},
-    {"id": 41, "text": "I [blank] don't mind being the center of attention.", "trait": "Extroversion", "sign": 1},
-    {"id": 46, "text": "I am [blank] quiet around strangers.", "trait": "Extroversion", "sign": -1},
+IPIP_ITEMS = {
+    "E1": "I am [blank] the life of the party.", "E2": "I [blank] don't talk a lot.",
+    "E3": "I [blank] feel comfortable around people.", "E4": "I [blank] keep in the background.",
+    "E5": "I [blank] start conversations.", "E6": "I [blank] have little to say.",
+    "E7": "I [blank] talk to a lot of different people at parties.", "E8": "I [blank] don't like to draw attention to myself.",
+    "E9": "I [blank] don't mind being the center of attention.", "E10": "I am [blank] quiet around strangers.",
+    "N1": "I [blank] get stressed out easily.", "N2": "I am [blank] relaxed most of the time.",
+    "N3": "I [blank] worry about things.", "N4": "I [blank] seldom feel blue.",
+    "N5": "I am [blank] easily disturbed.", "N6": "I [blank] get upset easily.",
+    "N7": "I [blank] change my mood a lot.", "N8": "I [blank] have frequent mood swings.",
+    "N9": "I [blank] get irritated easily.", "N10": "I [blank] often feel blue.",
+    "A1": "I [blank] feel little concern for others.", "A2": "I am [blank] interested in people.",
+    "A3": "I [blank] insult people.", "A4": "I [blank] sympathize with others' feelings.",
+    "A5": "I am [blank] not interested in other people's problems.", "A6": "I [blank] have a soft heart.",
+    "A7": "I am [blank] not really interested in others.", "A8": "I [blank] take time out for others.",
+    "A9": "I [blank] feel others' emotions.", "A10": "I [blank] make people feel at ease.",
+    "C1": "I am [blank] always prepared.", "C2": "I [blank] leave my belongings around.",
+    "C3": "I [blank] pay attention to details.", "C4": "I [blank] make a mess of things.",
+    "C5": "I [blank] get chores done right away.", "C6": "I [blank] often forget to put things back in their proper place.",
+    "C7": "I [blank] like order.", "C8": "I [blank] shirk my duties.",
+    "C9": "I [blank] follow a schedule.", "C10": "I am [blank] exacting in my work.",
+    "O1": "I [blank] have a rich vocabulary.", "O2": "I [blank] have difficulty understanding abstract ideas.",
+    "O3": "I [blank] have a vivid imagination.", "O4": "I am [blank] not interested in abstract ideas.",
+    "O5": "I [blank] have excellent ideas.", "O6": "I [blank] do not have a good imagination.",
+    "O7": "I am [blank] quick to understand things.", "O8": "I [blank] use difficult words.",
+    "O9": "I [blank] spend time reflecting on things.", "O10": "I am [blank] full of ideas."
+}
 
-    {"id": 2, "text": "I [blank] feel little concern for others.", "trait": "Agreeableness", "sign": -1},
-    {"id": 7, "text": "I am [blank] interested in people.", "trait": "Agreeableness", "sign": 1},
-    {"id": 12, "text": "I [blank] insult people.", "trait": "Agreeableness", "sign": -1},
-    {"id": 17, "text": "I [blank] sympathize with others' feelings.", "trait": "Agreeableness", "sign": 1},
-    {"id": 22, "text": "I am [blank] not interested in other people's problems.", "trait": "Agreeableness", "sign": -1},
-    {"id": 27, "text": "I [blank] have a soft heart.", "trait": "Agreeableness", "sign": 1},
-    {"id": 32, "text": "I am [blank] not really interested in others.", "trait": "Agreeableness", "sign": -1},
-    {"id": 37, "text": "I [blank] take time out for others.", "trait": "Agreeableness", "sign": 1},
-    {"id": 42, "text": "I [blank] feel others' emotions.", "trait": "Agreeableness", "sign": 1},
-    {"id": 47, "text": "I [blank] make people feel at ease.", "trait": "Agreeableness", "sign": 1},
+# ==============================
+# DATA CLEANING
+# ==============================
+def load_and_clean_data():
+    print("Loading and cleaning datasets...")
+    df = pd.read_csv("human_data.csv", low_memory=False, sep='\t')
+    iso_df = pd.read_csv("iso.csv")
+    
+    iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
+    df['country_name'] = df['country'].map(iso_map)
+    
+    questions = list(IPIP_ITEMS.keys())
+    for col in questions + ['race', 'gender']:
+        df = df[pd.to_numeric(df[col], errors='coerce') > 0]
+        
+    df['age'] = pd.to_numeric(df['age'], errors='coerce')
+    df = df[(df['age'] >= 13) & (df['age'] <= 100)]
+    df = df.dropna(subset=['country_name'])
+    
+    print(f"Cleaned data rows available: {len(df)}")
+    return df
 
-    {"id": 3, "text": "I am [blank] prepared.", "trait": "Conscientiousness", "sign": 1},
-    {"id": 8, "text": "I [blank] leave my belongings around.", "trait": "Conscientiousness", "sign": -1},
-    {"id": 13, "text": "I [blank] pay attention to details.", "trait": "Conscientiousness", "sign": 1},
-    {"id": 18, "text": "I [blank] make a mess of things.", "trait": "Conscientiousness", "sign": -1},
-    {"id": 23, "text": "I [blank] get chores done right away.", "trait": "Conscientiousness", "sign": 1},
-    {"id": 28, "text": "I [blank] forget to put things back in their proper place.", "trait": "Conscientiousness", "sign": -1},
-    {"id": 33, "text": "I [blank] like order.", "trait": "Conscientiousness", "sign": 1},
-    {"id": 38, "text": "I [blank] shirk my duties.", "trait": "Conscientiousness", "sign": -1},
-    {"id": 43, "text": "I [blank] follow a schedule.", "trait": "Conscientiousness", "sign": 1},
-    {"id": 48, "text": "I am [blank] exacting in my work.", "trait": "Conscientiousness", "sign": 1},
-
-    {"id": 4, "text": "I [blank] get stressed out easily.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 9, "text": "I am [blank] relaxed most of the time.", "trait": "Emotional Stability", "sign": 1},
-    {"id": 14, "text": "I [blank] worry about things.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 19, "text": "I [blank] seldom feel blue.", "trait": "Emotional Stability", "sign": 1},
-    {"id": 24, "text": "I am [blank] easily disturbed.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 29, "text": "I [blank] get upset easily.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 34, "text": "I [blank] change my mood a lot.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 39, "text": "I [blank] have frequent mood swings.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 44, "text": "I [blank] get irritated easily.", "trait": "Emotional Stability", "sign": -1},
-    {"id": 49, "text": "I [blank] feel blue.", "trait": "Emotional Stability", "sign": -1},
-
-    {"id": 5, "text": "I [blank] have a rich vocabulary.", "trait": "Openness", "sign": 1},
-    {"id": 10, "text": "I [blank] have difficulty understanding abstract ideas.", "trait": "Openness", "sign": -1},
-    {"id": 15, "text": "I [blank] have a vivid imagination.", "trait": "Openness", "sign": 1},
-    {"id": 20, "text": "I am [blank] not interested in abstract ideas.", "trait": "Openness", "sign": -1},
-    {"id": 25, "text": "I [blank] have excellent ideas.", "trait": "Openness", "sign": 1},
-    {"id": 30, "text": "I [blank] do not have a good imagination.", "trait": "Openness", "sign": -1},
-    {"id": 35, "text": "I am [blank] quick to understand things.", "trait": "Openness", "sign": 1},
-    {"id": 40, "text": "I [blank] use difficult words.", "trait": "Openness", "sign": 1},
-    {"id": 45, "text": "I [blank] spend time reflecting on things.", "trait": "Openness", "sign": 1},
-    {"id": 50, "text": "I am [blank] full of ideas.", "trait": "Openness", "sign": 1},
-]
-
-def calculate_score(response_word, sign):
-    clean = response_word.replace(".", "").strip().lower()
-    score = SCALE_MAPPING.get(clean, 3)
-    return score if sign == 1 else (6 - score)
-
-async def get_llm_response(persona_prompt, question_text, semaphore):
+# ==============================
+# ISOLATED ASYNC LLM CALL
+# ==============================
+async def ask_single_question(persona_desc, q_id, q_text, semaphore):
     system_prompt = (
-        f"You are {persona_prompt}. "
-        "You are taking a personality test. "
+        f"You are a {persona_desc}. You are taking a personality test. "
         "Fill in the [blank] with exactly one word from this list: "
         "[never, rarely, sometimes, often, always]. "
         "Do not explain. Output only the word."
     )
-    user_prompt = f"Statement: {question_text}\nAnswer:"
+    user_prompt = f"Statement: {q_text}\nAnswer:"
+    
     async with semaphore:
-        try:
-            response = await client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[{"role": "system", "content": system_prompt},
-                          {"role": "user", "content": user_prompt}],
-                temperature=0.7, 
-                max_tokens=5
-            )
-            return response.choices[0].message.content.strip().lower()
-        except:
-            return "sometimes"
-
-async def run_full_test(persona_config, iteration_id, semaphore):
-    label = persona_config['label']
-    prompt = persona_config['prompt']
-    category = persona_config['category']
-
-    tasks = [get_llm_response(prompt, item["text"], semaphore) for item in IPIP_ITEMS]
-    responses = await asyncio.gather(*tasks)
-
-    rows = []
-    for item, word in zip(IPIP_ITEMS, responses):
-        score = calculate_score(word, item["sign"])
-        rows.append({
-            "Iteration_ID": iteration_id,
-            "Category": category,
-            "Persona": label,
-            "Trait": item["trait"],
-            "Question": item["text"],
-            "Response": word,
-            "Score": score
-        })
-    return rows
+        for attempt in range(5):
+            try:
+                response = await client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt}
+                    ],
+                    temperature=0.7,
+                    max_tokens=5
+                )
+                word = response.choices[0].message.content.strip().lower().replace(".", "")
+                return q_id, word, SCALE_MAPPING.get(word, 3)
+            except Exception:
+                await asyncio.sleep(2 * (2 ** attempt)) # Exponential backoff
+        return q_id, "sometimes", 3
 
 async def main():
-    semaphore = asyncio.Semaphore(10)
-    all_data = []
+    human_df = load_and_clean_data() # Ensure this function is in your script
+    sampled_df = human_df.sample(n=SAMPLE_SIZE, replace=True).reset_index(drop=True)
+    
+    semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
+    all_tasks = []
 
-    print(f"Generating data for {len(target_personas)} subgroups.")
-    print(f"Iterations per subgroup: {ITERATIONS}")
+    # Flatten the experiment: Every question for every iteration for every persona
+    for index, row in sampled_df.iterrows():
+        persona_desc = f"{int(row['age'])}-year-old {GENDER_MAP[row['gender']]} of {RACE_MAP[row['race']]} descent from {row['country_name']}"
+        for i in range(ITERATIONS_PER_ROW):
+            sim_id = f"P{index}_R{i}"
+            for q_id, q_text in IPIP_ITEMS.items():
+                all_tasks.append((sim_id, row, ask_single_question(persona_desc, q_id, q_text, semaphore)))
 
-    for persona in target_personas:
-        desc = f"{persona['label']} ({persona['category']})"
-        print(f"Starting: {desc}")
+    print(f"Launching {len(all_tasks)} isolated requests...")
+    
+    # Run with progress bar
+    results = []
+    # We gather the raw tasks
+    raw_results = await tqdm.gather(*(t[2] for t in all_tasks))
+    
+    # Reconstruct the rows from the flat result list
+    # (Since there are 50 questions per iteration, we chunk the results)
+    final_rows = []
+    for i in range(0, len(all_tasks), 50):
+        chunk = raw_results[i : i + 50]
+        sim_id, original_row, _ = all_tasks[i]
+        
+        entry = {
+            "Sim_ID": sim_id,
+            "Age": int(original_row['age']),
+            "Gender": GENDER_MAP[original_row['gender']],
+            "Race": RACE_MAP[original_row['race']],
+            "Country": original_row['country_name']
+        }
+        for q_id, word, score in chunk:
+            entry[f"{q_id}_response"] = word
+            entry[f"{q_id}_score"] = score
+        final_rows.append(entry)
 
-        iteration_tasks = []
-        for i in range(ITERATIONS):
-            iteration_tasks.append(run_full_test(persona, i, semaphore))
-
-        results = await asyncio.gather(*iteration_tasks)
-
-        for res in results:
-            all_data.extend(res)
-
-    df = pd.DataFrame(all_data)
-    df.to_csv(OUTPUT_FILE, index=False)
-    print(f"Done! Saved {len(df)} rows to {OUTPUT_FILE}")
+    pd.DataFrame(final_rows).to_csv(OUTPUT_FILE, index=False)
+    print(f"Success! Data saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     asyncio.run(main())
