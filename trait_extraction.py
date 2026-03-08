@@ -73,14 +73,29 @@ sim_df = calculate_traits(sim_df, is_simulated=True)
 human_df['Source'] = 'Human'
 sim_df['Source'] = 'AI_Simulated'
 
+
+def get_age_group(age):
+    if age < 18: return "<18"
+    if 18 <= age <= 25: return "18-25"
+    if 26 <= age <= 34: return "26-34"
+    if 35 <= age <= 50: return "35-50"
+    return "50+"
+
+# Apply to both dataframes before merging
+human_df['Age_Group'] = human_df['Age'].apply(get_age_group)
+sim_df['Age_Group'] = sim_df['Age'].apply(get_age_group)
+
+# Update demo_cols to include Age_Group
+demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
+
 # Combine datasets for unified processing
 # Keep only the columns we need for the dashboard
-demo_cols = ['Country', 'Race', 'Age', 'Gender']
 trait_cols = ['E_Trait', 'A_Trait', 'C_Trait', 'N_Trait', 'O_Trait']
 combined_df = pd.concat([
     human_df[demo_cols + trait_cols + ['Source']],
     sim_df[demo_cols + trait_cols + ['Source']]
 ])
+
 
 # ==========================================
 # 3. GENERATE ALL SUBGROUP COMBINATIONS
