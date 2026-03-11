@@ -6,3 +6,4 @@ openai
 asyncio
 tqdm
 dotenv
+scipy
