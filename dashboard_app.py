@@ -36,7 +36,7 @@ def calculate_stats(m1, s1, n1, m2, s2, n2):
     return p_val, abs(d), sig_text, d_text
 
 # --- NAVIGATION ---
-page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "📖 Relevant Literature"])
+page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🧪 Prompt Ordering Effects", "📖 Relevant Literature"])
 
 # --- LOAD DATA ---
 @st.cache_data
@@ -155,7 +155,91 @@ if page == "📊 Persona Analytics":
         st.plotly_chart(fig_bar, use_container_width=True)
 
 # ==========================================
-# PAGE 2: LITERATURE
+# PAGE 2: PROMPT ORDERING EFFECTS
+# ==========================================
+elif page == "🧪 Prompt Ordering Effects":
+    st.title("🧪 Experiment: Prompt Ordering Effects")
+    st.markdown("This experiment isolates the effect of **prompt salience**. Do different orderings of demographic information yield statistically different Big Five personas?")
+    
+    @st.cache_data
+    def load_ordering_data():
+        try:
+            df_ord = pd.read_csv("dashboard_ordering_stats.csv")
+            demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
+            for col in demo_cols:
+                if col in df_ord.columns:
+                    df_ord[col] = df_ord[col].astype(str)
+            return df_ord
+        except FileNotFoundError:
+            st.error("Missing 'dashboard_ordering_stats.csv'. Run `generate_ordering_experiment.py` then `trait_extraction_ordering.py`.")
+            return pd.DataFrame()
+
+    df_ord = load_ordering_data()
+    
+    if not df_ord.empty:
+        st.sidebar.header("Filter Settings")
+        def get_options_ord(column):
+            opts = sorted([x for x in df_ord[column].unique() if x != 'All'])
+            return ['All'] + opts
+            
+        country = st.sidebar.selectbox("Country", get_options_ord('Country'), key='c_ord')
+        race = st.sidebar.selectbox("Race", get_options_ord('Race'), key='r_ord')
+        gender = st.sidebar.selectbox("Gender", get_options_ord('Gender'), key='g_ord')
+        
+        # Extract data for chosen demographics across orderings
+        filtered_df = df_ord[(df_ord['Country']==country) & (df_ord['Race']==race) & (df_ord['Age']=='All') & (df_ord['Age_Group']=='All') & (df_ord['Gender']==gender)]
+        
+        if filtered_df.empty:
+            st.warning("No data found for this combination.")
+            st.stop()
+            
+        trait_map = {"Extroversion": "E", "Agreeableness": "A", "Conscientiousness": "C", "Neuroticism": "N", "Openness": "O"}
+        sel_trait = st.sidebar.selectbox("Select Trait to Compare", list(trait_map.keys()))
+        t_pref = trait_map[sel_trait]
+        
+        st.subheader(f"Comparison: {sel_trait}")
+        
+        # Deep Dive Bar
+        bar_data = []
+        for _, row in filtered_df.iterrows():
+            bar_data.append({"Ordering": row["Ordering"], "Mean": row[f"{t_pref}_Trait_mean"], "StdDev": row[f"{t_pref}_Trait_std"]})
+            
+        fig_bar = px.bar(pd.DataFrame(bar_data), x='Ordering', y='Mean', color='Ordering', error_y='StdDev', text_auto='.2f', range_y=[1,5], title=f"{sel_trait} across Prompt Orderings")
+        st.plotly_chart(fig_bar, use_container_width=True)
+        
+        # Stats Comparison
+        st.header("📈 Formatting Bias (Significance Checks)")
+        st.markdown("Comparing base prompt against variations")
+        
+        orderings = filtered_df['Ordering'].unique()
+        if len(orderings) >= 2:
+            base_ord = "Age -> Gender -> Nationality"
+            base_row = filtered_df[filtered_df['Ordering'] == base_ord]
+            
+            if not base_row.empty:
+                base_row = base_row.iloc[0]
+                cols = st.columns(len(orderings) - 1)
+                col_idx = 0
+                
+                for ord_name in orderings:
+                    if ord_name == base_ord: continue
+                    comp_row = filtered_df[filtered_df['Ordering'] == ord_name].iloc[0]
+                    
+                    p_val, d_val, sig_text, d_text = calculate_stats(
+                        base_row[f"{t_pref}_Trait_mean"], base_row[f"{t_pref}_Trait_std"], base_row[f"{t_pref}_Trait_count"],
+                        comp_row[f"{t_pref}_Trait_mean"], comp_row[f"{t_pref}_Trait_std"], comp_row[f"{t_pref}_Trait_count"]
+                    )
+                    
+                    with cols[col_idx]:
+                        st.subheader(f"Base vs {ord_name.split('->')[0].strip()}")
+                        st.metric("P-Value", f"{p_val:.4f}")
+                        st.write(f"**Result:** {sig_text}\n\n**Effect:** {d_text}")
+                    col_idx += 1
+            else:
+                st.info("Baseline ordering missing for these filters.")
+
+# ==========================================
+# PAGE 3: LITERATURE
 # ==========================================
 elif page == "📖 Relevant Literature":
     st.title("📖 Relevant Research & Papers")
