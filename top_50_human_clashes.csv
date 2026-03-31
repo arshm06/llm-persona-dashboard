@@ -1,0 +1,51 @@
+Trait,Group_A,Group_B,Group_A_Mean,Group_B_Mean,Difference (A-B),Cohens_D,Group_A_N,Group_B_N
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Age_Group: <18 | Gender: Female,3.75,2.16,1.59,2.346,30,65
+Neuroticism,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Gender: Female,Race: Other | Age_Group: 50+ | Gender: Male,2.16,3.75,-1.59,-2.346,65,30
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Country: India | Age: 19 | Age_Group: 18-25 | Gender: Female,3.75,2.2,1.55,2.29,30,39
+Neuroticism,Country: India | Age: 19 | Gender: Female,Race: Other | Age_Group: 50+ | Gender: Male,2.2,3.75,-1.55,-2.29,39,30
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Gender: Female,3.75,2.2,1.55,2.266,30,42
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Age_Group: <18 | Gender: Female,3.75,2.2,1.55,2.266,30,42
+Neuroticism,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Age_Group: <18 | Gender: Female,3.61,2.16,1.45,2.198,33,65
+Neuroticism,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Gender: Female,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,2.16,3.61,-1.45,-2.198,65,33
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Race: Caucasian (European) | Age: 55 | Gender: Female,3.26,4.4,-1.15,-2.192,33,53
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Race: Caucasian (European) | Age: 55 | Age_Group: 50+ | Gender: Female,3.26,4.4,-1.15,-2.192,33,53
+Neuroticism,Country: India | Age: 19 | Gender: Female,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,2.2,3.61,-1.41,-2.163,39,33
+Neuroticism,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,Country: India | Age: 19 | Age_Group: 18-25 | Gender: Female,3.61,2.2,1.41,2.163,33,39
+Neuroticism,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Age_Group: <18 | Gender: Female,3.61,2.2,1.41,2.136,33,42
+Neuroticism,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Gender: Female,3.61,2.2,1.41,2.136,33,42
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Other | Age_Group: <18 | Gender: Female,3.75,2.14,1.61,2.116,30,47
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Race: South East Asian | Age: 15 | Age_Group: <18 | Gender: Female,3.75,2.38,1.37,2.096,30,59
+Neuroticism,Race: South East Asian | Age: 15 | Gender: Female,Race: Other | Age_Group: 50+ | Gender: Male,2.38,3.75,-1.37,-2.096,59,30
+Neuroticism,Country: Belgium | Gender: Male,Country: India | Age: 19 | Age_Group: 18-25 | Gender: Female,3.46,2.2,1.26,2.066,30,39
+Neuroticism,Country: Belgium | Gender: Male,Country: India | Age: 19 | Gender: Female,3.46,2.2,1.26,2.066,30,39
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Race: Caucasian (European) | Age: 53 | Age_Group: 50+ | Gender: Female,3.26,4.34,-1.08,-2.064,33,33
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Race: Caucasian (European) | Age: 53 | Gender: Female,3.26,4.34,-1.08,-2.064,33,33
+Neuroticism,Country: Belgium | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Gender: Female,3.46,2.16,1.29,2.061,30,65
+Neuroticism,Country: Belgium | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Age_Group: <18 | Gender: Female,3.46,2.16,1.29,2.061,30,65
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: Canada | Race: Caucasian (European) | Age_Group: 50+ | Gender: Female,3.26,4.36,-1.1,-2.056,33,35
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Caucasian (European) | Age: 55 | Gender: Female,3.26,4.38,-1.12,-2.042,33,32
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Caucasian (European) | Age: 55 | Age_Group: 50+ | Gender: Female,3.26,4.38,-1.12,-2.042,33,32
+Openness,Country: Switzerland | Race: Caucasian (European),Country: Malaysia | Age: 21 | Age_Group: 18-25,4.4,3.22,1.18,2.041,31,30
+Openness,Country: Switzerland | Race: Caucasian (European),Country: Malaysia | Age: 21,4.4,3.22,1.18,2.041,31,30
+Neuroticism,Race: Other | Age_Group: 50+ | Gender: Male,Race: Mixed Race | Age: 14 | Age_Group: <18 | Gender: Female,3.75,2.25,1.5,2.04,30,42
+Neuroticism,Race: Mixed Race | Age: 14 | Gender: Female,Race: Other | Age_Group: 50+ | Gender: Male,2.25,3.75,-1.5,-2.04,42,30
+Conscientiousness,Country: Brazil | Age_Group: <18,Race: South East Asian | Age_Group: 35-50 | Gender: Female,2.76,3.92,-1.15,-2.037,41,68
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Age: 53 | Age_Group: 50+ | Gender: Female,3.26,4.32,-1.06,-2.036,33,35
+Agreeableness,Country: United States of America | Age: 53 | Gender: Female,Country: France | Age_Group: 18-25 | Gender: Male,4.32,3.26,1.06,2.036,35,33
+Neuroticism,Country: Belgium | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Age_Group: <18 | Gender: Female,3.46,2.2,1.26,2.03,30,42
+Neuroticism,Country: Belgium | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Caucasian (European) | Age: 15 | Gender: Female,3.46,2.2,1.26,2.03,30,42
+Conscientiousness,Country: Brazil | Age_Group: <18,Race: Other | Age_Group: 50+ | Gender: Male,2.76,4.01,-1.25,-2.03,41,30
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Caucasian (European) | Age: 35 | Gender: Female,3.26,4.36,-1.1,-2.024,33,35
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Caucasian (European) | Age: 35 | Age_Group: 35-50 | Gender: Female,3.26,4.36,-1.1,-2.024,33,35
+Agreeableness,Age: 53 | Gender: Female,Country: France | Age_Group: 18-25 | Gender: Male,4.29,3.26,1.03,2.01,50,33
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Age: 53 | Age_Group: 50+ | Gender: Female,3.26,4.29,-1.03,-2.01,33,50
+Neuroticism,Race: Mixed Race | Age_Group: 35-50 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Race: Other | Age_Group: <18 | Gender: Female,3.61,2.14,1.47,1.992,33,47
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Other | Age: 22 | Gender: Female,3.26,4.34,-1.08,-1.991,33,36
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Country: United States of America | Race: Other | Age: 22 | Age_Group: 18-25 | Gender: Female,3.26,4.34,-1.08,-1.991,33,36
+Neuroticism,Age: 60 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Gender: Female,3.53,2.16,1.37,1.986,30,65
+Neuroticism,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Gender: Female,Age: 60 | Age_Group: 50+ | Gender: Male,2.16,3.53,-1.37,-1.986,65,30
+Neuroticism,Age: 60 | Age_Group: 50+ | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Age_Group: <18 | Gender: Female,3.53,2.16,1.37,1.986,30,65
+Neuroticism,Age: 60 | Gender: Male,Country: United Kingdom of Great Britain and Northern Ireland | Age: 15 | Age_Group: <18 | Gender: Female,3.53,2.16,1.37,1.986,30,65
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Age: 55 | Age_Group: 50+ | Gender: Female,3.26,4.35,-1.09,-1.98,33,64
+Agreeableness,Age: 55 | Gender: Female,Country: France | Age_Group: 18-25 | Gender: Male,4.35,3.26,1.09,1.98,64,33
+Agreeableness,Country: France | Age_Group: 18-25 | Gender: Male,Race: Other | Age_Group: 50+ | Gender: Male,3.26,4.36,-1.11,-1.971,33,30
