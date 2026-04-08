@@ -10,27 +10,31 @@ st.set_page_config(page_title="Big Five: Human vs AI", layout="wide", page_icon=
 
 # --- STATISTICAL HELPERS ---
 def calculate_stats(m1, s1, n1, m2, s2, n2):
+    """Calculates Welch's T-Test and Cohen's d."""
     t_stat, p_val = stats.ttest_ind_from_stats(
         mean1=m1, std1=s1, nobs1=n1,
         mean2=m2, std2=s2, nobs2=n2,
         equal_var=False
     )
-    
     pooled_var = (((n1 - 1) * s1**2) + ((n2 - 1) * s2**2)) / (n1 + n2 - 2)
     pooled_std = np.sqrt(pooled_var) if pooled_var > 0 else 0
     d = (m1 - m2) / pooled_std if pooled_std != 0 else 0
-    
-    if p_val < 0.05:
-        sig_text = "Statistically Significant"
-        if abs(d) < 0.2: d_text = "Negligible Effect"
-        elif abs(d) < 0.5: d_text = "Small Effect"
-        elif abs(d) < 0.8: d_text = "Medium Effect"
-        else: d_text = "Large Effect"
-    else:
-        sig_text = "Not Significant"
-        d_text = "N/A"
-        
-    return p_val, abs(d), sig_text, d_text
+    return p_val, abs(d)
+
+# --- SOURCE MAPPINGS ---
+SOURCE_DISPLAY_MAP = {
+    "Human": "🧑‍🤝‍🧑 Human",
+    "AI_GPT4o_Explicit": "🤖 G4 Explicit",
+    "AI_GPT4o_NLP": "🗣️ G4 NLP",
+    "AI_Qwen_Explicit": "🧠 Qw Explicit",
+    "AI_Qwen_NLP": "🗣️ Qw NLP",
+    "AI_GPT4o_Order_AGN": "🔄 G4 (Age 1st)",
+    "AI_GPT4o_Order_GAN": "🔄 G4 (Gen 1st)",
+    "AI_GPT4o_Order_NAG": "🔄 G4 (Nat 1st)",
+    "AI_Qwen_Order_AGN": "🔄 Qw (Age 1st)",
+    "AI_Qwen_Order_GAN": "🔄 Qw (Gen 1st)",
+    "AI_Qwen_Order_NAG": "🔄 Qw (Nat 1st)"
+}
 
 # --- NAVIGATION ---
 page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🏆 Key Discoveries", "📖 Relevant Literature"])
@@ -39,222 +43,125 @@ page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🏆 Key Disco
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("dashboard_precalc_stats_all.csv")
-        demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
-        for col in demo_cols:
-            if col in df.columns:
-                df[col] = df[col].astype(str)
+        df = pd.read_csv("dashboard_precalc_stats_singular.csv")
+        for col in ['Country', 'Race', 'Age', 'Age_Group', 'Gender']:
+            if col in df.columns: df[col] = df[col].astype(str)
         return df
     except FileNotFoundError:
-        st.error("Missing 'dashboard_precalc_stats_singular.csv'.")
+        st.error("Missing data file. Please run trait_extraction.py first.")
         return pd.DataFrame()
 
 df = load_data()
 
-# ==========================================
-# PAGE 1: ANALYTICS
-# ==========================================
 if page == "📊 Persona Analytics":
-    st.title("🤖 LLM vs 🧑‍🤝‍🧑 Human: Personality Persona Dashboard")
-    st.markdown("Compare empirical human personality against Explicit and Implicit (NLP) LLM personas.")
+    st.title("🤖 LLM vs 🧑‍🤝‍🧑 Human: Persona Dashboard")
     
     if not df.empty:
+        # --- SIDEBAR ---
+        st.sidebar.header("Data Sources")
+        available_sources = [s for s in SOURCE_DISPLAY_MAP.keys() if s in df['Source'].unique()]
+        selected_sources = st.sidebar.multiselect("Models to Compare", options=available_sources, default=available_sources[:4], format_func=lambda x: SOURCE_DISPLAY_MAP[x])
+        
+        st.sidebar.markdown("---")
         def get_options(column):
             opts = sorted([x for x in df[column].unique() if x != 'All'])
             return ['All'] + opts
-
-        # --- SIDEBAR FILTERS ---
-        st.sidebar.header("Filter Settings")
         
         def build_profile_sidebar(letter):
             st.sidebar.subheader(f"Profile {letter}")
-            country = st.sidebar.selectbox(f"Country", get_options('Country'), key=f'c_{letter}')
-            race = st.sidebar.selectbox(f"Race", get_options('Race'), key=f'r_{letter}')
-            age_type = st.sidebar.radio(f"Age Logic", ["Range", "Specific Year"], key=f'at_{letter}')
-            if age_type == "Range":
-                age_group = st.sidebar.selectbox(f"Select Range", get_options('Age_Group'), key=f'ag_{letter}')
-                age = "All"
-            else:
-                age = st.sidebar.selectbox(f"Select Year", get_options('Age'), key=f'a_{letter}')
-                age_group = "All"
-            gender = st.sidebar.selectbox(f"Gender", get_options('Gender'), key=f'g_{letter}')
-            return country, race, age, age_group, gender
+            c = st.sidebar.selectbox(f"Country", get_options('Country'), key=f'c_{letter}')
+            r = st.sidebar.selectbox(f"Race", get_options('Race'), key=f'r_{letter}')
+            at = st.sidebar.radio(f"Age Logic", ["Range", "Specific Year"], key=f'at_{letter}')
+            ag = st.sidebar.selectbox(f"Select Range", get_options('Age_Group'), key=f'ag_{letter}') if at == "Range" else "All"
+            a = st.sidebar.selectbox(f"Select Year", get_options('Age'), key=f'a_{letter}') if at != "Range" else "All"
+            g = st.sidebar.selectbox(f"Gender", get_options('Gender'), key=f'g_{letter}')
+            return c, r, a, ag, g
 
-        a_vals = build_profile_sidebar("A")
-        st.sidebar.markdown("---")
-        b_vals = build_profile_sidebar("B")
-
+        a_vals, b_vals = build_profile_sidebar("A"), build_profile_sidebar("B")
         trait_map = {"Extroversion": "E", "Agreeableness": "A", "Conscientiousness": "C", "Neuroticism": "N", "Openness": "O"}
-        sel_trait = st.sidebar.selectbox("Select Trait for Deep Dive", list(trait_map.keys()))
+        sel_trait = st.sidebar.selectbox("Select Trait for Analysis", list(trait_map.keys()))
         t_pref = trait_map[sel_trait]
 
-        # --- EXTRACT DATA ---
-        def get_data(c, r, a, ag, g):
-            return df[(df['Country']==c) & (df['Race']==r) & (df['Age']==a) & (df['Age_Group']==ag) & (df['Gender']==g)]
+        data_a = df[(df['Country']==a_vals[0]) & (df['Race']==a_vals[1]) & (df['Age']==a_vals[2]) & (df['Age_Group']==a_vals[3]) & (df['Gender']==a_vals[4])]
+        data_b = df[(df['Country']==b_vals[0]) & (df['Race']==b_vals[1]) & (df['Age']==b_vals[2]) & (df['Age_Group']==b_vals[3]) & (df['Gender']==b_vals[4])]
 
-        data_a = get_data(*a_vals)
-        data_b = get_data(*b_vals)
-
-        if data_a.empty or data_b.empty:
-            st.warning("Combination not found. Try resetting some filters to 'All'.")
-            st.stop()
-
-        # --- EXTRACT ROWS FOR MATH & UI ---
-        h_a = data_a[data_a['Source'] == 'Human'].iloc[0] if not data_a[data_a['Source'] == 'Human'].empty else None
-        ai_a = data_a[data_a['Source'] == 'AI_Simulated'].iloc[0] if not data_a[data_a['Source'] == 'AI_Simulated'].empty else None
-        nlp_a = data_a[data_a['Source'] == 'AI_NLP'].iloc[0] if not data_a[data_a['Source'] == 'AI_NLP'].empty else None
-        
-        h_b = data_b[data_b['Source'] == 'Human'].iloc[0] if not data_b[data_b['Source'] == 'Human'].empty else None
-        ai_b = data_b[data_b['Source'] == 'AI_Simulated'].iloc[0] if not data_b[data_b['Source'] == 'AI_Simulated'].empty else None
-        nlp_b = data_b[data_b['Source'] == 'AI_NLP'].iloc[0] if not data_b[data_b['Source'] == 'AI_NLP'].empty else None
-        # --- PROFILE OVERVIEW ---
         st.markdown("---")
-        st.header("👥 Profile Overview")
         
-        col_desc_a, col_desc_b = st.columns(2)
+        # ==========================================
+        # SECTION 1: INTER-PROFILE COMPARISON (A vs B, Same Model)
+        # ==========================================
+        st.header(f"⚖️ Section 1: Inter-Profile Comparison (Group A vs Group B)")
+        st.markdown(f"Does the **same model** perceive a significant difference between these two demographic groups for **{sel_trait}**?")
         
-        def format_description(c, r, a, ag, g):
-            desc = f"**Country:** {c} | **Race:** {r} | **Gender:** {g} <br>"
-            desc += f"**Age:** {a}" if a != "All" else f"**Age Group:** {ag}"
-            return desc
-
-        with col_desc_a:
-            st.subheader("Group A")
-            st.markdown(format_description(*a_vals), unsafe_allow_html=True)
-            n_h_a = int(h_a[f"{t_pref}_Trait_count"]) if h_a is not None else 0
-            n_ai_a = int(ai_a[f"{t_pref}_Trait_count"]) if ai_a is not None else 0
-            n_nlp_a = int(nlp_a[f"{t_pref}_Trait_count"]) if nlp_a is not None else 0
-            st.info(f"📊 **Sample Size:** {n_h_a} Humans | {n_ai_a} AI (Explicit) | {n_nlp_a} AI (NLP)")
-
-        with col_desc_b:
-            st.subheader("Group B")
-            st.markdown(format_description(*b_vals), unsafe_allow_html=True)
-
-            n_h_b = int(h_b[f"{t_pref}_Trait_count"]) if h_b is not None else 0
-            n_ai_b = int(ai_b[f"{t_pref}_Trait_count"]) if ai_b is not None else 0
-            n_nlp_b = int(nlp_b[f"{t_pref}_Trait_count"]) if nlp_b is not None else 0
-
-            st.info(f"📊 **Sample Size:** {n_h_b} Humans | {n_ai_b} AI (Explicit) | {n_nlp_b} AI (NLP)")
-                    
-        st.markdown("---")
-        st.header("📈 Statistical Significance Grid")
-
-        if h_a is not None and ai_a is not None and nlp_a is not None and h_b is not None:
-
-            # --- GROUP A COMPARISONS ---
-            st.subheader("Group A Comparisons")
-
-            p_ha_ai, d_ha_ai, txt_ha_ai, dt_ha_ai = calculate_stats(
-                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
-                ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"]
-            )
-
-            p_ha_nlp, d_ha_nlp, txt_ha_nlp, dt_ha_nlp = calculate_stats(
-                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
-                nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"]
-            )
-
-            p_ai_nlp_a, d_ai_nlp_a, txt_ai_nlp_a, dt_ai_nlp_a = calculate_stats(
-                ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"],
-                nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"]
-            )
-
-            st.dataframe(pd.DataFrame([
-                ["Human A vs AI A", p_ha_ai, txt_ha_ai, dt_ha_ai, d_ha_ai],
-                ["Human A vs NLP A", p_ha_nlp, txt_ha_nlp, dt_ha_nlp, d_ha_nlp],
-                ["AI A vs NLP A", p_ai_nlp_a, txt_ai_nlp_a, dt_ai_nlp_a, d_ai_nlp_a],
-            ], columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]))
-
-
-            # --- GROUP B COMPARISONS ---
-            st.subheader("Group B Comparisons")
-
-            if ai_b is not None and nlp_b is not None:
-
-                p_hb_ai, d_hb_ai, txt_hb_ai, dt_hb_ai = calculate_stats(
-                    h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"],
-                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"]
-                )
-
-                p_hb_nlp, d_hb_nlp, txt_hb_nlp, dt_hb_nlp = calculate_stats(
-                    h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"],
-                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
-                )
-
-                p_ai_nlp_b, d_ai_nlp_b, txt_ai_nlp_b, dt_ai_nlp_b = calculate_stats(
-                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"],
-                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
-                )
-
-                st.dataframe(pd.DataFrame([
-                    ["Human B vs AI B", p_hb_ai, txt_hb_ai, dt_hb_ai, d_hb_ai],
-                    ["Human B vs NLP B", p_hb_nlp, txt_hb_nlp, dt_hb_nlp, d_hb_nlp],
-                    ["AI B vs NLP B", p_ai_nlp_b, txt_ai_nlp_b, dt_ai_nlp_b, d_ai_nlp_b],
-                ], columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]))
-
-            else:
-                st.warning("Missing AI/NLP data for Group B")
-
-            st.subheader("Cross-Group Comparisons")
-
-            rows = []
-
-            # Human A vs Human B
-            p_hh, d_hh, txt_hh, dt_hh = calculate_stats(
-                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
-                h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"]
-            )
-            rows.append(["Human A vs Human B", p_hh, txt_hh, dt_hh, d_hh])
-
-            # AI A vs AI B
-            if ai_a is not None and ai_b is not None:
-                p_ai, d_ai, txt_ai, dt_ai = calculate_stats(
-                    ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"],
-                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"]
-                )
-                rows.append(["AI A vs AI B", p_ai, txt_ai, dt_ai, d_ai])
-
-            # NLP A vs NLP B
-            if nlp_a is not None and nlp_b is not None:
-                p_nlp, d_nlp, txt_nlp, dt_nlp = calculate_stats(
-                    nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"],
-                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
-                )
-                rows.append(["NLP A vs NLP B", p_nlp, txt_nlp, dt_nlp, d_nlp])
-
-            st.dataframe(pd.DataFrame(
-                rows,
-                columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]
-            ))
+        valid_both = [s for s in selected_sources if not data_a[data_a['Source'] == s].empty and not data_b[data_b['Source'] == s].empty]
+        
+        if valid_both:
+            inter_results = []
+            for src in valid_both:
+                r1 = data_a[data_a['Source'] == src].iloc[0]
+                r2 = data_b[data_b['Source'] == src].iloc[0]
+                n1, n2 = int(r1[f"{t_pref}_Trait_count"]), int(r2[f"{t_pref}_Trait_count"])
+                p, d = calculate_stats(r1[f"{t_pref}_Trait_mean"], r1[f"{t_pref}_Trait_std"], n1, 
+                                       r2[f"{t_pref}_Trait_mean"], r2[f"{t_pref}_Trait_std"], n2)
+                inter_results.append({
+                    "Model": SOURCE_DISPLAY_MAP[src],
+                    "n (A)": n1,
+                    "n (B)": n2,
+                    "P-Value": round(p, 4),
+                    "Cohen's d": round(d, 2),
+                    "Significant": "✅ Yes" if p < 0.05 else "❌ No"
+                })
+            st.table(pd.DataFrame(inter_results))
         else:
-            st.warning("Not enough data for statistical comparisons.")
-     
-        
-        # Bar Chart
+            st.warning("Select models that have data for both profiles.")
+
+        # ==========================================
+        # SECTION 2 & 3: INTRA-PROFILE METHODOLOGY GRIDS
+        # ==========================================
+        def render_intra_grid(data_subset, letter):
+            st.header(f"🔍 Section {'2' if letter == 'A' else '3'}: Intra-Profile Methodology Grid (Group {letter})")
+            st.markdown(f"How much do the different models and prompts disagree when describing **Group {letter}**?")
+            
+            valid_subset = [s for s in selected_sources if not data_subset[data_subset['Source'] == s].empty]
+            if len(valid_subset) > 1:
+                # Build names with (n=X)
+                names = []
+                for s in valid_subset:
+                    n = int(data_subset[data_subset['Source'] == s].iloc[0][f"{t_pref}_Trait_count"])
+                    names.append(f"{SOURCE_DISPLAY_MAP[s]} (n={n})")
+
+                p_mat = pd.DataFrame(index=names, columns=names, dtype=float)
+                d_mat = pd.DataFrame(index=names, columns=names, dtype=float)
+                
+                for i, s1 in enumerate(valid_subset):
+                    r1 = data_subset[data_subset['Source'] == s1].iloc[0]
+                    for j, s2 in enumerate(valid_subset):
+                        r2 = data_subset[data_subset['Source'] == s2].iloc[0]
+                        p, d = calculate_stats(r1[f"{t_pref}_Trait_mean"], r1[f"{t_pref}_Trait_std"], r1[f"{t_pref}_Trait_count"], 
+                                               r2[f"{t_pref}_Trait_mean"], r2[f"{t_pref}_Trait_std"], r2[f"{t_pref}_Trait_count"])
+                        p_mat.iloc[i, j], d_mat.iloc[i, j] = p, d
+
+                c1, c2 = st.columns(2)
+                with c1:
+                    st.plotly_chart(px.imshow(p_mat, text_auto=".3f", color_continuous_scale="Blues_r", title=f"P-Values (Group {letter})"), use_container_width=True)
+                with c2:
+                    st.plotly_chart(px.imshow(d_mat, text_auto=".2f", color_continuous_scale="Reds", title=f"Effect Size (Group {letter})"), use_container_width=True)
+            else:
+                st.info(f"Select more models to see the disagreement grid for Group {letter}.")
+
+        render_intra_grid(data_a, "A")
+        st.markdown("---")
+        render_intra_grid(data_b, "B")
+
         bar_data = []
         for d, n in zip([data_a, data_b], ["Group A", "Group B"]):
-            for s, s_label in zip(['Human', 'AI_Simulated', 'AI_NLP'], ['🧑‍🤝‍🧑 Human', '🤖 Explicit AI', '🗣️ NLP AI']):
-                row = d[d['Source'] == s]
+            for src in selected_sources:
+                row = d[d['Source'] == src]
                 if not row.empty:
-                    bar_data.append({
-                        "Group": n, 
-                        "Source": s_label, 
-                        "Mean": row.iloc[0][f"{t_pref}_Trait_mean"], 
-                        "StdDev": row.iloc[0][f"{t_pref}_Trait_std"]
-                    })
-        
-        if bar_data:
-            fig_bar = px.bar(
-                pd.DataFrame(bar_data), 
-                x='Group', y='Mean', color='Source', 
-                barmode='group', error_y='StdDev', text_auto='.2f', 
-                range_y=[1,5], title=f"Comparison: {sel_trait}",
-                color_discrete_sequence=['#636EFA', '#EF553B', '#00CC96']
-            )
-            st.plotly_chart(fig_bar, use_container_width=True)
-
+                    bar_data.append({"Group": n, "Source": SOURCE_DISPLAY_MAP[src], "Mean": row.iloc[0][f"{t_pref}_Trait_mean"], "StdDev": row.iloc[0][f"{t_pref}_Trait_std"]})
+        if bar_data: st.plotly_chart(px.bar(pd.DataFrame(bar_data), x='Group', y='Mean', color='Source', barmode='group', error_y='StdDev', text_auto='.2f', range_y=[1,5]), use_container_width=True)
 # ==========================================
-# PAGE 2: KEY DISCOVERIES
+# PAGE 2 & 3: KEY DISCOVERIES / LITERATURE
 # ==========================================
 elif page == "🏆 Key Discoveries":
     st.title("🏆 Key Discoveries & Statistical Extremes")
@@ -270,16 +177,6 @@ elif page == "🏆 Key Discoveries":
         
     st.divider()
     
-    st.header("🌍 Top 20 Extreme Human Subgroups (vs Global Average)")
-    st.markdown("Human demographics that possess the most distinct personality traits compared to the rest of the world.")
-    try:
-        human_extreme_df = pd.read_csv("top_20_human_extremes.csv")
-        st.dataframe(human_extreme_df, use_container_width=True)
-    except:
-        st.info("Run the Human Variance script to generate 'top_20_human_extremes.csv'")
-
-    st.divider()
-    
     st.header("⚔️ Top 50 Human-vs-Human Personality Clashes")
     st.markdown("The largest recorded personality gaps between two distinct human demographic groups.")
     try:
@@ -289,9 +186,6 @@ elif page == "🏆 Key Discoveries":
         st.info("Run the Pairwise Clash script to generate 'top_50_human_clashes.csv'")
 
 
-# ==========================================
-# PAGE 3: LITERATURE
-# ==========================================
 elif page == "📖 Relevant Literature":
     st.title("📖 Relevant Research & Papers")
     st.markdown("Essential reading on LLM personality bias and psychometric evaluation.")
