@@ -10,19 +10,16 @@ st.set_page_config(page_title="Big Five: Human vs AI", layout="wide", page_icon=
 
 # --- STATISTICAL HELPERS ---
 def calculate_stats(m1, s1, n1, m2, s2, n2):
-    """Calculates Welch's T-Test and Cohen's d Effect Size."""
-    # Welch's T-Test (does not assume equal variance)
     t_stat, p_val = stats.ttest_ind_from_stats(
         mean1=m1, std1=s1, nobs1=n1,
         mean2=m2, std2=s2, nobs2=n2,
         equal_var=False
     )
     
-    # Cohen's d (Effect Size)
-    pooled_std = np.sqrt(((n1 - 1) * s1**2 + (n2 - 1) * s2**2) / (n1 + n2 - 2))
+    pooled_var = (((n1 - 1) * s1**2) + ((n2 - 1) * s2**2)) / (n1 + n2 - 2)
+    pooled_std = np.sqrt(pooled_var) if pooled_var > 0 else 0
     d = (m1 - m2) / pooled_std if pooled_std != 0 else 0
     
-    # Interpretation
     if p_val < 0.05:
         sig_text = "Statistically Significant"
         if abs(d) < 0.2: d_text = "Negligible Effect"
@@ -36,20 +33,20 @@ def calculate_stats(m1, s1, n1, m2, s2, n2):
     return p_val, abs(d), sig_text, d_text
 
 # --- NAVIGATION ---
-page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🧪 Prompt Ordering Effects", "📖 Relevant Literature"])
+page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🏆 Key Discoveries", "📖 Relevant Literature"])
 
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("dashboard_precalc_stats.csv")
+        df = pd.read_csv("dashboard_precalc_stats_all.csv")
         demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
         for col in demo_cols:
             if col in df.columns:
                 df[col] = df[col].astype(str)
         return df
     except FileNotFoundError:
-        st.error("Missing 'dashboard_precalc_stats.csv'. Please run your aggregation script first.")
+        st.error("Missing 'dashboard_precalc_stats_singular.csv'.")
         return pd.DataFrame()
 
 df = load_data()
@@ -59,6 +56,7 @@ df = load_data()
 # ==========================================
 if page == "📊 Persona Analytics":
     st.title("🤖 LLM vs 🧑‍🤝‍🧑 Human: Personality Persona Dashboard")
+    st.markdown("Compare empirical human personality against Explicit and Implicit (NLP) LLM personas.")
     
     if not df.empty:
         def get_options(column):
@@ -101,157 +99,208 @@ if page == "📊 Persona Analytics":
             st.warning("Combination not found. Try resetting some filters to 'All'.")
             st.stop()
 
-        # --- STATS SUMMARY ---
-        st.header("📈 Statistical Significance")
-        h_a = data_a[data_a['Source'] == 'Human'].iloc[0]
-        h_b = data_b[data_b['Source'] == 'Human'].iloc[0]
-        ai_a = data_a[data_a['Source'] == 'AI_Simulated'].iloc[0]
-
-        p_h, d_h, txt_h, dt_h = calculate_stats(
-            h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
-            h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"]
-        )
+        # --- EXTRACT ROWS FOR MATH & UI ---
+        h_a = data_a[data_a['Source'] == 'Human'].iloc[0] if not data_a[data_a['Source'] == 'Human'].empty else None
+        ai_a = data_a[data_a['Source'] == 'AI_Simulated'].iloc[0] if not data_a[data_a['Source'] == 'AI_Simulated'].empty else None
+        nlp_a = data_a[data_a['Source'] == 'AI_NLP'].iloc[0] if not data_a[data_a['Source'] == 'AI_NLP'].empty else None
         
-        p_ai, d_ai, txt_ai, dt_ai = calculate_stats(
-            h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
-            ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"]
-        )
+        h_b = data_b[data_b['Source'] == 'Human'].iloc[0] if not data_b[data_b['Source'] == 'Human'].empty else None
+        ai_b = data_b[data_b['Source'] == 'AI_Simulated'].iloc[0] if not data_b[data_b['Source'] == 'AI_Simulated'].empty else None
+        nlp_b = data_b[data_b['Source'] == 'AI_NLP'].iloc[0] if not data_b[data_b['Source'] == 'AI_NLP'].empty else None
+        # --- PROFILE OVERVIEW ---
+        st.markdown("---")
+        st.header("👥 Profile Overview")
+        
+        col_desc_a, col_desc_b = st.columns(2)
+        
+        def format_description(c, r, a, ag, g):
+            desc = f"**Country:** {c} | **Race:** {r} | **Gender:** {g} <br>"
+            desc += f"**Age:** {a}" if a != "All" else f"**Age Group:** {ag}"
+            return desc
 
-        ai_b = data_b[data_b['Source'] == 'AI_Simulated'].iloc[0]
+        with col_desc_a:
+            st.subheader("Group A")
+            st.markdown(format_description(*a_vals), unsafe_allow_html=True)
+            n_h_a = int(h_a[f"{t_pref}_Trait_count"]) if h_a is not None else 0
+            n_ai_a = int(ai_a[f"{t_pref}_Trait_count"]) if ai_a is not None else 0
+            n_nlp_a = int(nlp_a[f"{t_pref}_Trait_count"]) if nlp_a is not None else 0
+            st.info(f"📊 **Sample Size:** {n_h_a} Humans | {n_ai_a} AI (Explicit) | {n_nlp_a} AI (NLP)")
 
-        # Calculate significance for AI Group A vs AI Group B
-        p_ai_diff, d_ai_diff, txt_ai_diff, dt_ai_diff = calculate_stats(
-            ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"],
-            ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"]
-        )
+        with col_desc_b:
+            st.subheader("Group B")
+            st.markdown(format_description(*b_vals), unsafe_allow_html=True)
 
-        # Update the columns to a 3-column layout
-        c1, c2, c3 = st.columns(3)
+            n_h_b = int(h_b[f"{t_pref}_Trait_count"]) if h_b is not None else 0
+            n_ai_b = int(ai_b[f"{t_pref}_Trait_count"]) if ai_b is not None else 0
+            n_nlp_b = int(nlp_b[f"{t_pref}_Trait_count"]) if nlp_b is not None else 0
 
-        with c1:
-            st.subheader("Human A vs Human B")
-            st.metric("P-Value", f"{p_h:.4f}")
-            st.write(f"**Result:** {txt_h}\n\n**Effect:** {dt_h}")
+            st.info(f"📊 **Sample Size:** {n_h_b} Humans | {n_ai_b} AI (Explicit) | {n_nlp_b} AI (NLP)")
+                    
+        st.markdown("---")
+        st.header("📈 Statistical Significance Grid")
 
-        with c2:
-            st.subheader("Human A vs AI A")
-            st.metric("P-Value", f"{p_ai:.4f}")
-            st.write(f"**Result:** {txt_ai}\n\n**Effect:** {dt_ai}")
+        if h_a is not None and ai_a is not None and nlp_a is not None and h_b is not None:
 
-        with c3:
-            st.subheader("AI A vs AI B")
-            st.metric("P-Value", f"{p_ai_diff:.4f}")
-            st.write(f"**Result:** {txt_ai_diff}\n\n**Effect:** {dt_ai_diff}")
-      
-        # Deep Dive Bar
+            # --- GROUP A COMPARISONS ---
+            st.subheader("Group A Comparisons")
+
+            p_ha_ai, d_ha_ai, txt_ha_ai, dt_ha_ai = calculate_stats(
+                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
+                ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"]
+            )
+
+            p_ha_nlp, d_ha_nlp, txt_ha_nlp, dt_ha_nlp = calculate_stats(
+                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
+                nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"]
+            )
+
+            p_ai_nlp_a, d_ai_nlp_a, txt_ai_nlp_a, dt_ai_nlp_a = calculate_stats(
+                ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"],
+                nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"]
+            )
+
+            st.dataframe(pd.DataFrame([
+                ["Human A vs AI A", p_ha_ai, txt_ha_ai, dt_ha_ai, d_ha_ai],
+                ["Human A vs NLP A", p_ha_nlp, txt_ha_nlp, dt_ha_nlp, d_ha_nlp],
+                ["AI A vs NLP A", p_ai_nlp_a, txt_ai_nlp_a, dt_ai_nlp_a, d_ai_nlp_a],
+            ], columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]))
+
+
+            # --- GROUP B COMPARISONS ---
+            st.subheader("Group B Comparisons")
+
+            if ai_b is not None and nlp_b is not None:
+
+                p_hb_ai, d_hb_ai, txt_hb_ai, dt_hb_ai = calculate_stats(
+                    h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"],
+                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"]
+                )
+
+                p_hb_nlp, d_hb_nlp, txt_hb_nlp, dt_hb_nlp = calculate_stats(
+                    h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"],
+                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
+                )
+
+                p_ai_nlp_b, d_ai_nlp_b, txt_ai_nlp_b, dt_ai_nlp_b = calculate_stats(
+                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"],
+                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
+                )
+
+                st.dataframe(pd.DataFrame([
+                    ["Human B vs AI B", p_hb_ai, txt_hb_ai, dt_hb_ai, d_hb_ai],
+                    ["Human B vs NLP B", p_hb_nlp, txt_hb_nlp, dt_hb_nlp, d_hb_nlp],
+                    ["AI B vs NLP B", p_ai_nlp_b, txt_ai_nlp_b, dt_ai_nlp_b, d_ai_nlp_b],
+                ], columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]))
+
+            else:
+                st.warning("Missing AI/NLP data for Group B")
+
+            st.subheader("Cross-Group Comparisons")
+
+            rows = []
+
+            # Human A vs Human B
+            p_hh, d_hh, txt_hh, dt_hh = calculate_stats(
+                h_a[f"{t_pref}_Trait_mean"], h_a[f"{t_pref}_Trait_std"], h_a[f"{t_pref}_Trait_count"],
+                h_b[f"{t_pref}_Trait_mean"], h_b[f"{t_pref}_Trait_std"], h_b[f"{t_pref}_Trait_count"]
+            )
+            rows.append(["Human A vs Human B", p_hh, txt_hh, dt_hh, d_hh])
+
+            # AI A vs AI B
+            if ai_a is not None and ai_b is not None:
+                p_ai, d_ai, txt_ai, dt_ai = calculate_stats(
+                    ai_a[f"{t_pref}_Trait_mean"], ai_a[f"{t_pref}_Trait_std"], ai_a[f"{t_pref}_Trait_count"],
+                    ai_b[f"{t_pref}_Trait_mean"], ai_b[f"{t_pref}_Trait_std"], ai_b[f"{t_pref}_Trait_count"]
+                )
+                rows.append(["AI A vs AI B", p_ai, txt_ai, dt_ai, d_ai])
+
+            # NLP A vs NLP B
+            if nlp_a is not None and nlp_b is not None:
+                p_nlp, d_nlp, txt_nlp, dt_nlp = calculate_stats(
+                    nlp_a[f"{t_pref}_Trait_mean"], nlp_a[f"{t_pref}_Trait_std"], nlp_a[f"{t_pref}_Trait_count"],
+                    nlp_b[f"{t_pref}_Trait_mean"], nlp_b[f"{t_pref}_Trait_std"], nlp_b[f"{t_pref}_Trait_count"]
+                )
+                rows.append(["NLP A vs NLP B", p_nlp, txt_nlp, dt_nlp, d_nlp])
+
+            st.dataframe(pd.DataFrame(
+                rows,
+                columns=["Comparison", "P-Value", "Significance", "Effect Size Label", "Cohen's d"]
+            ))
+        else:
+            st.warning("Not enough data for statistical comparisons.")
+     
+        
+        # Bar Chart
         bar_data = []
         for d, n in zip([data_a, data_b], ["Group A", "Group B"]):
-            for s in ['Human', 'AI_Simulated']:
+            for s, s_label in zip(['Human', 'AI_Simulated', 'AI_NLP'], ['🧑‍🤝‍🧑 Human', '🤖 Explicit AI', '🗣️ NLP AI']):
                 row = d[d['Source'] == s]
                 if not row.empty:
-                    bar_data.append({"Group": n, "Source": s, "Mean": row.iloc[0][f"{t_pref}_Trait_mean"], "StdDev": row.iloc[0][f"{t_pref}_Trait_std"]})
+                    bar_data.append({
+                        "Group": n, 
+                        "Source": s_label, 
+                        "Mean": row.iloc[0][f"{t_pref}_Trait_mean"], 
+                        "StdDev": row.iloc[0][f"{t_pref}_Trait_std"]
+                    })
         
-        fig_bar = px.bar(pd.DataFrame(bar_data), x='Group', y='Mean', color='Source', barmode='group', error_y='StdDev', text_auto='.2f', range_y=[1,5], title=f"Comparison: {sel_trait}")
-        st.plotly_chart(fig_bar, use_container_width=True)
+        if bar_data:
+            fig_bar = px.bar(
+                pd.DataFrame(bar_data), 
+                x='Group', y='Mean', color='Source', 
+                barmode='group', error_y='StdDev', text_auto='.2f', 
+                range_y=[1,5], title=f"Comparison: {sel_trait}",
+                color_discrete_sequence=['#636EFA', '#EF553B', '#00CC96']
+            )
+            st.plotly_chart(fig_bar, use_container_width=True)
 
 # ==========================================
-# PAGE 2: PROMPT ORDERING EFFECTS
+# PAGE 2: KEY DISCOVERIES
 # ==========================================
-elif page == "🧪 Prompt Ordering Effects":
-    st.title("🧪 Experiment: Prompt Ordering Effects")
-    st.markdown("This experiment isolates the effect of **prompt salience**. Do different orderings of demographic information yield statistically different Big Five personas?")
+elif page == "🏆 Key Discoveries":
+    st.title("🏆 Key Discoveries & Statistical Extremes")
+    st.markdown("A macro-level view of the largest deviations and biases discovered in the dataset.")
     
-    @st.cache_data
-    def load_ordering_data():
-        try:
-            df_ord = pd.read_csv("dashboard_ordering_stats.csv")
-            demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
-            for col in demo_cols:
-                if col in df_ord.columns:
-                    df_ord[col] = df_ord[col].astype(str)
-            return df_ord
-        except FileNotFoundError:
-            st.error("Missing 'dashboard_ordering_stats.csv'. Run `generate_ordering_experiment.py` then `trait_extraction_ordering.py`.")
-            return pd.DataFrame()
+    st.header("🚨 Top 20 AI Hallucinations (Explicit AI vs Human)")
+    st.markdown("Demographics where the LLM's simulated personality diverged the most from actual human survey data.")
+    try:
+        ai_bias_df = pd.read_csv("top_20_ai_biases.csv")
+        st.dataframe(ai_bias_df, use_container_width=True)
+    except:
+        st.info("Run the AI Bias script to generate 'top_20_ai_biases.csv'")
+        
+    st.divider()
+    
+    st.header("🌍 Top 20 Extreme Human Subgroups (vs Global Average)")
+    st.markdown("Human demographics that possess the most distinct personality traits compared to the rest of the world.")
+    try:
+        human_extreme_df = pd.read_csv("top_20_human_extremes.csv")
+        st.dataframe(human_extreme_df, use_container_width=True)
+    except:
+        st.info("Run the Human Variance script to generate 'top_20_human_extremes.csv'")
 
-    df_ord = load_ordering_data()
+    st.divider()
     
-    if not df_ord.empty:
-        st.sidebar.header("Filter Settings")
-        def get_options_ord(column):
-            opts = sorted([x for x in df_ord[column].unique() if x != 'All'])
-            return ['All'] + opts
-            
-        country = st.sidebar.selectbox("Country", get_options_ord('Country'), key='c_ord')
-        race = st.sidebar.selectbox("Race", get_options_ord('Race'), key='r_ord')
-        gender = st.sidebar.selectbox("Gender", get_options_ord('Gender'), key='g_ord')
-        
-        # Extract data for chosen demographics across orderings
-        filtered_df = df_ord[(df_ord['Country']==country) & (df_ord['Race']==race) & (df_ord['Age']=='All') & (df_ord['Age_Group']=='All') & (df_ord['Gender']==gender)]
-        
-        if filtered_df.empty:
-            st.warning("No data found for this combination.")
-            st.stop()
-            
-        trait_map = {"Extroversion": "E", "Agreeableness": "A", "Conscientiousness": "C", "Neuroticism": "N", "Openness": "O"}
-        sel_trait = st.sidebar.selectbox("Select Trait to Compare", list(trait_map.keys()))
-        t_pref = trait_map[sel_trait]
-        
-        st.subheader(f"Comparison: {sel_trait}")
-        
-        # Deep Dive Bar
-        bar_data = []
-        for _, row in filtered_df.iterrows():
-            bar_data.append({"Ordering": row["Ordering"], "Mean": row[f"{t_pref}_Trait_mean"], "StdDev": row[f"{t_pref}_Trait_std"]})
-            
-        fig_bar = px.bar(pd.DataFrame(bar_data), x='Ordering', y='Mean', color='Ordering', error_y='StdDev', text_auto='.2f', range_y=[1,5], title=f"{sel_trait} across Prompt Orderings")
-        st.plotly_chart(fig_bar, use_container_width=True)
-        
-        # Stats Comparison
-        st.header("📈 Formatting Bias (Significance Checks)")
-        st.markdown("Comparing base prompt against variations")
-        
-        orderings = filtered_df['Ordering'].unique()
-        if len(orderings) >= 2:
-            base_ord = "Age -> Gender -> Nationality"
-            base_row = filtered_df[filtered_df['Ordering'] == base_ord]
-            
-            if not base_row.empty:
-                base_row = base_row.iloc[0]
-                cols = st.columns(len(orderings) - 1)
-                col_idx = 0
-                
-                for ord_name in orderings:
-                    if ord_name == base_ord: continue
-                    comp_row = filtered_df[filtered_df['Ordering'] == ord_name].iloc[0]
-                    
-                    p_val, d_val, sig_text, d_text = calculate_stats(
-                        base_row[f"{t_pref}_Trait_mean"], base_row[f"{t_pref}_Trait_std"], base_row[f"{t_pref}_Trait_count"],
-                        comp_row[f"{t_pref}_Trait_mean"], comp_row[f"{t_pref}_Trait_std"], comp_row[f"{t_pref}_Trait_count"]
-                    )
-                    
-                    with cols[col_idx]:
-                        st.subheader(f"Base vs {ord_name.split('->')[0].strip()}")
-                        st.metric("P-Value", f"{p_val:.4f}")
-                        st.write(f"**Result:** {sig_text}\n\n**Effect:** {d_text}")
-                    col_idx += 1
-            else:
-                st.info("Baseline ordering missing for these filters.")
+    st.header("⚔️ Top 50 Human-vs-Human Personality Clashes")
+    st.markdown("The largest recorded personality gaps between two distinct human demographic groups.")
+    try:
+        clash_df = pd.read_csv("top_50_human_clashes.csv")
+        st.dataframe(clash_df, use_container_width=True)
+    except:
+        st.info("Run the Pairwise Clash script to generate 'top_50_human_clashes.csv'")
+
 
 # ==========================================
 # PAGE 3: LITERATURE
 # ==========================================
 elif page == "📖 Relevant Literature":
     st.title("📖 Relevant Research & Papers")
-    st.markdown("Scientific foundations for LLM psychometric evaluation.")
-    
+    st.markdown("Essential reading on LLM personality bias and psychometric evaluation.")
+
     papers = [
-        {"title": "The Silicon Sample: Using LLMs to Simulate Human Surveys", "authors": "Argyle et al. (2023)", "link": "https://doi.org/10.1017/psrm.2023.18", "summary": "A study on the alignment between LLM 'silicon' sub-populations and actual human survey data."},
-        {"title": "Personality Traits in Large Language Models", "authors": "Caron & Srivastava (2022)", "link": "https://arxiv.org/abs/2207.00233", "summary": "An exploration into whether LLMs exhibit stable personality structures."},
-        {"title": "On the Opportunities and Risks of Foundation Models", "authors": "Bommasani et al. (2021)", "link": "https://arxiv.org/abs/2108.07258", "summary": "A comprehensive review of the social biases inherent in large-scale foundation models."}
+        {"title": "Manipulating the Perceived Personality Traits of Language Models", "authors": "Caron & Srivastava (2022)", "link": "https://arxiv.org/abs/2212.10276"},
     ]
 
-    for p in papers:
-        with st.expander(f"📄 {p['title']}"):
-            st.write(f"**Authors:** {p['authors']}\n\n**Summary:** {p['summary']}")
-            st.link_button("Read Full Paper", p["link"])
+    for paper in papers:
+        with st.expander(f"📄 {paper['title']}"):
+            st.write(f"**Authors:** {paper['authors']}")
+            st.link_button("Read Paper", paper["link"])

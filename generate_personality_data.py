@@ -1,5 +1,6 @@
 import asyncio
 import pandas as pd
+import math
 import os
 import json
 from openai import AsyncOpenAI
@@ -11,7 +12,7 @@ load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 OUTPUT_FILE = "simulated_human_data_isolated.csv"
-SAMPLE_SIZE = 1000
+SAMPLE_SIZE = 1720
 ITERATIONS_PER_ROW = 3
 CONCURRENT_REQUESTS = 100
 
@@ -108,48 +109,65 @@ async def ask_single_question(persona_desc, q_id, q_text, semaphore):
         return q_id, "sometimes", 3
 
 async def main():
-    human_df = load_and_clean_data() # Ensure this function is in your script
+    human_df = load_and_clean_data()
     sampled_df = human_df.sample(n=SAMPLE_SIZE, replace=True).reset_index(drop=True)
     
     semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
-    all_tasks = []
-
-    # Flatten the experiment: Every question for every iteration for every persona
-    for index, row in sampled_df.iterrows():
-        persona_desc = f"{int(row['age'])}-year-old {GENDER_MAP[row['gender']]} of {RACE_MAP[row['race']]} descent from {row['country_name']}"
-        for i in range(ITERATIONS_PER_ROW):
-            sim_id = f"P{index}_R{i}"
-            for q_id, q_text in IPIP_ITEMS.items():
-                all_tasks.append((sim_id, row, ask_single_question(persona_desc, q_id, q_text, semaphore)))
-
-    print(f"Launching {len(all_tasks)} isolated requests...")
     
-    # Run with progress bar
-    results = []
-    # We gather the raw tasks
-    raw_results = await tqdm.gather(*(t[2] for t in all_tasks))
-    
-    # Reconstruct the rows from the flat result list
-    # (Since there are 50 questions per iteration, we chunk the results)
-    final_rows = []
-    for i in range(0, len(all_tasks), 50):
-        chunk = raw_results[i : i + 50]
-        sim_id, original_row, _ = all_tasks[i]
+    # Process 500 personas (75,000 API calls) at a time to prevent memory crashes
+    BATCH_SIZE = 500 
+    total_batches = math.ceil(SAMPLE_SIZE / BATCH_SIZE)
+
+    print(f"Executing 2.7 million isolated requests in {total_batches} batches...")
+
+    for batch_idx in range(total_batches):
+        batch_start = batch_idx * BATCH_SIZE
+        batch_df = sampled_df.iloc[batch_start : batch_start + BATCH_SIZE]
+        all_tasks = []
+
+        # Build the tasks for this specific batch
+        for index, row in batch_df.iterrows():
+            persona_desc = f"{int(row['age'])}-year-old {GENDER_MAP[row['gender']]} of {RACE_MAP[row['race']]} descent from {row['country_name']}"
+            for i in range(ITERATIONS_PER_ROW):
+                # Unique Sim_ID so it doesn't overlap with your first 1,000 runs
+                sim_id = f"Run2_P{index}_R{i}"
+                for q_id, q_text in IPIP_ITEMS.items():
+                    all_tasks.append((sim_id, row, ask_single_question(persona_desc, q_id, q_text, semaphore)))
+
+        print(f"\nProcessing Batch {batch_idx + 1} / {total_batches} ({len(all_tasks)} requests)")
         
-        entry = {
-            "Sim_ID": sim_id,
-            "Age": int(original_row['age']),
-            "Gender": GENDER_MAP[original_row['gender']],
-            "Race": RACE_MAP[original_row['race']],
-            "Country": original_row['country_name']
-        }
-        for q_id, word, score in chunk:
-            entry[f"{q_id}_response"] = word
-            entry[f"{q_id}_score"] = score
-        final_rows.append(entry)
+        # Execute batch
+        raw_results = await tqdm.gather(*(t[2] for t in all_tasks))
+        
+        # Reconstruct rows
+        final_rows = []
+        for i in range(0, len(all_tasks), 50):
+            chunk = raw_results[i : i + 50]
+            sim_id, original_row, _ = all_tasks[i]
+            
+            entry = {
+                "Sim_ID": sim_id,
+                "Age": int(original_row['age']),
+                "Gender": GENDER_MAP[original_row['gender']],
+                "Race": RACE_MAP[original_row['race']],
+                "Country": original_row['country_name']
+            }
+            for q_id, word, score in chunk:
+                entry[f"{q_id}_response"] = word
+                entry[f"{q_id}_score"] = score
+            final_rows.append(entry)
 
-    pd.DataFrame(final_rows).to_csv(OUTPUT_FILE, index=False)
-    print(f"Success! Data saved to {OUTPUT_FILE}")
+        # APPEND TO CSV (The crucial change)
+        file_exists = os.path.isfile(OUTPUT_FILE)
+        pd.DataFrame(final_rows).to_csv(
+            OUTPUT_FILE, 
+            mode='a', # 'a' stands for append
+            header=not file_exists, # Only write headers if the file somehow doesn't exist
+            index=False
+        )
+        print(f"Batch {batch_idx + 1} saved successfully. Moving to next...")
+
+    print(f"\nSuccess! All {SAMPLE_SIZE} additional personas appended to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     asyncio.run(main())
