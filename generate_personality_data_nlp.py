@@ -7,19 +7,13 @@ from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from tqdm.asyncio import tqdm
 
-# Load the API key from your .env file
+# Load API key
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# CHANGED: New output file for NLP data
 OUTPUT_FILE = "simulated_human_data_nlp.csv" 
 ITERATIONS_PER_ROW = 1
-CONCURRENT_REQUESTS = 100
-
-# ==============================
-# MAPPINGS & ITEMS
-# ==============================
-
+CONCURRENT_REQUESTS = 300
 
 SCALE_MAPPING = {"never": 1, "rarely": 2, "sometimes": 3, "often": 4, "always": 5}
 
@@ -51,81 +45,23 @@ IPIP_ITEMS = {
     "O9": "I [blank] spend time reflecting on things.", "O10": "I am [blank] full of ideas."
 }
 
-# ==============================
-# DATA CLEANING
-# ==============================
 def load_and_clean_data():
     print("Loading and cleaning datasets...")
-    df = pd.read_csv("simulated_human_data_isolated.csv", low_memory=False, sep=',')    
+    df = pd.read_csv("simulated_human_data_isolated.csv", low_memory=False)
     return df
 
-# ==============================
-# PHASE 1: NLP BACKSTORY GENERATOR
-# ==============================
-async def generate_single_backstory(age, gender, race, country, semaphore):
-    system_prompt = f"""Generate a very concise realistic, 2-to-3 sentence, first-person backstory for a specific demographic profile.
-
-CRITICAL RULES:
-Make sure to explicitly include the specific trait of that person. So if they are a male from a certain country, make sure to include that they are a male from that country. 
-Use cultural touchstones, generational life stages, geographic references, and socio-linguistic markers to hint at who they are.
-Ground the description in mundane reality. Do not use extreme or offensive stereotypes.
-Output ONLY the 2-3 sentences of the backstory. No introductory text. Should not exceed 130 tokens.
-
-INPUT: Age: {age}, Gender: {gender}, Race: {race}, Country: {country}
-"""
-    
-    async with semaphore:
-        for attempt in range(3):
-            try:
-                response = await client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[{"role": "system", "content": system_prompt}],
-                    temperature=0.8,
-                    max_tokens=150
-                )
-                return response.choices[0].message.content.strip()
-            except Exception:
-                await asyncio.sleep(2 * (2 ** attempt))
-        return "I am a typical person living a normal life, trying to balance my daily responsibilities."
-
-async def build_backstory_dictionary(unique_profiles_df, semaphore):
-    print(f"Generating Natural Language Profiles for {len(unique_profiles_df)} unique demographic combinations...")
-    backstory_dict = {}
-    tasks = []
-    keys = []
-    
-    for _, row in unique_profiles_df.iterrows():
-        age = row['Age']
-        gender = row['Gender']
-        race = row['Race']
-        country = row['Country']
-        
-        profile_key = f"{age}_{gender}_{race}_{country}"
-        keys.append(profile_key)
-        tasks.append(generate_single_backstory(age, gender, race, country, semaphore))
-        
-    results = await tqdm.gather(*tasks)
-    
-    for key, backstory in zip(keys, results):
-        backstory_dict[key] = backstory
-        
-    return backstory_dict
 
 # ==============================
-# PHASE 2: ISOLATED ASYNC LLM CALL
+# SINGLE QUESTION CALL
 # ==============================
-async def ask_questions_batch(backstory, semaphore):
-    questions_text = "\n".join(
-        [f"{k}: {v}" for k, v in IPIP_ITEMS.items()]
-    )
-
+async def ask_single_question(backstory, q_id, question_text, semaphore):
     system_prompt = (
         f"Here is your background context: '{backstory}'\n\n"
-        "You are taking a personality test. For EACH statement, respond with EXACTLY one word from:\n"
+        "You are taking a personality test. Respond with EXACTLY one word from:\n"
         "[never, rarely, sometimes, often, always]\n\n"
-        f"{questions_text}\n\n"
+        f"{q_id}: {question_text}\n\n"
         "Output format EXACTLY like:\n"
-        "E1: word\nE2: word\n...\nO10: word\n"
+        f"{q_id}: word\n"
         "Do not add anything else."
     )
 
@@ -136,101 +72,110 @@ async def ask_questions_batch(backstory, semaphore):
                     model="gpt-4o-mini",
                     messages=[{"role": "system", "content": system_prompt}],
                     temperature=0.7,
-                    max_tokens=300
+                    max_tokens=20
                 )
 
-                lines = response.choices[0].message.content.strip().split("\n")
+                line = response.choices[0].message.content.strip()
 
-                result = {}
-                for line in lines:
-                    if ":" in line:
-                        q, word = line.split(":", 1)
-                        word = word.strip().lower().replace(".", "")
-                        result[q.strip()] = (
-                            word,
-                            SCALE_MAPPING.get(word, 3)
-                        )
-
-                return result
+                if ":" in line:
+                    _, word = line.split(":", 1)
+                    word = word.strip().lower().replace(".", "")
+                    return word, SCALE_MAPPING.get(word, 3)
 
             except Exception:
                 await asyncio.sleep(2 * (2 ** attempt))
 
-        # fallback
-        return {k: ("sometimes", 3) for k in IPIP_ITEMS.keys()}
+        return "sometimes", 3
+
 
 # ==============================
-# MAIN PIPELINE
-# ==============================
-# ==============================
-# MAIN PIPELINE
+# MAIN PIPELINE (RESUME SAFE)
 # ==============================
 async def main():
-    # 1. Load the ENTIRE dataset (no sampling)
-    human_df = load_and_clean_data()    
+    human_df = load_and_clean_data()
     semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
-    
+
     human_df = human_df.iloc[::3].reset_index(drop=True)
     total_rows = len(human_df)
+
+    # 🔥 LOAD COMPLETED IDS (RESUME)
+    if os.path.isfile(OUTPUT_FILE):
+        existing_df = pd.read_csv(OUTPUT_FILE)
+        completed_ids = set(existing_df["Sim_ID"])
+        print(f"Resuming: {len(completed_ids)} rows already completed.")
+    else:
+        completed_ids = set()
+
     with open("nlp_backstories_mapping.json", "r") as f:
         backstory_dict = json.load(f)
 
-    
-    # 3. Setup batching for the entire dataset
-    BATCH_SIZE = 500 
+    BATCH_SIZE = 500
     total_batches = math.ceil(total_rows / BATCH_SIZE)
-    print(f"\nExecuting questionnaire requests for all {total_rows} rows in {total_batches} batches...")
+
+    print(f"\nProcessing {total_rows} rows across {total_batches} batches...")
 
     for batch_idx in range(total_batches):
         batch_start = batch_idx * BATCH_SIZE
-        # Slice from the full dataset instead of a sample
         batch_df = human_df.iloc[batch_start : batch_start + BATCH_SIZE]
-        all_tasks = []
 
-        # Build the tasks for this specific batch
+        print(f"\nBatch {batch_idx + 1}/{total_batches}")
+
+        all_tasks = []
+        metadata = []
+
         for index, row in batch_df.iterrows():
-            # Construct the key to fetch the specific backstory
             profile_key = f"{int(row['Age'])}_{row['Gender']}_{row['Race']}_{row['Country']}"
             backstory = backstory_dict[profile_key]
-            
+
             for i in range(ITERATIONS_PER_ROW):
-                # Using the actual index from the human_df to link them directly
                 sim_id = f"NLP_P{index}_R{i}"
-                all_tasks.append((sim_id, row, ask_questions_batch(backstory, semaphore)))
-        print(f"\nProcessing Batch {batch_idx + 1} / {total_batches} ({len(all_tasks)} requests)")
-        
-        # Execute batch
-        raw_results = await tqdm.gather(*(t[2] for t in all_tasks))
-        
-        # Reconstruct rows
-        final_rows = []
-        for (sim_id, original_row, _), answers in zip(all_tasks, raw_results):
-            
-            entry = {
-                "Sim_ID": sim_id,
-                "Age": int(original_row['Age']),
-                "Gender": original_row['Gender'],
-                "Race": original_row['Race'],
-                "Country": original_row['Country']
-            }
 
-            for q_id, (word, score) in answers.items():
-                entry[f"{q_id}_response"] = word
-                entry[f"{q_id}_score"] = score
+                # 🔥 SKIP IF ALREADY DONE
+                if sim_id in completed_ids:
+                    continue
 
-            final_rows.append(entry)
+                for q_id, question_text in IPIP_ITEMS.items():
+                    task = ask_single_question(backstory, q_id, question_text, semaphore)
+                    all_tasks.append(task)
+                    metadata.append((sim_id, row, q_id))
 
-        # Append to CSV
+        if not all_tasks:
+            print("All rows in this batch already completed.")
+            continue
+
+        print(f"API calls this batch: {len(all_tasks)}")
+
+        results = await tqdm.gather(*all_tasks)
+
+        rows_dict = {}
+
+        for (sim_id, row, q_id), (word, score) in zip(metadata, results):
+            if sim_id not in rows_dict:
+                rows_dict[sim_id] = {
+                    "Sim_ID": sim_id,
+                    "Age": int(row['Age']),
+                    "Gender": row['Gender'],
+                    "Race": row['Race'],
+                    "Country": row['Country']
+                }
+
+            rows_dict[sim_id][f"{q_id}_response"] = word
+            rows_dict[sim_id][f"{q_id}_score"] = score
+
+        final_rows = list(rows_dict.values())
+
         file_exists = os.path.isfile(OUTPUT_FILE)
         pd.DataFrame(final_rows).to_csv(
-            OUTPUT_FILE, 
-            mode='a', 
-            header=not file_exists, 
+            OUTPUT_FILE,
+            mode='a',
+            header=not file_exists,
             index=False
         )
-        print(f"Batch {batch_idx + 1} saved successfully. Moving to next...")
 
-    print(f"\nSuccess! All {total_rows} original rows mapped to NLP personas and saved to {OUTPUT_FILE}")
+        print(f"Batch {batch_idx + 1} saved.")
+
+    print("\n✅ DONE")
+
 
 if __name__ == "__main__":
     asyncio.run(main())

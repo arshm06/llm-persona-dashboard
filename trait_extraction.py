@@ -36,41 +36,82 @@ def calculate_traits(df, is_simulated=False):
 # ==========================================
 # 2. LOAD & PREP DATA
 # ==========================================
-print("Loading data...")
-human_df = pd.read_csv('human_data.csv', sep='\t', low_memory=False)
-sim_df = pd.read_csv('simulated_human_data_isolated.csv')
-nlp_df = pd.read_csv('simulated_human_data_nlp.csv')
+print("Loading datasets...")
+try: human_df = pd.read_csv('human_data.csv', sep='\t', low_memory=False)
+except: human_df = pd.DataFrame()
+
+try: sim_df = pd.read_csv('simulated_human_data_isolated.csv')
+except: sim_df = pd.DataFrame()
+
+try: nlp_df = pd.read_csv('simulated_human_data_nlp.csv')
+except: nlp_df = pd.DataFrame()
+
+try: qwen_df = pd.read_csv('simulated_human_data_isolated_qwen.csv')
+except: qwen_df = pd.DataFrame()
+
+try: qwen_nlp_df = pd.read_csv('simulated_human_data_nlp_qwen.csv')
+except: qwen_nlp_df = pd.DataFrame()
+
+try: order_df = pd.read_csv('simulated_ordering_experiment.csv')
+except: order_df = pd.DataFrame()
+
+try: qwen_order_df = pd.read_csv('simulated_ordering_experiment_qwen2.5-3b.csv')
+except: qwen_order_df = pd.DataFrame()
 
 # --- FILTER FOR FIRST RUN ONLY ---
-sim_df = sim_df[sim_df['Sim_ID'].str.endswith('_R0')].copy()
-nlp_df = nlp_df[nlp_df['Sim_ID'].str.endswith('_R0')].copy()
-print(f"Filtered to first iterations only. Simulated explicit rows: {len(sim_df)}, NLP rows: {len(nlp_df)}")
-# ---------------------------------
+if not sim_df.empty: sim_df = sim_df[sim_df['Sim_ID'].str.contains('_R0')].copy()
+if not nlp_df.empty: nlp_df = nlp_df[nlp_df['Sim_ID'].str.contains('_R0')].copy()
+if not qwen_df.empty: qwen_df = qwen_df[qwen_df['Sim_ID'].str.contains('_R0')].copy()
+if not qwen_nlp_df.empty: qwen_nlp_df = qwen_nlp_df[qwen_nlp_df['Sim_ID'].str.contains('_R0')].copy()
+if not order_df.empty: order_df = order_df[order_df['Sim_ID'].str.contains('_R0_')].copy()
+# Note: qwen_order_df only has 1 iteration built-in, so no filtering needed.
 
 # Clean human data
-iso_df = pd.read_csv("iso.csv")
-iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
-human_df['Country'] = human_df['country'].map(iso_map)
+if not human_df.empty:
+    iso_df = pd.read_csv("iso.csv")
+    iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
+    human_df['Country'] = human_df['country'].map(iso_map)
 
-RACE_MAP = {1: 'Mixed Race', 2: 'Arctic', 3: 'Caucasian (European)', 4: 'Caucasian (Indian)', 5: 'Caucasian (Middle East)', 6: 'Caucasian (North African)', 7: 'Indigenous Australian', 8: 'Native American', 9: 'North East Asian', 10: 'Pacific Islander', 11: 'South East Asian', 12: 'West African', 13: 'Other'}
-GENDER_MAP = {1: 'Male', 2: 'Female', 3: 'Other'}
-human_df['Race'] = pd.to_numeric(human_df['race'], errors='coerce').map(RACE_MAP)
-human_df['Gender'] = pd.to_numeric(human_df['gender'], errors='coerce').map(GENDER_MAP)
-human_df['Age'] = pd.to_numeric(human_df['age'], errors='coerce')
+    RACE_MAP = {1: 'Mixed Race', 2: 'Arctic', 3: 'Caucasian (European)', 4: 'Caucasian (Indian)', 5: 'Caucasian (Middle East)', 6: 'Caucasian (North African)', 7: 'Indigenous Australian', 8: 'Native American', 9: 'North East Asian', 10: 'Pacific Islander', 11: 'South East Asian', 12: 'West African', 13: 'Other'}
+    GENDER_MAP = {1: 'Male', 2: 'Female', 3: 'Other'}
+    human_df['Race'] = pd.to_numeric(human_df['race'], errors='coerce').map(RACE_MAP)
+    human_df['Gender'] = pd.to_numeric(human_df['gender'], errors='coerce').map(GENDER_MAP)
+    human_df['Age'] = pd.to_numeric(human_df['age'], errors='coerce')
 
-human_df = human_df.dropna(subset=['Country', 'Race', 'Gender', 'Age'])
-human_df = human_df[(human_df['Age'] >= 13) & (human_df['Age'] <= 100)]
+    human_df = human_df.dropna(subset=['Country', 'Race', 'Gender', 'Age'])
+    human_df = human_df[(human_df['Age'] >= 13) & (human_df['Age'] <= 100)]
 
 # Calculate Trait Scores
 print("Calculating Big Five Traits...")
-human_df = calculate_traits(human_df, is_simulated=False)
-sim_df = calculate_traits(sim_df, is_simulated=True)
-nlp_df = calculate_traits(nlp_df, is_simulated=True)
+if not human_df.empty: human_df = calculate_traits(human_df, is_simulated=False)
+if not sim_df.empty: sim_df = calculate_traits(sim_df, is_simulated=True)
+if not nlp_df.empty: nlp_df = calculate_traits(nlp_df, is_simulated=True)
+if not qwen_df.empty: qwen_df = calculate_traits(qwen_df, is_simulated=True)
+if not qwen_nlp_df.empty: qwen_nlp_df = calculate_traits(qwen_nlp_df, is_simulated=True)
+if not order_df.empty: order_df = calculate_traits(order_df, is_simulated=True)
+if not qwen_order_df.empty: qwen_order_df = calculate_traits(qwen_order_df, is_simulated=True)
 
-# Tag data sources (NOW 3 SOURCES)
-human_df['Source'] = 'Human'
-sim_df['Source'] = 'AI_Simulated'
-nlp_df['Source'] = 'AI_NLP'
+# Tag data sources
+if not human_df.empty: human_df['Source'] = 'Human'
+if not sim_df.empty: sim_df['Source'] = 'AI_GPT4o_Explicit'
+if not nlp_df.empty: nlp_df['Source'] = 'AI_GPT4o_NLP'
+if not qwen_df.empty: qwen_df['Source'] = 'AI_Qwen_Explicit'
+if not qwen_nlp_df.empty: qwen_nlp_df['Source'] = 'AI_Qwen_NLP'
+
+# Map Orderings
+gpt4o_order_map = {
+    "Age -> Gender -> Nationality": "AI_GPT4o_Order_AGN",
+    "Gender -> Age -> Nationality": "AI_GPT4o_Order_GAN",
+    "Nationality -> Age -> Gender": "AI_GPT4o_Order_NAG"
+}
+if not order_df.empty: order_df['Source'] = order_df['Ordering'].map(gpt4o_order_map)
+
+qwen_order_map = {
+    "Age -> Gender -> Nationality": "AI_Qwen_Order_AGN",
+    "Gender -> Age -> Nationality": "AI_Qwen_Order_GAN",
+    "Nationality -> Age -> Gender": "AI_Qwen_Order_NAG"
+}
+if not qwen_order_df.empty: qwen_order_df['Source'] = qwen_order_df['Ordering'].map(qwen_order_map)
 
 def get_age_group(age):
     if age < 18: return "<18"
@@ -79,18 +120,17 @@ def get_age_group(age):
     if 35 <= age <= 50: return "35-50"
     return "50+"
 
-human_df['Age_Group'] = human_df['Age'].apply(get_age_group)
-sim_df['Age_Group'] = sim_df['Age'].apply(get_age_group)
-nlp_df['Age_Group'] = nlp_df['Age'].apply(get_age_group)
+dfs_to_concat = []
+for d in [human_df, sim_df, nlp_df, qwen_df, qwen_nlp_df, order_df, qwen_order_df]:
+    if not d.empty:
+        d['Age_Group'] = d['Age'].apply(get_age_group)
+        dfs_to_concat.append(d)
 
 demo_cols = ['Country', 'Race', 'Age', 'Age_Group', 'Gender']
 trait_cols = ['E_Trait', 'A_Trait', 'C_Trait', 'N_Trait', 'O_Trait']
 
-combined_df = pd.concat([
-    human_df[demo_cols + trait_cols + ['Source']],
-    sim_df[demo_cols + trait_cols + ['Source']],
-    nlp_df[demo_cols + trait_cols + ['Source']]
-])
+# Combine all valid datasets
+combined_df = pd.concat([d[demo_cols + trait_cols + ['Source']] for d in dfs_to_concat])
 
 # ==========================================
 # 3. GENERATE ALL SUBGROUP COMBINATIONS
@@ -126,6 +166,6 @@ final_dashboard_data = final_dashboard_data[col_order]
 float_cols = final_dashboard_data.select_dtypes(include=['float64']).columns
 final_dashboard_data[float_cols] = final_dashboard_data[float_cols].round(3)
 
-OUTPUT_FILE = "dashboard_precalc_stats_all.csv"
+OUTPUT_FILE = "dashboard_precalc_stats_singular.csv"
 final_dashboard_data.to_csv(OUTPUT_FILE, index=False)
 print(f"Success! Dashboard data saved to {OUTPUT_FILE} with {len(final_dashboard_data)} rows.")
