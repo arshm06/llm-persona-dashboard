@@ -78,7 +78,7 @@ if page == "📊 Persona Analytics":
             return c, r, a, ag, g
 
         a_vals, b_vals = build_profile_sidebar("A"), build_profile_sidebar("B")
-        trait_map = {"Extroversion": "E", "Agreeableness": "A", "Conscientiousness": "C", "Neuroticism": "N", "Openness": "O"}
+        trait_map = {"Extroversion": "E", "Agreeableness": "A", "Conscientiousness": "C", "Emotional Stability": "E", "Openness": "O"}
         sel_trait = st.sidebar.selectbox("Select Trait for Analysis", list(trait_map.keys()))
         t_pref = trait_map[sel_trait]
 
