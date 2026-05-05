@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from itertools import combinations
+
+ROOT = Path(__file__).parent.parent.parent
 
 # ==========================================
 # 1. SCORING LOGIC
@@ -37,25 +40,25 @@ def calculate_traits(df, is_simulated=False):
 # 2. LOAD & PREP DATA
 # ==========================================
 print("Loading datasets...")
-try: human_df = pd.read_csv('human_data.csv', sep='\t', low_memory=False)
+try: human_df = pd.read_csv(ROOT / "data/human_data.csv", sep='\t', low_memory=False)
 except: human_df = pd.DataFrame()
 
-try: sim_df = pd.read_csv('simulated_human_data_isolated.csv')
+try: sim_df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_isolated.csv")
 except: sim_df = pd.DataFrame()
 
-try: nlp_df = pd.read_csv('simulated_human_data_nlp.csv')
+try: nlp_df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_nlp.csv")
 except: nlp_df = pd.DataFrame()
 
-try: qwen_df = pd.read_csv('simulated_human_data_isolated_qwen.csv')
+try: qwen_df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_isolated_qwen.csv")
 except: qwen_df = pd.DataFrame()
 
-try: qwen_nlp_df = pd.read_csv('simulated_human_data_nlp_qwen.csv')
+try: qwen_nlp_df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_nlp_qwen.csv")
 except: qwen_nlp_df = pd.DataFrame()
 
-try: order_df = pd.read_csv('simulated_ordering_experiment.csv')
+try: order_df = pd.read_csv(ROOT / "output/simulated/simulated_ordering_experiment.csv")
 except: order_df = pd.DataFrame()
 
-try: qwen_order_df = pd.read_csv('simulated_ordering_experiment_qwen2.5-3b.csv')
+try: qwen_order_df = pd.read_csv(ROOT / "output/simulated/simulated_ordering_experiment_qwen2.5-3b.csv")
 except: qwen_order_df = pd.DataFrame()
 
 # --- FILTER FOR FIRST RUN ONLY ---
@@ -68,7 +71,7 @@ if not order_df.empty: order_df = order_df[order_df['Sim_ID'].str.contains('_R0_
 
 # Clean human data
 if not human_df.empty:
-    iso_df = pd.read_csv("iso.csv")
+    iso_df = pd.read_csv(ROOT / "data/iso.csv")
     iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
     human_df['Country'] = human_df['country'].map(iso_map)
 
@@ -166,6 +169,6 @@ final_dashboard_data = final_dashboard_data[col_order]
 float_cols = final_dashboard_data.select_dtypes(include=['float64']).columns
 final_dashboard_data[float_cols] = final_dashboard_data[float_cols].round(3)
 
-OUTPUT_FILE = "dashboard_precalc_stats_singular.csv"
+OUTPUT_FILE = ROOT / "output/dashboard/dashboard_precalc_stats_singular.csv"
 final_dashboard_data.to_csv(OUTPUT_FILE, index=False)
 print(f"Success! Dashboard data saved to {OUTPUT_FILE} with {len(final_dashboard_data)} rows.")

@@ -3,15 +3,18 @@ import pandas as pd
 import math
 import os
 import json
+from pathlib import Path
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from tqdm.asyncio import tqdm
+
+ROOT = Path(__file__).parent.parent.parent
 
 # Load the API key from your .env file
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-OUTPUT_FILE = "simulated_human_data_isolated.csv"
+OUTPUT_FILE = ROOT / "output/simulated/simulated_human_data_isolated.csv"
 SAMPLE_SIZE = 1720
 ITERATIONS_PER_ROW = 3
 CONCURRENT_REQUESTS = 100
@@ -61,8 +64,8 @@ IPIP_ITEMS = {
 # ==============================
 def load_and_clean_data():
     print("Loading and cleaning datasets...")
-    df = pd.read_csv("human_data.csv", low_memory=False, sep='\t')
-    iso_df = pd.read_csv("iso.csv")
+    df = pd.read_csv(ROOT / "data/human_data.csv", low_memory=False, sep='\t')
+    iso_df = pd.read_csv(ROOT / "data/iso.csv")
     
     iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
     df['country_name'] = df['country'].map(iso_map)

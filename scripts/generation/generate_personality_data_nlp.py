@@ -3,15 +3,18 @@ import pandas as pd
 import math
 import os
 import json
+from pathlib import Path
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from tqdm.asyncio import tqdm
+
+ROOT = Path(__file__).parent.parent.parent
 
 # Load API key
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-OUTPUT_FILE = "simulated_human_data_nlp.csv" 
+OUTPUT_FILE = ROOT / "output/simulated/simulated_human_data_nlp.csv"
 ITERATIONS_PER_ROW = 1
 CONCURRENT_REQUESTS = 300
 
@@ -47,7 +50,7 @@ IPIP_ITEMS = {
 
 def load_and_clean_data():
     print("Loading and cleaning datasets...")
-    df = pd.read_csv("simulated_human_data_isolated.csv", low_memory=False)
+    df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_isolated.csv", low_memory=False)
     return df
 
 
@@ -106,7 +109,7 @@ async def main():
     else:
         completed_ids = set()
 
-    with open("nlp_backstories_mapping.json", "r") as f:
+    with open(ROOT / "config/nlp_backstories_mapping.json", "r") as f:
         backstory_dict = json.load(f)
 
     BATCH_SIZE = 500

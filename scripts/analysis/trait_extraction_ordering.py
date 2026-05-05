@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from itertools import combinations
+
+ROOT = Path(__file__).parent.parent.parent
 
 # ==========================================
 # 1. SCORING LOGIC
@@ -41,7 +44,7 @@ def calculate_traits(df):
 # ==========================================
 print("Loading ordering experiment data...")
 try:
-    sim_df = pd.read_csv('simulated_ordering_experiment.csv')
+    sim_df = pd.read_csv(ROOT / "output/simulated/simulated_ordering_experiment.csv")
 except FileNotFoundError:
     print("simulated_ordering_experiment.csv not found. Run generate_ordering_experiment.py first.")
     exit(1)
@@ -100,6 +103,6 @@ final_dashboard_data = final_dashboard_data[col_order]
 float_cols = final_dashboard_data.select_dtypes(include=['float64']).columns
 final_dashboard_data[float_cols] = final_dashboard_data[float_cols].round(3)
 
-OUTPUT_FILE = "dashboard_ordering_stats.csv"
+OUTPUT_FILE = ROOT / "output/dashboard/dashboard_ordering_stats.csv"
 final_dashboard_data.to_csv(OUTPUT_FILE, index=False)
 print(f"Success! Dashboard ordering stats saved to {OUTPUT_FILE} with {len(final_dashboard_data)} rows.")

@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from scipy import stats
 from itertools import combinations
 
-FILE_PATH = "simulated_ordering_experiment.csv"
+ROOT = Path(__file__).parent.parent.parent
+
+FILE_PATH = ROOT / "output/simulated/simulated_ordering_experiment.csv"
 
 # ================================
 # LOAD DATA

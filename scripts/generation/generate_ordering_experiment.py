@@ -2,15 +2,18 @@ import asyncio
 import pandas as pd
 import os
 import json
+from pathlib import Path
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 from tqdm.asyncio import tqdm
+
+ROOT = Path(__file__).parent.parent.parent
 
 # Load the API key from your .env file
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-OUTPUT_FILE = "simulated_ordering_experiment.csv"
+OUTPUT_FILE = ROOT / "output/simulated/simulated_ordering_experiment.csv"
 SAMPLE_SIZE = 1000
 ITERATIONS_PER_ROW = 1 # Keep at 1 for speed if running 3 templates
 CONCURRENT_REQUESTS = 100
@@ -69,8 +72,8 @@ PROMPT_TEMPLATES = {
 # ==============================
 def load_and_clean_data():
     print("Loading and cleaning datasets...")
-    df = pd.read_csv("human_data.csv", low_memory=False, sep='\t')
-    iso_df = pd.read_csv("iso.csv")
+    df = pd.read_csv(ROOT / "data/human_data.csv", low_memory=False, sep='\t')
+    iso_df = pd.read_csv(ROOT / "data/iso.csv")
     
     iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
     df['country_name'] = df['country'].map(iso_map)

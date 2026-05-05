@@ -10,17 +10,20 @@ Usage:
 import math
 import os
 import json
+from pathlib import Path
 import pandas as pd
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from tqdm import tqdm
 
+ROOT = Path(__file__).parent.parent.parent
+
 # ==============================
 # CONFIG
 # ==============================
 MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
-OUTPUT_FILE = "simulated_human_data_nlp_qwen.csv"
-BACKSTORY_FILE = "nlp_backstories_mapping.json"
+OUTPUT_FILE = ROOT / "output/simulated/simulated_human_data_nlp_qwen.csv"
+BACKSTORY_FILE = ROOT / "config/nlp_backstories_mapping.json"
 BATCH_SIZE = 4   # smaller — NLP prompts are longer
 RANDOM_SEED = 42
 
@@ -60,7 +63,7 @@ IPIP_ITEMS = {
 # ==============================
 def load_and_clean_data():
     print("Loading data...")
-    df = pd.read_csv("simulated_human_data_isolated.csv", low_memory=False)
+    df = pd.read_csv(ROOT / "output/simulated/simulated_human_data_isolated.csv", low_memory=False)
     # Match Arsh's original: take every 3rd row
     df = df.iloc[::3].reset_index(drop=True)
     print(f"  {len(df)} rows after every-3rd-row sampling.")

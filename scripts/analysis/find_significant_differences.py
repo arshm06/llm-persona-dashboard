@@ -1,10 +1,13 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
+
+ROOT = Path(__file__).parent.parent.parent
 
 # 1. Load the pre-calculated stats
 print("Loading data...")
 try:
-    df = pd.read_csv("dashboard_precalc_stats_all.csv")
+    df = pd.read_csv(ROOT / "output/dashboard/dashboard_precalc_stats_all.csv")
 except FileNotFoundError:
     print("Error: Could not find 'dashboard_precalc_stats_singular.csv'.")
     exit()
@@ -86,5 +89,5 @@ print("="*90)
 print(top_20.to_string(index=False))
 
 # Export to a CSV
-top_20.to_csv("top_20_human_extremes.csv", index=False)
+top_20.to_csv(ROOT / "output/dashboard/top_20_human_extremes.csv", index=False)
 print("\nSuccess! Saved full details to 'top_20_human_extremes.csv'")

@@ -3,7 +3,10 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
+from pathlib import Path
 from scipy import stats
+
+ROOT = Path(__file__).parent
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Big Five: Human vs AI", layout="wide", page_icon="📊")
@@ -43,7 +46,7 @@ page = st.sidebar.radio("Navigation", ["📊 Persona Analytics", "🏆 Key Disco
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("dashboard_precalc_stats_singular.csv")
+        df = pd.read_csv(ROOT / "output/dashboard/dashboard_precalc_stats_singular.csv")
         for col in ['Country', 'Race', 'Age', 'Age_Group', 'Gender']:
             if col in df.columns: df[col] = df[col].astype(str)
         return df
@@ -170,7 +173,7 @@ elif page == "🏆 Key Discoveries":
     st.header("🚨 Top 20 AI Hallucinations (Explicit AI vs Human)")
     st.markdown("Demographics where the LLM's simulated personality diverged the most from actual human survey data.")
     try:
-        ai_bias_df = pd.read_csv("top_20_ai_biases.csv")
+        ai_bias_df = pd.read_csv(ROOT / "output/dashboard/top_20_ai_biases.csv")
         st.dataframe(ai_bias_df, use_container_width=True)
     except:
         st.info("Run the AI Bias script to generate 'top_20_ai_biases.csv'")
@@ -180,7 +183,7 @@ elif page == "🏆 Key Discoveries":
     st.header("⚔️ Top 50 Human-vs-Human Personality Clashes")
     st.markdown("The largest recorded personality gaps between two distinct human demographic groups.")
     try:
-        clash_df = pd.read_csv("top_50_human_clashes.csv")
+        clash_df = pd.read_csv(ROOT / "output/dashboard/top_50_human_clashes.csv")
         st.dataframe(clash_df, use_container_width=True)
     except:
         st.info("Run the Pairwise Clash script to generate 'top_50_human_clashes.csv'")

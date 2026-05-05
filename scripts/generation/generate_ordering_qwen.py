@@ -1,23 +1,26 @@
 """
 Ordering experiment using local HuggingFace transformers.
-Runs google/gemma-2b-it on a single GPU.
+No sudo, no Ollama needed. Runs Qwen2.5-3B-Instruct on a single GPU.
 
 Usage:
-    CUDA_VISIBLE_DEVICES=2 python generate_ordering_gemma.py
+    CUDA_VISIBLE_DEVICES=3 python generate_ordering_qwen.py
 """
 
 import os
 import math
+from pathlib import Path
 import pandas as pd
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from tqdm import tqdm
 
+ROOT = Path(__file__).parent.parent.parent
+
 # ==============================
 # CONFIG
 # ==============================
-MODEL_NAME = "google/gemma-2b-it"
-OUTPUT_FILE = "simulated_ordering_experiment_gemma-2b.csv"
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
+OUTPUT_FILE = ROOT / "output/simulated/simulated_ordering_experiment_qwen2.5-3b.csv"
 SAMPLE_SIZE = 1000
 BATCH_SIZE = 8
 RANDOM_SEED = 42  # MUST match GPT-4o-mini run for fair comparison
@@ -75,8 +78,8 @@ PROMPT_TEMPLATES = {
 # ==============================
 def load_and_clean_data():
     print("Loading human data...")
-    df = pd.read_csv("human_data.csv", low_memory=False, sep='\t')
-    iso_df = pd.read_csv("iso.csv")
+    df = pd.read_csv(ROOT / "data/human_data.csv", low_memory=False, sep='\t')
+    iso_df = pd.read_csv(ROOT / "data/iso.csv")
     iso_map = dict(zip(iso_df['alpha-2'], iso_df['name']))
     df['country_name'] = df['country'].map(iso_map)
 
@@ -93,7 +96,7 @@ def load_and_clean_data():
 # ==============================
 # BUILD ALL PROMPTS UPFRONT
 # ==============================
-def build_all_prompts(sampled_df, tokenizer):
+def build_all_prompts(sampled_df):
     all_items = []
     for index, row in sampled_df.iterrows():
         age = int(row['age'])
@@ -103,25 +106,20 @@ def build_all_prompts(sampled_df, tokenizer):
 
         for ordering_name, template in PROMPT_TEMPLATES.items():
             persona_desc = template.format(age=age, gender=gender, race=race, country=country)
-            sim_id = f"Gemma2b_P{index}_{ordering_name.replace(' ', '').replace('->', '_')}"
+            sim_id = f"Qwen3B_P{index}_{ordering_name.replace(' ', '').replace('->', '_')}"
 
             for q_id, q_text in IPIP_ITEMS.items():
-                # Gemma-2b-it uses a chat template with user/model turns only (no system role)
-                # Everything goes in the user turn
-                messages = [
-                    {"role": "user", "content": (
-                        f"You are roleplaying as a {persona_desc} taking a personality questionnaire.\n"
-                        f"Fill in the [blank] in the following statement with exactly one word "
-                        f"chosen from this list: never, rarely, sometimes, often, always.\n"
-                        f"Output only the single word. Do not explain or add punctuation.\n\n"
-                        f"Statement: {q_text}\n"
-                        f"Answer:"
-                    )}
-                ]
-                prompt = tokenizer.apply_chat_template(
-                    messages,
-                    tokenize=False,
-                    add_generation_prompt=True
+                # KEY FIX: single combined prompt instead of system/user chat split.
+                # The chat template caused Qwen to output EOS immediately after the
+                # system turn for many questions, producing '!!!!!' in the decoded output.
+                # A plain instruction-style prompt is more reliable for single-word outputs.
+                prompt = (
+                    f"You are roleplaying as a {persona_desc} taking a personality questionnaire.\n"
+                    f"Fill in the [blank] in the following statement with exactly one word "
+                    f"chosen from this list: never, rarely, sometimes, often, always.\n"
+                    f"Output only the single word. Do not explain or add punctuation.\n\n"
+                    f"Statement: {q_text}\n"
+                    f"Answer:"
                 )
 
                 all_items.append({
@@ -154,10 +152,10 @@ def run_batch(batch_items, model, tokenizer, device):
         outputs = model.generate(
             **inputs,
             max_new_tokens=8,
-            do_sample=False,
+            do_sample=False,          # greedy — deterministic
             pad_token_id=tokenizer.eos_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            repetition_penalty=1.1,
+            repetition_penalty=1.1,   # discourages repeating EOS tokens
         )
 
     results = []
@@ -166,7 +164,7 @@ def run_batch(batch_items, model, tokenizer, device):
         new_tokens = output[input_len:]
         decoded = tokenizer.decode(new_tokens, skip_special_tokens=True).strip().lower()
 
-        # Scan for first valid word
+        # Scan for first valid word, strip any punctuation
         found = "sometimes"  # fallback
         for token in decoded.replace(",", "").replace(".", "").replace("!", "").split():
             if token in VALID_WORDS:
@@ -190,7 +188,7 @@ def reconstruct_rows(all_items, all_words):
         first_item = item_word_pairs[0][0]
         entry = {
             "Sim_ID": sim_id,
-            "Model": "gemma-2b-it",
+            "Model": "Qwen2.5-3B-Instruct",
             "Ordering": first_item["ordering"],
             "Age": first_item["age"],
             "Gender": first_item["gender"],
@@ -205,32 +203,15 @@ def reconstruct_rows(all_items, all_words):
     return rows
 
 # ==============================
-# SANITY CHECK
+# SANITY CHECK — run before full run to catch issues early
 # ==============================
 def sanity_check(model, tokenizer, device):
     print("Running sanity check (3 examples)...")
-    test_personas = [
-        ("25-year-old Male of Caucasian (European) descent from Germany", "I am [blank] the life of the party.", "E1"),
-        ("40-year-old Female of North East Asian descent from Japan", "I [blank] worry about things.", "N3"),
-        ("30-year-old Male of West African descent from Nigeria", "I am [blank] always prepared.", "C1"),
+    test_items = [
+        {"prompt": "You are roleplaying as a 25-year-old Male of Caucasian (European) descent from Germany taking a personality questionnaire.\nFill in the [blank] in the following statement with exactly one word chosen from this list: never, rarely, sometimes, often, always.\nOutput only the single word. Do not explain or add punctuation.\n\nStatement: I am [blank] the life of the party.\nAnswer:", "q_id": "E1"},
+        {"prompt": "You are roleplaying as a 40-year-old Female of North East Asian descent from Japan taking a personality questionnaire.\nFill in the [blank] in the following statement with exactly one word chosen from this list: never, rarely, sometimes, often, always.\nOutput only the single word. Do not explain or add punctuation.\n\nStatement: I [blank] worry about things.\nAnswer:", "q_id": "N3"},
+        {"prompt": "You are roleplaying as a 30-year-old Male of West African descent from Nigeria taking a personality questionnaire.\nFill in the [blank] in the following statement with exactly one word chosen from this list: never, rarely, sometimes, often, always.\nOutput only the single word. Do not explain or add punctuation.\n\nStatement: I am [blank] always prepared.\nAnswer:", "q_id": "C1"},
     ]
-    test_items = []
-    for persona_desc, q_text, q_id in test_personas:
-        messages = [
-            {"role": "user", "content": (
-                f"You are roleplaying as a {persona_desc} taking a personality questionnaire.\n"
-                f"Fill in the [blank] in the following statement with exactly one word "
-                f"chosen from this list: never, rarely, sometimes, often, always.\n"
-                f"Output only the single word. Do not explain or add punctuation.\n\n"
-                f"Statement: {q_text}\n"
-                f"Answer:"
-            )}
-        ]
-        prompt = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
-        test_items.append({"prompt": prompt, "q_id": q_id})
-
     words = run_batch(test_items, model, tokenizer, device)
     all_ok = True
     for item, word in zip(test_items, words):
@@ -240,7 +221,7 @@ def sanity_check(model, tokenizer, device):
             all_ok = False
 
     if not all_ok:
-        print("\nWARNING: Some responses falling back. Check prompt format.\n")
+        print("\nWARNING: Some responses falling back to 'sometimes'. Check prompt format.\n")
     else:
         print("  All valid. Proceeding with full run.\n")
     return all_ok
@@ -271,14 +252,14 @@ def main():
     model.eval()
     print(f"  Model loaded. VRAM used: {torch.cuda.memory_allocated(device)/1e9:.1f} GB\n")
 
-    # Sanity check before full run
+    # Run sanity check before committing to full run
     sanity_check(model, tokenizer, device)
 
     human_df = load_and_clean_data()
     sampled_df = human_df.sample(n=SAMPLE_SIZE, replace=True, random_state=RANDOM_SEED).reset_index(drop=True)
 
     print("Building prompts...")
-    all_items = build_all_prompts(sampled_df, tokenizer)
+    all_items = build_all_prompts(sampled_df)
     total = len(all_items)
     print(f"  {total} total calls ({SAMPLE_SIZE} personas x 3 orderings x 50 questions)\n")
 
