@@ -1,0 +1,346 @@
+Factor,Subgroup,Trait_Code,Trait,Human_Effect,GPT_Explicit_Effect,GPT_NLP_Effect,Qwen_NLP_Effect,GPT_Explicit_Dist_Human,GPT_NLP_Dist_Human,GPT_NLP_closer_than_Explicit,Human_exaggerates,GPT_Explicit_exaggerates,GPT_NLP_exaggerates,Qwen_NLP_exaggerates
+Gender,Female,E,Extroversion,0.04,0.0,0.005,-0.007,0.04,0.035,True,False,False,False,False
+Gender,Male,E,Extroversion,-0.056,0.001,-0.004,0.01,0.057,0.052,True,False,False,False,False
+Gender,Other,E,Extroversion,-0.601,-0.08,-0.168,,0.521,0.433,True,False,False,False,
+Gender,Female,A,Agreeableness,0.124,0.019,0.052,-0.019,0.105,0.072,True,False,False,False,False
+Gender,Male,A,Agreeableness,-0.19,-0.029,-0.079,0.033,0.161,0.111,True,False,False,False,False
+Gender,Other,A,Agreeableness,-0.323,-0.016,-0.046,,0.307,0.277,True,False,False,False,
+Gender,Female,C,Conscientiousness,0.017,0.022,0.038,0.013,0.005,0.021,False,False,True,True,False
+Gender,Male,C,Conscientiousness,-0.025,-0.032,-0.054,-0.021,0.007,0.029,False,False,True,True,False
+Gender,Other,C,Conscientiousness,-0.219,-0.119,-0.251,,0.1,0.032,True,False,False,True,
+Gender,Female,N,Emotional Stability,-0.113,-0.017,-0.019,-0.001,0.096,0.094,True,False,False,False,False
+Gender,Male,N,Emotional Stability,0.183,0.026,0.031,0.003,0.157,0.152,True,False,False,False,False
+Gender,Other,N,Emotional Stability,-0.33,-0.012,-0.155,,0.318,0.175,True,False,False,False,
+Gender,Female,O,Openness,-0.052,0.012,0.058,-0.006,0.064,0.11,False,False,False,True,False
+Gender,Male,O,Openness,0.078,-0.02,-0.091,0.011,0.098,0.169,False,False,False,True,False
+Gender,Other,O,Openness,0.265,0.007,0.134,,0.258,0.131,True,False,False,False,
+Age_Group,18-25,E,Extroversion,-0.037,0.014,-0.01,-0.003,0.051,0.027,True,False,False,False,False
+Age_Group,26-34,E,Extroversion,0.047,0.095,0.15,0.029,0.048,0.103,False,False,True,True,False
+Age_Group,35-50,E,Extroversion,0.134,0.061,0.056,-0.023,0.073,0.078,False,False,False,False,False
+Age_Group,50+,E,Extroversion,0.208,-0.085,-0.062,-0.056,0.293,0.27,True,False,False,False,False
+Age_Group,<18,E,Extroversion,-0.11,-0.123,-0.12,0.008,0.013,0.01,True,False,True,True,False
+Age_Group,18-25,A,Agreeableness,-0.023,-0.009,0.002,-0.007,0.014,0.025,False,False,False,False,False
+Age_Group,26-34,A,Agreeableness,0.051,0.016,0.037,0.026,0.035,0.014,True,False,False,False,False
+Age_Group,35-50,A,Agreeableness,0.148,0.018,0.08,0.015,0.13,0.068,True,False,False,False,False
+Age_Group,50+,A,Agreeableness,0.272,0.033,0.113,-0.072,0.239,0.159,True,False,False,False,False
+Age_Group,<18,A,Agreeableness,-0.17,-0.016,-0.119,0.0,0.154,0.051,True,False,False,False,False
+Age_Group,18-25,C,Conscientiousness,-0.041,-0.038,-0.026,0.021,0.003,0.015,False,False,False,False,False
+Age_Group,26-34,C,Conscientiousness,0.095,0.124,0.106,0.082,0.029,0.011,True,False,True,True,False
+Age_Group,35-50,C,Conscientiousness,0.236,0.172,0.216,0.034,0.064,0.02,True,False,False,False,False
+Age_Group,50+,C,Conscientiousness,0.314,0.181,0.326,-0.088,0.133,0.012,True,False,False,True,False
+Age_Group,<18,C,Conscientiousness,-0.239,-0.184,-0.261,-0.126,0.055,0.022,True,False,False,True,False
+Age_Group,18-25,N,Emotional Stability,-0.042,-0.015,-0.029,0.0,0.027,0.013,True,False,False,False,False
+Age_Group,26-34,N,Emotional Stability,0.048,0.037,0.04,0.023,0.011,0.008,True,False,False,False,False
+Age_Group,35-50,N,Emotional Stability,0.182,0.069,0.106,0.031,0.113,0.076,True,False,False,False,False
+Age_Group,50+,N,Emotional Stability,0.363,0.154,0.338,0.046,0.209,0.025,True,False,False,False,False
+Age_Group,<18,N,Emotional Stability,-0.171,-0.086,-0.133,-0.053,0.085,0.038,True,False,False,False,False
+Age_Group,18-25,O,Openness,-0.045,-0.006,0.018,0.006,0.039,0.063,False,False,False,False,False
+Age_Group,26-34,O,Openness,0.064,0.051,0.052,0.005,0.013,0.012,True,False,False,False,False
+Age_Group,35-50,O,Openness,0.093,0.061,-0.018,0.016,0.032,0.111,False,False,False,False,False
+Age_Group,50+,O,Openness,0.079,0.025,-0.113,-0.045,0.054,0.192,False,False,False,True,False
+Age_Group,<18,O,Openness,-0.041,-0.079,-0.038,-0.018,0.038,0.003,True,False,True,False,False
+Race,Caucasian (European),E,Extroversion,0.005,-0.02,-0.057,-0.039,0.025,0.062,False,False,True,True,True
+Race,Caucasian (Indian),E,Extroversion,0.006,0.024,0.009,0.043,0.018,0.003,True,False,True,True,True
+Race,Caucasian (Middle East),E,Extroversion,0.075,-0.023,0.025,,0.098,0.05,True,False,False,False,
+Race,Caucasian (North African),E,Extroversion,0.002,0.034,0.029,-0.009,0.032,0.027,True,False,True,True,True
+Race,Mixed Race,E,Extroversion,-0.005,0.151,0.206,0.067,0.156,0.211,False,False,True,True,True
+Race,Native American,E,Extroversion,0.007,-0.093,-0.084,,0.1,0.091,True,False,True,True,
+Race,North East Asian,E,Extroversion,-0.062,-0.173,-0.085,,0.111,0.023,True,False,True,True,
+Race,Other,E,Extroversion,0.061,0.039,0.077,0.042,0.022,0.016,True,False,False,True,False
+Race,Pacific Islander,E,Extroversion,0.056,0.117,0.158,,0.061,0.102,False,False,True,True,
+Race,South East Asian,E,Extroversion,-0.155,-0.088,0.03,0.05,0.067,0.185,False,False,False,False,False
+Race,West African,E,Extroversion,0.086,0.224,0.149,,0.138,0.063,True,False,True,True,
+Race,Caucasian (European),A,Agreeableness,0.01,-0.003,-0.017,-0.009,0.013,0.027,False,False,False,True,False
+Race,Caucasian (Indian),A,Agreeableness,0.007,-0.03,-0.07,0.003,0.037,0.077,False,False,True,True,False
+Race,Caucasian (Middle East),A,Agreeableness,-0.002,-0.003,-0.014,,0.001,0.012,False,False,True,True,
+Race,Caucasian (North African),A,Agreeableness,-0.007,-0.006,-0.003,0.004,0.001,0.004,False,False,False,False,False
+Race,Mixed Race,A,Agreeableness,-0.034,0.041,0.089,0.007,0.075,0.123,False,False,True,True,False
+Race,Native American,A,Agreeableness,-0.02,0.042,0.088,,0.062,0.108,False,False,True,True,
+Race,North East Asian,A,Agreeableness,-0.164,-0.023,-0.093,,0.141,0.071,True,False,False,False,
+Race,Other,A,Agreeableness,0.052,-0.012,0.038,0.012,0.064,0.014,True,False,False,False,False
+Race,Pacific Islander,A,Agreeableness,-0.022,0.06,0.098,,0.082,0.12,False,False,True,True,
+Race,South East Asian,A,Agreeableness,-0.097,0.016,0.018,0.015,0.113,0.115,False,False,False,False,False
+Race,West African,A,Agreeableness,0.13,0.047,0.07,,0.083,0.06,True,False,False,False,
+Race,Caucasian (European),C,Conscientiousness,-0.017,0.012,0.021,-0.022,0.029,0.038,False,False,False,True,True
+Race,Caucasian (Indian),C,Conscientiousness,-0.023,0.015,-0.044,0.063,0.038,0.021,True,False,False,True,True
+Race,Caucasian (Middle East),C,Conscientiousness,0.026,0.009,-0.047,,0.017,0.073,False,False,False,True,
+Race,Caucasian (North African),C,Conscientiousness,-0.012,0.018,-0.018,-0.062,0.03,0.006,True,False,True,True,True
+Race,Mixed Race,C,Conscientiousness,-0.045,-0.058,-0.076,0.004,0.013,0.031,False,False,True,True,False
+Race,Native American,C,Conscientiousness,0.129,-0.011,0.098,,0.14,0.031,True,False,False,False,
+Race,North East Asian,C,Conscientiousness,-0.093,0.038,-0.008,,0.131,0.085,True,False,False,False,
+Race,Other,C,Conscientiousness,0.086,-0.019,-0.02,0.008,0.105,0.106,False,False,False,False,False
+Race,Pacific Islander,C,Conscientiousness,-0.048,-0.056,0.003,,0.008,0.051,False,False,True,False,
+Race,South East Asian,C,Conscientiousness,0.009,-0.024,0.007,0.039,0.033,0.002,True,False,True,False,True
+Race,West African,C,Conscientiousness,0.12,0.033,0.038,,0.087,0.082,True,False,False,False,
+Race,Caucasian (European),N,Emotional Stability,0.027,0.017,0.071,0.004,0.01,0.044,False,False,False,True,False
+Race,Caucasian (Indian),N,Emotional Stability,-0.121,-0.058,-0.103,0.009,0.063,0.018,True,False,False,False,False
+Race,Caucasian (Middle East),N,Emotional Stability,-0.076,-0.054,-0.121,,0.022,0.045,False,False,False,True,
+Race,Caucasian (North African),N,Emotional Stability,0.023,-0.041,-0.079,-0.012,0.064,0.102,False,False,True,True,False
+Race,Mixed Race,N,Emotional Stability,0.003,-0.016,-0.109,-0.028,0.019,0.112,False,False,True,True,True
+Race,Native American,N,Emotional Stability,0.127,0.001,0.034,,0.126,0.093,True,False,False,False,
+Race,North East Asian,N,Emotional Stability,-0.104,-0.022,-0.115,,0.082,0.011,True,False,False,True,
+Race,Other,N,Emotional Stability,0.005,0.0,-0.057,-0.012,0.005,0.062,False,False,False,True,True
+Race,Pacific Islander,N,Emotional Stability,0.168,0.016,0.066,,0.152,0.102,True,False,False,False,
+Race,South East Asian,N,Emotional Stability,-0.103,-0.011,-0.09,0.016,0.092,0.013,True,False,False,False,False
+Race,West African,N,Emotional Stability,0.282,-0.01,-0.051,,0.292,0.333,False,False,False,False,
+Race,Caucasian (European),O,Openness,0.115,0.002,-0.056,-0.005,0.113,0.171,False,False,False,False,False
+Race,Caucasian (Indian),O,Openness,-0.195,0.003,0.024,0.025,0.198,0.219,False,False,False,False,False
+Race,Caucasian (Middle East),O,Openness,-0.105,-0.002,0.076,,0.103,0.181,False,False,False,False,
+Race,Caucasian (North African),O,Openness,-0.061,-0.001,0.064,-0.035,0.06,0.125,False,False,False,True,False
+Race,Mixed Race,O,Openness,0.049,0.011,0.112,-0.023,0.038,0.063,False,False,False,True,False
+Race,Native American,O,Openness,-0.213,0.004,0.135,,0.217,0.348,False,False,False,False,
+Race,North East Asian,O,Openness,-0.166,-0.013,0.021,,0.153,0.187,False,False,False,False,
+Race,Other,O,Openness,-0.185,0.005,0.081,0.013,0.19,0.266,False,False,False,False,False
+Race,Pacific Islander,O,Openness,-0.123,-0.024,0.045,,0.099,0.168,False,False,False,False,
+Race,South East Asian,O,Openness,-0.203,-0.033,0.024,0.016,0.17,0.227,False,False,False,False,False
+Race,West African,O,Openness,0.014,0.027,0.096,,0.013,0.082,False,False,True,True,
+Country,Argentina,E,Extroversion,-0.049,0.065,0.214,,0.114,0.263,False,False,True,True,
+Country,Australia,E,Extroversion,0.077,-0.005,0.174,0.001,0.082,0.097,False,False,False,True,False
+Country,Bangladesh,E,Extroversion,-0.231,-0.045,-0.024,,0.186,0.207,False,False,False,False,
+Country,Belgium,E,Extroversion,0.319,0.047,0.07,,0.272,0.249,True,False,False,False,
+Country,Brazil,E,Extroversion,-0.417,0.075,0.235,,0.492,0.652,False,False,False,False,
+Country,Bulgaria,E,Extroversion,-0.272,0.016,0.044,,0.288,0.316,False,False,False,False,
+Country,Canada,E,Extroversion,0.01,-0.04,-0.02,0.001,0.05,0.03,True,False,True,True,False
+Country,China,E,Extroversion,-0.107,-0.088,0.066,,0.019,0.173,False,False,False,False,
+Country,Croatia,E,Extroversion,-0.162,0.084,-0.016,,0.246,0.146,True,False,False,False,
+Country,Denmark,E,Extroversion,0.315,0.003,0.026,,0.312,0.289,True,False,False,False,
+Country,Egypt,E,Extroversion,-0.152,0.053,0.096,,0.205,0.248,False,False,False,False,
+Country,Finland,E,Extroversion,-0.074,-0.204,-0.205,,0.13,0.131,False,False,True,True,
+Country,France,E,Extroversion,-0.074,0.004,0.089,,0.078,0.163,False,False,False,True,
+Country,Germany,E,Extroversion,-0.044,0.057,0.07,,0.101,0.114,False,False,True,True,
+Country,Greece,E,Extroversion,-0.092,0.073,0.148,,0.165,0.24,False,False,False,True,
+Country,Hong Kong,E,Extroversion,-0.034,-0.102,0.057,,0.068,0.091,False,False,True,True,
+Country,Hungary,E,Extroversion,-0.18,0.009,0.019,,0.189,0.199,False,False,False,False,
+Country,India,E,Extroversion,0.013,0.031,0.016,0.05,0.018,0.003,True,False,True,True,True
+Country,Indonesia,E,Extroversion,-0.101,-0.154,0.02,,0.053,0.121,False,False,True,False,
+Country,Ireland,E,Extroversion,0.168,-0.017,0.01,,0.185,0.158,True,False,False,False,
+Country,Italy,E,Extroversion,-0.085,0.094,0.137,,0.179,0.222,False,False,True,True,
+Country,Japan,E,Extroversion,-0.171,-0.247,-0.031,,0.076,0.14,False,False,True,False,
+Country,Kenya,E,Extroversion,-0.184,0.141,0.255,,0.325,0.439,False,False,False,True,
+Country,Lebanon,E,Extroversion,0.19,0.01,0.096,,0.18,0.094,True,False,False,False,
+Country,Malaysia,E,Extroversion,-0.131,-0.117,0.045,,0.014,0.176,False,False,False,False,
+Country,Mexico,E,Extroversion,-0.174,0.034,0.168,,0.208,0.342,False,False,False,False,
+Country,"Netherlands, Kingdom of the",E,Extroversion,0.137,0.115,0.137,,0.022,0.0,True,False,False,False,
+Country,New Zealand,E,Extroversion,0.02,0.0,0.121,,0.02,0.101,False,False,False,True,
+Country,Nigeria,E,Extroversion,0.205,0.259,0.166,,0.054,0.039,True,False,True,False,
+Country,Norway,E,Extroversion,0.181,-0.09,-0.078,,0.271,0.259,True,False,False,False,
+Country,Pakistan,E,Extroversion,-0.018,-0.035,-0.043,,0.017,0.025,False,False,True,True,
+Country,Philippines,E,Extroversion,-0.205,-0.027,0.052,0.05,0.178,0.257,False,False,False,False,False
+Country,Poland,E,Extroversion,-0.146,-0.053,0.083,,0.093,0.229,False,False,False,False,
+Country,Portugal,E,Extroversion,0.018,-0.042,0.14,,0.06,0.122,False,False,True,True,
+Country,Romania,E,Extroversion,-0.147,0.042,-0.095,,0.189,0.052,True,False,False,False,
+Country,Saudi Arabia,E,Extroversion,-0.105,-0.021,-0.03,,0.084,0.075,True,False,False,False,
+Country,Serbia,E,Extroversion,0.194,0.027,0.056,,0.167,0.138,True,False,False,False,
+Country,Singapore,E,Extroversion,-0.317,-0.048,0.131,,0.269,0.448,False,False,False,False,
+Country,Slovenia,E,Extroversion,-0.418,-0.056,-0.118,,0.362,0.3,True,False,False,False,
+Country,South Africa,E,Extroversion,0.048,0.085,0.236,,0.037,0.188,False,False,True,True,
+Country,Spain,E,Extroversion,-0.144,0.099,0.255,,0.243,0.399,False,False,False,True,
+Country,Sri Lanka,E,Extroversion,0.182,0.011,0.072,,0.171,0.11,True,False,False,False,
+Country,Sweden,E,Extroversion,0.065,-0.035,0.067,,0.1,0.002,True,False,False,True,
+Country,Switzerland,E,Extroversion,0.14,0.036,0.043,,0.104,0.097,True,False,False,False,
+Country,Thailand,E,Extroversion,-0.238,-0.06,0.106,,0.178,0.344,False,False,False,False,
+Country,Türkiye,E,Extroversion,0.263,0.097,0.177,,0.166,0.086,True,False,False,False,
+Country,United Arab Emirates,E,Extroversion,0.0,0.034,0.109,,0.034,0.109,False,False,True,True,
+Country,United Kingdom of Great Britain and Northern Ireland,E,Extroversion,0.026,-0.029,-0.005,0.018,0.055,0.031,True,False,True,False,False
+Country,United States of America,E,Extroversion,0.026,0.003,-0.069,-0.026,0.023,0.095,False,False,False,True,False
+Country,Viet Nam,E,Extroversion,-0.345,-0.129,-0.005,,0.216,0.34,False,False,False,False,
+Country,Argentina,A,Agreeableness,-0.134,0.031,0.047,,0.165,0.181,False,False,False,False,
+Country,Australia,A,Agreeableness,0.012,-0.004,0.035,-0.058,0.016,0.023,False,False,False,True,True
+Country,Bangladesh,A,Agreeableness,-0.154,-0.035,-0.039,,0.119,0.115,True,False,False,False,
+Country,Belgium,A,Agreeableness,0.225,0.015,0.049,,0.21,0.176,True,False,False,False,
+Country,Brazil,A,Agreeableness,-0.358,0.043,0.056,,0.401,0.414,False,False,False,False,
+Country,Bulgaria,A,Agreeableness,-0.374,0.013,-0.044,,0.387,0.33,True,False,False,False,
+Country,Canada,A,Agreeableness,0.02,0.003,0.045,-0.027,0.017,0.025,False,False,False,True,True
+Country,China,A,Agreeableness,-0.093,0.042,0.024,,0.135,0.117,True,False,False,False,
+Country,Croatia,A,Agreeableness,-0.132,0.027,0.016,,0.159,0.148,True,False,False,False,
+Country,Denmark,A,Agreeableness,0.095,0.012,0.078,,0.083,0.017,True,False,False,False,
+Country,Egypt,A,Agreeableness,-0.121,0.021,-0.035,,0.142,0.086,True,False,False,False,
+Country,Finland,A,Agreeableness,-0.241,0.039,-0.029,,0.28,0.212,True,False,False,False,
+Country,France,A,Agreeableness,-0.239,0.009,0.024,,0.248,0.263,False,False,False,False,
+Country,Germany,A,Agreeableness,-0.159,0.031,0.032,,0.19,0.191,False,False,False,False,
+Country,Greece,A,Agreeableness,-0.017,0.019,0.057,,0.036,0.074,False,False,True,True,
+Country,Hong Kong,A,Agreeableness,-0.107,-0.01,-0.085,,0.097,0.022,True,False,False,False,
+Country,Hungary,A,Agreeableness,-0.365,0.025,-0.037,,0.39,0.328,True,False,False,False,
+Country,India,A,Agreeableness,0.0,-0.023,-0.076,0.029,0.023,0.076,False,False,True,True,True
+Country,Indonesia,A,Agreeableness,-0.195,0.038,0.005,,0.233,0.2,True,False,False,False,
+Country,Ireland,A,Agreeableness,0.146,0.007,0.043,,0.139,0.103,True,False,False,False,
+Country,Italy,A,Agreeableness,-0.085,0.039,0.067,,0.124,0.152,False,False,False,False,
+Country,Japan,A,Agreeableness,-0.228,0.013,-0.062,,0.241,0.166,True,False,False,False,
+Country,Kenya,A,Agreeableness,0.177,0.017,0.094,,0.16,0.083,True,False,False,False,
+Country,Lebanon,A,Agreeableness,0.128,0.053,0.017,,0.075,0.111,False,False,False,False,
+Country,Malaysia,A,Agreeableness,-0.127,0.0,0.011,,0.127,0.138,False,False,False,False,
+Country,Mexico,A,Agreeableness,-0.322,0.035,0.08,,0.357,0.402,False,False,False,False,
+Country,"Netherlands, Kingdom of the",A,Agreeableness,0.017,0.029,0.104,,0.012,0.087,False,False,True,True,
+Country,New Zealand,A,Agreeableness,0.122,0.022,0.1,,0.1,0.022,True,False,False,False,
+Country,Nigeria,A,Agreeableness,0.336,0.047,0.011,,0.289,0.325,False,False,False,False,
+Country,Norway,A,Agreeableness,0.05,0.046,0.058,,0.004,0.008,False,False,False,True,
+Country,Pakistan,A,Agreeableness,-0.017,-0.041,-0.078,,0.024,0.061,False,False,True,True,
+Country,Philippines,A,Agreeableness,-0.083,0.031,0.079,0.01,0.114,0.162,False,False,False,False,False
+Country,Poland,A,Agreeableness,-0.403,0.032,-0.037,,0.435,0.366,True,False,False,False,
+Country,Portugal,A,Agreeableness,-0.129,0.039,0.041,,0.168,0.17,False,False,False,False,
+Country,Romania,A,Agreeableness,-0.185,0.015,-0.043,,0.2,0.142,True,False,False,False,
+Country,Saudi Arabia,A,Agreeableness,0.065,-0.028,-0.102,,0.093,0.167,False,False,False,True,
+Country,Serbia,A,Agreeableness,-0.265,0.03,-0.002,,0.295,0.263,True,False,False,False,
+Country,Singapore,A,Agreeableness,-0.094,0.023,-0.036,,0.117,0.058,True,False,False,False,
+Country,Slovenia,A,Agreeableness,-0.279,0.019,0.062,,0.298,0.341,False,False,False,False,
+Country,South Africa,A,Agreeableness,0.128,-0.012,0.104,,0.14,0.024,True,False,False,False,
+Country,Spain,A,Agreeableness,-0.132,0.026,0.043,,0.158,0.175,False,False,False,False,
+Country,Sri Lanka,A,Agreeableness,0.153,-0.026,0.041,,0.179,0.112,True,False,False,False,
+Country,Sweden,A,Agreeableness,-0.084,0.035,0.046,,0.119,0.13,False,False,False,False,
+Country,Switzerland,A,Agreeableness,-0.082,0.025,-0.004,,0.107,0.078,True,False,False,False,
+Country,Thailand,A,Agreeableness,-0.154,0.039,0.057,,0.193,0.211,False,False,False,False,
+Country,Türkiye,A,Agreeableness,0.023,0.006,0.051,,0.017,0.028,False,False,False,True,
+Country,United Arab Emirates,A,Agreeableness,0.073,-0.019,-0.057,,0.092,0.13,False,False,False,False,
+Country,United Kingdom of Great Britain and Northern Ireland,A,Agreeableness,-0.071,-0.023,-0.023,-0.021,0.048,0.048,False,False,False,False,False
+Country,United States of America,A,Agreeableness,0.066,-0.006,-0.014,0.006,0.072,0.08,False,False,False,False,False
+Country,Viet Nam,A,Agreeableness,-0.294,0.05,0.038,,0.344,0.332,True,False,False,False,
+Country,Argentina,C,Conscientiousness,-0.413,-0.024,-0.108,,0.389,0.305,True,False,False,False,
+Country,Australia,C,Conscientiousness,-0.115,-0.02,-0.092,-0.068,0.095,0.023,True,False,False,False,False
+Country,Bangladesh,C,Conscientiousness,-0.157,-0.019,-0.075,,0.138,0.082,True,False,False,False,
+Country,Belgium,C,Conscientiousness,0.031,0.097,0.126,,0.066,0.095,False,False,True,True,
+Country,Brazil,C,Conscientiousness,-0.327,-0.048,-0.06,,0.279,0.267,True,False,False,False,
+Country,Bulgaria,C,Conscientiousness,-0.223,0.022,0.067,,0.245,0.29,False,False,False,False,
+Country,Canada,C,Conscientiousness,-0.008,0.006,0.058,0.018,0.014,0.066,False,False,False,True,True
+Country,China,C,Conscientiousness,0.101,0.11,0.126,,0.009,0.025,False,False,True,True,
+Country,Croatia,C,Conscientiousness,-0.035,0.076,0.056,,0.111,0.091,True,False,True,True,
+Country,Denmark,C,Conscientiousness,-0.051,0.11,0.254,,0.161,0.305,False,False,True,True,
+Country,Egypt,C,Conscientiousness,-0.09,0.086,-0.067,,0.176,0.023,True,False,False,False,
+Country,Finland,C,Conscientiousness,-0.156,0.085,0.21,,0.241,0.366,False,False,False,True,
+Country,France,C,Conscientiousness,-0.195,0.016,-0.063,,0.211,0.132,True,False,False,False,
+Country,Germany,C,Conscientiousness,-0.144,0.122,0.164,,0.266,0.308,False,False,False,True,
+Country,Greece,C,Conscientiousness,0.03,0.075,0.035,,0.045,0.005,True,False,True,True,
+Country,Hong Kong,C,Conscientiousness,0.067,-0.001,0.016,,0.068,0.051,True,False,False,False,
+Country,Hungary,C,Conscientiousness,-0.174,0.026,0.015,,0.2,0.189,True,False,False,False,
+Country,India,C,Conscientiousness,-0.03,0.021,-0.031,0.075,0.051,0.001,True,False,False,True,True
+Country,Indonesia,C,Conscientiousness,0.088,0.006,-0.04,,0.082,0.128,False,False,False,False,
+Country,Ireland,C,Conscientiousness,-0.016,-0.012,-0.054,,0.004,0.038,False,False,False,True,
+Country,Italy,C,Conscientiousness,-0.109,0.095,0.091,,0.204,0.2,True,False,False,False,
+Country,Japan,C,Conscientiousness,-0.153,0.176,0.132,,0.329,0.285,True,False,True,False,
+Country,Kenya,C,Conscientiousness,0.318,0.083,0.11,,0.235,0.208,True,False,False,False,
+Country,Lebanon,C,Conscientiousness,0.265,0.058,0.017,,0.207,0.248,False,False,False,False,
+Country,Malaysia,C,Conscientiousness,-0.059,-0.06,0.019,,0.001,0.078,False,False,True,False,
+Country,Mexico,C,Conscientiousness,-0.066,0.003,-0.009,,0.069,0.057,True,False,False,False,
+Country,"Netherlands, Kingdom of the",C,Conscientiousness,-0.003,0.127,0.194,,0.13,0.197,False,False,True,True,
+Country,New Zealand,C,Conscientiousness,-0.059,0.008,0.066,,0.067,0.125,False,False,False,True,
+Country,Nigeria,C,Conscientiousness,0.438,0.111,0.076,,0.327,0.362,False,False,False,False,
+Country,Norway,C,Conscientiousness,-0.055,0.113,0.279,,0.168,0.334,False,False,True,True,
+Country,Pakistan,C,Conscientiousness,-0.037,-0.061,-0.033,,0.024,0.004,True,False,True,False,
+Country,Philippines,C,Conscientiousness,0.053,-0.07,0.051,0.004,0.123,0.002,True,False,True,False,False
+Country,Poland,C,Conscientiousness,-0.311,0.062,0.069,,0.373,0.38,False,False,False,False,
+Country,Portugal,C,Conscientiousness,-0.081,0.035,0.017,,0.116,0.098,True,False,False,False,
+Country,Romania,C,Conscientiousness,-0.031,0.049,0.047,,0.08,0.078,True,False,True,True,
+Country,Saudi Arabia,C,Conscientiousness,-0.008,0.102,0.052,,0.11,0.06,True,False,True,True,
+Country,Serbia,C,Conscientiousness,-0.053,0.129,0.032,,0.182,0.085,True,False,True,False,
+Country,Singapore,C,Conscientiousness,-0.11,0.038,0.023,,0.148,0.133,True,False,False,False,
+Country,Slovenia,C,Conscientiousness,-0.01,0.049,0.153,,0.059,0.163,False,False,True,True,
+Country,South Africa,C,Conscientiousness,0.125,0.076,0.121,,0.049,0.004,True,False,False,False,
+Country,Spain,C,Conscientiousness,-0.171,0.018,-0.038,,0.189,0.133,True,False,False,False,
+Country,Sri Lanka,C,Conscientiousness,0.052,0.092,0.109,,0.04,0.057,False,False,True,True,
+Country,Sweden,C,Conscientiousness,-0.193,0.098,0.177,,0.291,0.37,False,False,False,False,
+Country,Switzerland,C,Conscientiousness,-0.325,0.151,0.348,,0.476,0.673,False,False,False,True,
+Country,Thailand,C,Conscientiousness,-0.105,0.111,0.007,,0.216,0.112,True,False,True,False,
+Country,Türkiye,C,Conscientiousness,-0.004,0.014,0.02,,0.018,0.024,False,False,True,True,
+Country,United Arab Emirates,C,Conscientiousness,0.045,0.101,0.084,,0.056,0.039,True,False,True,True,
+Country,United Kingdom of Great Britain and Northern Ireland,C,Conscientiousness,-0.126,-0.008,-0.082,-0.013,0.118,0.044,True,False,False,False,False
+Country,United States of America,C,Conscientiousness,0.074,-0.024,-0.016,-0.058,0.098,0.09,True,False,False,False,False
+Country,Viet Nam,C,Conscientiousness,-0.155,0.102,0.05,,0.257,0.205,True,False,False,False,
+Country,Argentina,N,Emotional Stability,-0.186,0.002,-0.116,,0.188,0.07,True,False,False,False,
+Country,Australia,N,Emotional Stability,0.016,0.012,0.106,0.024,0.004,0.09,False,False,False,True,True
+Country,Bangladesh,N,Emotional Stability,0.014,-0.05,-0.162,,0.064,0.176,False,False,True,True,
+Country,Belgium,N,Emotional Stability,0.256,0.062,0.078,,0.194,0.178,True,False,False,False,
+Country,Brazil,N,Emotional Stability,-0.248,0.004,-0.051,,0.252,0.197,True,False,False,False,
+Country,Bulgaria,N,Emotional Stability,-0.043,0.037,-0.042,,0.08,0.001,True,False,False,False,
+Country,Canada,N,Emotional Stability,0.073,0.022,0.074,-0.008,0.051,0.001,True,False,False,True,False
+Country,China,N,Emotional Stability,0.148,0.04,-0.025,,0.108,0.173,False,False,False,False,
+Country,Croatia,N,Emotional Stability,-0.045,0.058,0.054,,0.103,0.099,True,False,True,True,
+Country,Denmark,N,Emotional Stability,0.333,0.072,0.296,,0.261,0.037,True,False,False,False,
+Country,Egypt,N,Emotional Stability,-0.214,0.004,-0.152,,0.218,0.062,True,False,False,False,
+Country,Finland,N,Emotional Stability,-0.113,0.082,0.262,,0.195,0.375,False,False,False,True,
+Country,France,N,Emotional Stability,-0.112,0.058,0.054,,0.17,0.166,True,False,False,False,
+Country,Germany,N,Emotional Stability,0.124,0.066,0.144,,0.058,0.02,True,False,False,True,
+Country,Greece,N,Emotional Stability,-0.199,0.077,0.048,,0.276,0.247,True,False,False,False,
+Country,Hong Kong,N,Emotional Stability,-0.179,-0.04,-0.07,,0.139,0.109,True,False,False,False,
+Country,Hungary,N,Emotional Stability,-0.074,0.027,-0.011,,0.101,0.063,True,False,False,False,
+Country,India,N,Emotional Stability,-0.138,-0.036,-0.092,0.035,0.102,0.046,True,False,False,False,False
+Country,Indonesia,N,Emotional Stability,-0.057,0.024,-0.075,,0.081,0.018,True,False,False,True,
+Country,Ireland,N,Emotional Stability,0.056,0.03,0.044,,0.026,0.012,True,False,False,False,
+Country,Italy,N,Emotional Stability,-0.026,0.063,0.085,,0.089,0.111,False,False,True,True,
+Country,Japan,N,Emotional Stability,-0.025,0.021,-0.019,,0.046,0.006,True,False,False,False,
+Country,Kenya,N,Emotional Stability,0.146,0.045,0.047,,0.101,0.099,True,False,False,False,
+Country,Lebanon,N,Emotional Stability,0.192,-0.038,-0.136,,0.23,0.328,False,False,False,False,
+Country,Malaysia,N,Emotional Stability,0.004,-0.01,-0.06,,0.014,0.064,False,False,True,True,
+Country,Mexico,N,Emotional Stability,-0.041,0.015,-0.028,,0.056,0.013,True,False,False,False,
+Country,"Netherlands, Kingdom of the",N,Emotional Stability,0.169,0.028,0.214,,0.141,0.045,True,False,False,True,
+Country,New Zealand,N,Emotional Stability,0.087,0.019,0.18,,0.068,0.093,False,False,False,True,
+Country,Nigeria,N,Emotional Stability,0.266,0.03,-0.036,,0.236,0.302,False,False,False,False,
+Country,Norway,N,Emotional Stability,0.191,0.06,0.306,,0.131,0.115,True,False,False,True,
+Country,Pakistan,N,Emotional Stability,-0.285,-0.028,-0.12,,0.257,0.165,True,False,False,False,
+Country,Philippines,N,Emotional Stability,-0.18,0.001,-0.065,0.04,0.181,0.115,True,False,False,False,False
+Country,Poland,N,Emotional Stability,-0.314,0.046,0.008,,0.36,0.322,True,False,False,False,
+Country,Portugal,N,Emotional Stability,-0.077,0.058,0.083,,0.135,0.16,False,False,False,True,
+Country,Romania,N,Emotional Stability,-0.021,0.059,-0.016,,0.08,0.005,True,False,True,False,
+Country,Saudi Arabia,N,Emotional Stability,0.013,-0.029,-0.069,,0.042,0.082,False,False,True,True,
+Country,Serbia,N,Emotional Stability,-0.087,0.081,-0.017,,0.168,0.07,True,False,False,False,
+Country,Singapore,N,Emotional Stability,-0.095,0.0,-0.022,,0.095,0.073,True,False,False,False,
+Country,Slovenia,N,Emotional Stability,-0.035,0.067,0.2,,0.102,0.235,False,False,True,True,
+Country,South Africa,N,Emotional Stability,0.126,0.024,0.035,,0.102,0.091,True,False,False,False,
+Country,Spain,N,Emotional Stability,0.06,0.061,0.044,,0.001,0.016,False,False,True,False,
+Country,Sri Lanka,N,Emotional Stability,-0.161,-0.001,-0.055,,0.16,0.106,True,False,False,False,
+Country,Sweden,N,Emotional Stability,0.026,0.066,0.233,,0.04,0.207,False,False,True,True,
+Country,Switzerland,N,Emotional Stability,-0.033,0.098,0.272,,0.131,0.305,False,False,True,True,
+Country,Thailand,N,Emotional Stability,-0.029,0.066,0.026,,0.095,0.055,True,False,True,False,
+Country,Türkiye,N,Emotional Stability,-0.11,-0.04,-0.053,,0.07,0.057,True,False,False,False,
+Country,United Arab Emirates,N,Emotional Stability,-0.198,-0.018,-0.045,,0.18,0.153,True,False,False,False,
+Country,United Kingdom of Great Britain and Northern Ireland,N,Emotional Stability,-0.152,0.014,-0.049,-0.029,0.166,0.103,True,False,False,False,False
+Country,United States of America,N,Emotional Stability,0.06,-0.017,-0.013,-0.007,0.077,0.073,True,False,False,False,False
+Country,Viet Nam,N,Emotional Stability,0.007,0.005,-0.045,,0.002,0.052,False,False,False,True,
+Country,Argentina,O,Openness,0.206,0.021,0.063,,0.185,0.143,True,False,False,False,
+Country,Australia,O,Openness,0.007,-0.002,0.006,-0.025,0.009,0.001,True,False,False,False,True
+Country,Bangladesh,O,Openness,-0.463,-0.01,0.092,,0.453,0.555,False,False,False,False,
+Country,Belgium,O,Openness,0.101,0.044,0.13,,0.057,0.029,True,False,False,True,
+Country,Brazil,O,Openness,0.161,0.005,0.059,,0.156,0.102,True,False,False,False,
+Country,Bulgaria,O,Openness,0.064,0.049,0.053,,0.015,0.011,True,False,False,False,
+Country,Canada,O,Openness,0.062,0.012,0.037,-0.038,0.05,0.025,True,False,False,False,False
+Country,China,O,Openness,-0.08,0.022,0.109,,0.102,0.189,False,False,False,True,
+Country,Croatia,O,Openness,0.087,0.03,0.019,,0.057,0.068,False,False,False,False,
+Country,Denmark,O,Openness,0.186,0.054,0.063,,0.132,0.123,True,False,False,False,
+Country,Egypt,O,Openness,-0.154,0.012,0.135,,0.166,0.289,False,False,False,False,
+Country,Finland,O,Openness,0.055,0.043,0.031,,0.012,0.024,False,False,False,False,
+Country,France,O,Openness,0.099,0.022,0.15,,0.077,0.051,True,False,False,True,
+Country,Germany,O,Openness,0.203,0.05,0.071,,0.153,0.132,True,False,False,False,
+Country,Greece,O,Openness,0.074,0.032,0.104,,0.042,0.03,True,False,False,True,
+Country,Hong Kong,O,Openness,-0.191,-0.015,-0.042,,0.176,0.149,True,False,False,False,
+Country,Hungary,O,Openness,0.098,0.014,0.095,,0.084,0.003,True,False,False,False,
+Country,India,O,Openness,-0.201,0.012,0.016,0.03,0.213,0.217,False,False,False,False,False
+Country,Indonesia,O,Openness,-0.215,-0.052,0.044,,0.163,0.259,False,False,False,False,
+Country,Ireland,O,Openness,0.007,0.016,0.069,,0.009,0.062,False,False,True,True,
+Country,Italy,O,Openness,0.099,0.057,0.105,,0.042,0.006,True,False,False,True,
+Country,Japan,O,Openness,0.03,0.045,0.026,,0.015,0.004,True,False,True,False,
+Country,Kenya,O,Openness,-0.137,0.027,0.129,,0.164,0.266,False,False,False,False,
+Country,Lebanon,O,Openness,0.019,0.045,0.148,,0.026,0.129,False,False,True,True,
+Country,Malaysia,O,Openness,-0.399,-0.025,0.029,,0.374,0.428,False,False,False,False,
+Country,Mexico,O,Openness,0.144,-0.005,0.077,,0.149,0.067,True,False,False,False,
+Country,"Netherlands, Kingdom of the",O,Openness,0.152,0.023,0.074,,0.129,0.078,True,False,False,False,
+Country,New Zealand,O,Openness,0.042,-0.009,0.069,,0.051,0.027,True,False,False,True,
+Country,Nigeria,O,Openness,0.032,0.055,0.047,,0.023,0.015,True,False,True,True,
+Country,Norway,O,Openness,0.129,0.072,0.091,,0.057,0.038,True,False,False,False,
+Country,Pakistan,O,Openness,-0.395,-0.005,0.051,,0.39,0.446,False,False,False,False,
+Country,Philippines,O,Openness,-0.19,-0.048,0.018,0.007,0.142,0.208,False,False,False,False,False
+Country,Poland,O,Openness,0.275,0.029,0.048,,0.246,0.227,True,False,False,False,
+Country,Portugal,O,Openness,0.065,0.029,0.049,,0.036,0.016,True,False,False,False,
+Country,Romania,O,Openness,0.088,0.025,0.111,,0.063,0.023,True,False,False,True,
+Country,Saudi Arabia,O,Openness,-0.02,-0.001,0.052,,0.019,0.072,False,False,False,True,
+Country,Serbia,O,Openness,0.196,0.036,0.028,,0.16,0.168,False,False,False,False,
+Country,Singapore,O,Openness,-0.127,-0.011,-0.018,,0.116,0.109,True,False,False,False,
+Country,Slovenia,O,Openness,0.092,-0.003,0.107,,0.095,0.015,True,False,False,True,
+Country,South Africa,O,Openness,0.127,0.038,0.108,,0.089,0.019,True,False,False,False,
+Country,Spain,O,Openness,0.156,0.03,0.062,,0.126,0.094,True,False,False,False,
+Country,Sri Lanka,O,Openness,0.034,0.029,0.062,,0.005,0.028,False,False,False,True,
+Country,Sweden,O,Openness,0.069,0.079,0.058,,0.01,0.011,False,False,True,False,
+Country,Switzerland,O,Openness,0.351,0.098,-0.026,,0.253,0.377,False,False,False,False,
+Country,Thailand,O,Openness,-0.273,-0.008,0.022,,0.265,0.295,False,False,False,False,
+Country,Türkiye,O,Openness,0.096,0.03,0.09,,0.066,0.006,True,False,False,False,
+Country,United Arab Emirates,O,Openness,-0.26,0.014,0.07,,0.274,0.33,False,False,False,False,
+Country,United Kingdom of Great Britain and Northern Ireland,O,Openness,-0.014,-0.008,-0.009,-0.003,0.006,0.005,True,False,False,False,False
+Country,United States of America,O,Openness,0.039,-0.011,-0.049,0.0,0.05,0.088,False,False,False,True,False
+Country,Viet Nam,O,Openness,-0.088,-0.034,0.01,,0.054,0.098,False,False,False,False,

@@ -1,0 +1,26 @@
+Trait,Trait_Code,Predictor,Predictor_Key,F,p_raw,partial_eta2,p_adj_bh,sig_bh
+Extroversion,E,Gender,Gender,66.015,0.0,0.00219,0.0,True
+Extroversion,E,Age Group,Age_Group,281.719,0.0,0.01841,0.0,True
+Extroversion,E,Race,Race,47.821,0.0,0.00946,0.0,True
+Extroversion,E,Prompt Type,PromptType,2075.12,0.0,0.06461,0.0,True
+Extroversion,E,Model,Model,35.62,0.0,0.00118,0.0,True
+Agreeableness,A,Gender,Gender,1129.89,0.0,0.03625,0.0,True
+Agreeableness,A,Age Group,Age_Group,413.811,0.0,0.02681,0.0,True
+Agreeableness,A,Race,Race,11.212,0.0,0.00223,0.0,True
+Agreeableness,A,Prompt Type,PromptType,3258.612,0.0,0.09786,0.0,True
+Agreeableness,A,Model,Model,4091.613,0.0,0.11988,0.0,True
+Conscientiousness,C,Gender,Gender,238.807,0.0,0.00789,0.0,True
+Conscientiousness,C,Age Group,Age_Group,1900.648,0.0,0.11233,0.0,True
+Conscientiousness,C,Race,Race,12.688,0.0,0.00253,0.0,True
+Conscientiousness,C,Prompt Type,PromptType,631.503,0.0,0.02059,0.0,True
+Conscientiousness,C,Model,Model,309.399,0.0,0.01019,0.0,True
+Emotional Stability,N,Gender,Gender,439.703,0.0,0.01443,0.0,True
+Emotional Stability,N,Age Group,Age_Group,548.434,0.0,0.03523,0.0,True
+Emotional Stability,N,Race,Race,32.136,0.0,0.00638,0.0,True
+Emotional Stability,N,Prompt Type,PromptType,2835.801,0.0,0.08626,0.0,True
+Emotional Stability,N,Model,Model,2351.719,0.0,0.0726,0.0,True
+Openness,O,Gender,Gender,40.518,0.0,0.00135,0.0,True
+Openness,O,Age Group,Age_Group,149.844,0.0,0.00988,0.0,True
+Openness,O,Race,Race,44.748,0.0,0.00886,0.0,True
+Openness,O,Prompt Type,PromptType,1436.971,0.0,0.04565,0.0,True
+Openness,O,Model,Model,2012.446,0.0,0.06279,0.0,True

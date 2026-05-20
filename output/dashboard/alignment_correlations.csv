@@ -1,0 +1,56 @@
+Factor,Trait_Code,Trait,Source,Source_Label,N_Subgroups,Pearson_r_means,Pearson_p_means,Spearman_rho_means,Spearman_p_means,Pearson_r_effects,Pearson_p_effects
+Gender,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3,0.9888,0.0955,0.5,0.6667,0.9888,0.0955
+Gender,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3,0.9957,0.0592,1.0,0.0,0.9957,0.0592
+Gender,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,3,0.8479,0.3558,0.5,0.6667,0.8479,0.3558
+Gender,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,3,0.8585,0.3428,0.5,0.6667,0.8585,0.3428
+Gender,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3,0.9755,0.1411,1.0,0.0,0.9755,0.1411
+Gender,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3,0.9889,0.095,1.0,0.0,0.9889,0.095
+Gender,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3,0.857,0.3447,0.5,0.6667,0.857,0.3447
+Gender,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3,0.9395,0.2225,1.0,0.0,0.9395,0.2225
+Gender,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3,-0.0423,0.9731,-0.5,0.6667,-0.0423,0.9731
+Gender,O,Openness,AI_GPT4o_NLP,GPT NLP,3,0.4276,0.7187,0.5,0.6667,0.4276,0.7187
+Age_Group,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,5,0.2054,0.7404,0.3,0.6238,0.2054,0.7404
+Age_Group,E,Extroversion,AI_GPT4o_NLP,GPT NLP,5,0.2719,0.6582,0.3,0.6238,0.2719,0.6582
+Age_Group,E,Extroversion,AI_Qwen_NLP,Qwen NLP,5,-0.7249,0.1658,-0.7,0.1881,-0.7249,0.1658
+Age_Group,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,5,0.9569,0.0107,1.0,0.0,0.9569,0.0107
+Age_Group,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,5,0.9706,0.006,1.0,0.0,0.9706,0.006
+Age_Group,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,5,-0.5368,0.3509,-0.2,0.7471,-0.5368,0.3509
+Age_Group,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,5,0.9736,0.0051,1.0,0.0,0.9736,0.0051
+Age_Group,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,5,0.997,0.0002,1.0,0.0,0.997,0.0002
+Age_Group,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,5,0.2974,0.627,0.3,0.6238,0.2974,0.627
+Age_Group,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,5,0.992,0.0009,1.0,0.0,0.992,0.0009
+Age_Group,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,5,0.9861,0.002,1.0,0.0,0.9861,0.002
+Age_Group,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,5,0.9098,0.0321,1.0,0.0,0.9098,0.0321
+Age_Group,O,Openness,AI_GPT4o_Explicit,GPT Explicit,5,0.8467,0.0704,0.8,0.1041,0.8467,0.0704
+Age_Group,O,Openness,AI_GPT4o_NLP,GPT NLP,5,-0.211,0.7334,-0.3,0.6238,-0.211,0.7334
+Age_Group,O,Openness,AI_Qwen_NLP,Qwen NLP,5,-0.0301,0.9617,0.1,0.8729,-0.0301,0.9617
+Race,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,11,0.6056,0.0483,0.4273,0.1899,0.6056,0.0483
+Race,E,Extroversion,AI_GPT4o_NLP,GPT NLP,11,0.3536,0.2861,0.2182,0.5192,0.3536,0.2861
+Race,E,Extroversion,AI_Qwen_NLP,Qwen NLP,6,-0.2208,0.6742,-0.4857,0.3287,-0.2208,0.6742
+Race,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,11,0.2444,0.4688,-0.0638,0.8522,0.2444,0.4688
+Race,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,11,0.4057,0.2157,-0.0455,0.8944,0.4057,0.2157
+Race,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,6,-0.3771,0.4612,-0.4286,0.3965,-0.3771,0.4612
+Race,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,11,0.1039,0.7611,0.0273,0.9366,0.1039,0.7611
+Race,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,11,0.5861,0.0581,0.3909,0.2345,0.5861,0.0581
+Race,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,6,0.0533,0.9202,0.0286,0.9572,0.0533,0.9202
+Race,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,11,0.5429,0.0844,0.7182,0.0128,0.5429,0.0844
+Race,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,11,0.5925,0.0547,0.7909,0.0037,0.5925,0.0547
+Race,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,6,-0.6803,0.1369,-0.4058,0.4247,-0.6803,0.1369
+Race,O,Openness,AI_GPT4o_Explicit,GPT Explicit,11,0.4751,0.1397,0.2818,0.4011,0.4751,0.1397
+Race,O,Openness,AI_GPT4o_NLP,GPT NLP,11,-0.2199,0.516,-0.0592,0.8627,-0.2199,0.516
+Race,O,Openness,AI_Qwen_NLP,Qwen NLP,6,-0.6634,0.1509,-0.7143,0.1108,-0.6634,0.1509
+Country,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,50,0.2568,0.0719,0.223,0.1195,0.2568,0.0719
+Country,E,Extroversion,AI_GPT4o_NLP,GPT NLP,50,0.0553,0.7029,0.0881,0.5431,0.0553,0.7029
+Country,E,Extroversion,AI_Qwen_NLP,Qwen NLP,6,-0.5961,0.2117,-0.5374,0.2715,-0.5961,0.2117
+Country,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,50,-0.2701,0.0578,-0.3205,0.0232,-0.2701,0.0578
+Country,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,50,0.2338,0.1023,0.2557,0.0731,0.2338,0.1023
+Country,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,6,-0.0838,0.8746,-0.3714,0.4685,-0.0838,0.8746
+Country,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,50,0.1181,0.4139,0.0594,0.6819,0.1181,0.4139
+Country,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,50,0.0769,0.5956,0.1771,0.2185,0.0769,0.5956
+Country,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,6,0.0879,0.8685,0.0857,0.8717,0.0879,0.8685
+Country,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,50,0.2407,0.0923,0.235,0.1004,0.2407,0.0923
+Country,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,50,0.4337,0.0017,0.4304,0.0018,0.4337,0.0017
+Country,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,6,-0.331,0.5216,-0.4286,0.3965,-0.331,0.5216
+Country,O,Openness,AI_GPT4o_Explicit,GPT Explicit,50,0.6216,0.0,0.604,0.0,0.6216,0.0
+Country,O,Openness,AI_GPT4o_NLP,GPT NLP,50,0.1128,0.4354,0.249,0.0812,0.1128,0.4354
+Country,O,Openness,AI_Qwen_NLP,Qwen NLP,6,-0.8089,0.0513,-0.8286,0.0416,-0.8089,0.0513

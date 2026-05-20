@@ -14,7 +14,6 @@ load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 OUTPUT_FILE = ROOT / "output/simulated/simulated_ordering_experiment.csv"
-SAMPLE_SIZE = 1000
 ITERATIONS_PER_ROW = 1 # Keep at 1 for speed if running 3 templates
 CONCURRENT_REQUESTS = 100
 
@@ -121,7 +120,7 @@ async def ask_single_question(persona_desc, q_id, q_text, semaphore):
 
 async def main():
     human_df = load_and_clean_data()
-    sampled_df = human_df.sample(n=SAMPLE_SIZE, replace=True).reset_index(drop=True)
+    sampled_df = human_df.reset_index(drop=True)
     
     semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
     all_tasks = []

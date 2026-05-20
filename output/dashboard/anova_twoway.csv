@@ -1,0 +1,136 @@
+Source,Factor1,Factor2,Effect,Trait,Trait_Code,F,p_raw,eta2
+Human,Gender,Age_Group,Gender,Extroversion,E,49.309,0.0,0.0049
+Human,Gender,Age_Group,Age_Group,Extroversion,E,51.478,0.0,0.0103
+Human,Gender,Age_Group,Interaction,Extroversion,E,3.792,0.0002,0.0015
+Human,Gender,Age_Group,Gender,Agreeableness,A,519.513,0.0,0.0488
+Human,Gender,Age_Group,Age_Group,Agreeableness,A,156.406,0.0,0.0294
+Human,Gender,Age_Group,Interaction,Agreeableness,A,2.511,0.01,0.0009
+Human,Gender,Age_Group,Gender,Conscientiousness,C,16.736,0.0,0.0016
+Human,Gender,Age_Group,Age_Group,Conscientiousness,C,265.863,0.0,0.0514
+Human,Gender,Age_Group,Interaction,Conscientiousness,C,1.726,0.0869,0.0007
+Human,Gender,Age_Group,Gender,Emotional Stability,N,275.314,0.0,0.0265
+Human,Gender,Age_Group,Age_Group,Emotional Stability,N,127.254,0.0,0.0245
+Human,Gender,Age_Group,Interaction,Emotional Stability,N,12.523,0.0,0.0048
+Human,Gender,Age_Group,Gender,Openness,O,105.731,0.0,0.0106
+Human,Gender,Age_Group,Age_Group,Openness,O,41.756,0.0,0.0084
+Human,Gender,Age_Group,Interaction,Openness,O,1.277,0.2501,0.0005
+Human,Gender,Race,Gender,Extroversion,E,26.816,0.0,0.0027
+Human,Gender,Race,Race,Extroversion,E,8.494,0.0,0.0043
+Human,Gender,Race,Interaction,Extroversion,E,1.486,0.0892,0.0015
+Human,Gender,Race,Gender,Agreeableness,A,472.266,0.0,0.0459
+Human,Gender,Race,Race,Agreeableness,A,9.946,0.0,0.0048
+Human,Gender,Race,Interaction,Agreeableness,A,7.943,0.0,0.0077
+Human,Gender,Race,Gender,Conscientiousness,C,8.82,0.0001,0.0009
+Human,Gender,Race,Race,Conscientiousness,C,6.684,0.0,0.0034
+Human,Gender,Race,Interaction,Conscientiousness,C,0.906,0.5671,0.0009
+Human,Gender,Race,Gender,Emotional Stability,N,291.892,0.0,0.0289
+Human,Gender,Race,Race,Emotional Stability,N,15.955,0.0,0.0079
+Human,Gender,Race,Interaction,Emotional Stability,N,1.403,0.1238,0.0014
+Human,Gender,Race,Gender,Openness,O,100.873,0.0,0.0096
+Human,Gender,Race,Race,Openness,O,148.917,0.0,0.0706
+Human,Gender,Race,Interaction,Openness,O,0.916,0.5539,0.0009
+Human,Age_Group,Race,Age_Group,Extroversion,E,47.357,0.0,0.0096
+Human,Age_Group,Race,Race,Extroversion,E,4.966,0.0,0.0025
+Human,Age_Group,Race,Interaction,Extroversion,E,0.841,0.7505,0.0017
+Human,Age_Group,Race,Age_Group,Agreeableness,A,126.754,0.0,0.0254
+Human,Age_Group,Race,Race,Agreeableness,A,4.473,0.0,0.0022
+Human,Age_Group,Race,Interaction,Agreeableness,A,1.305,0.0941,0.0026
+Human,Age_Group,Race,Age_Group,Conscientiousness,C,272.238,0.0,0.0528
+Human,Age_Group,Race,Race,Conscientiousness,C,10.957,0.0,0.0053
+Human,Age_Group,Race,Interaction,Conscientiousness,C,1.853,0.0008,0.0036
+Human,Age_Group,Race,Age_Group,Emotional Stability,N,123.369,0.0,0.0246
+Human,Age_Group,Race,Race,Emotional Stability,N,7.64,0.0,0.0038
+Human,Age_Group,Race,Interaction,Emotional Stability,N,1.971,0.0002,0.0039
+Human,Age_Group,Race,Age_Group,Openness,O,25.606,0.0,0.005
+Human,Age_Group,Race,Race,Openness,O,98.371,0.0,0.0479
+Human,Age_Group,Race,Interaction,Openness,O,1.549,0.0147,0.003
+GPT_Explicit,Gender,Age_Group,Gender,Extroversion,E,5.787,0.0031,0.0005
+GPT_Explicit,Gender,Age_Group,Age_Group,Extroversion,E,829.026,0.0,0.1439
+GPT_Explicit,Gender,Age_Group,Interaction,Extroversion,E,2.194,0.0249,0.0008
+GPT_Explicit,Gender,Age_Group,Gender,Agreeableness,A,856.123,0.0,0.0753
+GPT_Explicit,Gender,Age_Group,Age_Group,Agreeableness,A,186.093,0.0,0.0327
+GPT_Explicit,Gender,Age_Group,Interaction,Agreeableness,A,72.753,0.0,0.0256
+GPT_Explicit,Gender,Age_Group,Gender,Conscientiousness,C,638.357,0.0,0.0313
+GPT_Explicit,Gender,Age_Group,Age_Group,Conscientiousness,C,4916.912,0.0,0.4828
+GPT_Explicit,Gender,Age_Group,Interaction,Conscientiousness,C,11.061,0.0,0.0022
+GPT_Explicit,Gender,Age_Group,Gender,Emotional Stability,N,444.306,0.0,0.0291
+GPT_Explicit,Gender,Age_Group,Age_Group,Emotional Stability,N,2466.484,0.0,0.3226
+GPT_Explicit,Gender,Age_Group,Interaction,Emotional Stability,N,15.079,0.0,0.0039
+GPT_Explicit,Gender,Age_Group,Gender,Openness,O,480.157,0.0,0.0345
+GPT_Explicit,Gender,Age_Group,Age_Group,Openness,O,1742.516,0.0,0.2504
+GPT_Explicit,Gender,Age_Group,Interaction,Openness,O,24.503,0.0,0.007
+GPT_Explicit,Gender,Race,Gender,Extroversion,E,6.166,0.0021,0.0005
+GPT_Explicit,Gender,Race,Race,Extroversion,E,307.925,0.0,0.135
+GPT_Explicit,Gender,Race,Interaction,Extroversion,E,2.948,0.0,0.0026
+GPT_Explicit,Gender,Race,Gender,Agreeableness,A,730.527,0.0,0.0662
+GPT_Explicit,Gender,Race,Race,Agreeableness,A,82.686,0.0,0.0375
+GPT_Explicit,Gender,Race,Interaction,Agreeableness,A,5.869,0.0,0.0053
+GPT_Explicit,Gender,Race,Gender,Conscientiousness,C,243.554,0.0,0.0235
+GPT_Explicit,Gender,Race,Race,Conscientiousness,C,49.452,0.0,0.0239
+GPT_Explicit,Gender,Race,Interaction,Conscientiousness,C,4.017,0.0,0.0039
+GPT_Explicit,Gender,Race,Gender,Emotional Stability,N,462.083,0.0,0.0414
+GPT_Explicit,Gender,Race,Race,Emotional Stability,N,167.525,0.0,0.075
+GPT_Explicit,Gender,Race,Interaction,Emotional Stability,N,3.806,0.0,0.0034
+GPT_Explicit,Gender,Race,Gender,Openness,O,273.35,0.0,0.0265
+GPT_Explicit,Gender,Race,Race,Openness,O,40.6,0.0,0.0196
+GPT_Explicit,Gender,Race,Interaction,Openness,O,2.725,0.0002,0.0026
+GPT_Explicit,Age_Group,Race,Age_Group,Extroversion,E,978.445,0.0,0.1475
+GPT_Explicit,Age_Group,Race,Race,Extroversion,E,279.135,0.0,0.1052
+GPT_Explicit,Age_Group,Race,Interaction,Extroversion,E,4.916,0.0,0.0074
+GPT_Explicit,Age_Group,Race,Age_Group,Agreeableness,A,182.509,0.0,0.0341
+GPT_Explicit,Age_Group,Race,Race,Agreeableness,A,93.904,0.0,0.0438
+GPT_Explicit,Age_Group,Race,Interaction,Agreeableness,A,2.849,0.0,0.0053
+GPT_Explicit,Age_Group,Race,Age_Group,Conscientiousness,C,4535.672,0.0,0.4747
+GPT_Explicit,Age_Group,Race,Race,Conscientiousness,C,27.382,0.0,0.0072
+GPT_Explicit,Age_Group,Race,Interaction,Conscientiousness,C,4.247,0.0,0.0044
+GPT_Explicit,Age_Group,Race,Age_Group,Emotional Stability,N,2411.121,0.0,0.3165
+GPT_Explicit,Age_Group,Race,Race,Emotional Stability,N,98.246,0.0,0.0322
+GPT_Explicit,Age_Group,Race,Interaction,Emotional Stability,N,5.44,0.0,0.0071
+GPT_Explicit,Age_Group,Race,Age_Group,Openness,O,1595.637,0.0,0.2414
+GPT_Explicit,Age_Group,Race,Race,Openness,O,28.754,0.0,0.0109
+GPT_Explicit,Age_Group,Race,Interaction,Openness,O,3.46,0.0,0.0052
+GPT_NLP,Gender,Age_Group,Gender,Extroversion,E,26.519,0.0,0.0024
+GPT_NLP,Gender,Age_Group,Age_Group,Extroversion,E,637.062,0.0,0.1136
+GPT_NLP,Gender,Age_Group,Interaction,Extroversion,E,15.064,0.0,0.0054
+GPT_NLP,Gender,Age_Group,Gender,Agreeableness,A,1925.272,0.0,0.1373
+GPT_NLP,Gender,Age_Group,Age_Group,Agreeableness,A,1103.81,0.0,0.1574
+GPT_NLP,Gender,Age_Group,Interaction,Agreeableness,A,9.074,0.0,0.0026
+GPT_NLP,Gender,Age_Group,Gender,Conscientiousness,C,799.623,0.0,0.043
+GPT_NLP,Gender,Age_Group,Age_Group,Conscientiousness,C,3934.987,0.0,0.4229
+GPT_NLP,Gender,Age_Group,Interaction,Conscientiousness,C,21.956,0.0,0.0047
+GPT_NLP,Gender,Age_Group,Gender,Emotional Stability,N,148.558,0.0,0.0107
+GPT_NLP,Gender,Age_Group,Age_Group,Emotional Stability,N,1866.287,0.0,0.2698
+GPT_NLP,Gender,Age_Group,Interaction,Emotional Stability,N,25.266,0.0,0.0073
+GPT_NLP,Gender,Age_Group,Gender,Openness,O,2063.979,0.0,0.1623
+GPT_NLP,Gender,Age_Group,Age_Group,Openness,O,343.01,0.0,0.0539
+GPT_NLP,Gender,Age_Group,Interaction,Openness,O,29.551,0.0,0.0093
+GPT_NLP,Gender,Race,Gender,Extroversion,E,0.297,0.7428,0.0
+GPT_NLP,Gender,Race,Race,Extroversion,E,283.158,0.0,0.1251
+GPT_NLP,Gender,Race,Interaction,Extroversion,E,7.66,0.0,0.0068
+GPT_NLP,Gender,Race,Gender,Agreeableness,A,1341.091,0.0,0.1135
+GPT_NLP,Gender,Race,Race,Agreeableness,A,100.671,0.0,0.0426
+GPT_NLP,Gender,Race,Interaction,Agreeableness,A,13.969,0.0,0.0118
+GPT_NLP,Gender,Race,Gender,Conscientiousness,C,344.805,0.0,0.033
+GPT_NLP,Gender,Race,Race,Conscientiousness,C,43.089,0.0,0.0206
+GPT_NLP,Gender,Race,Interaction,Conscientiousness,C,4.928,0.0,0.0047
+GPT_NLP,Gender,Race,Gender,Emotional Stability,N,160.115,0.0,0.013
+GPT_NLP,Gender,Race,Race,Emotional Stability,N,453.291,0.0,0.1843
+GPT_NLP,Gender,Race,Interaction,Emotional Stability,N,4.118,0.0,0.0033
+GPT_NLP,Gender,Race,Gender,Openness,O,2051.426,0.0,0.1457
+GPT_NLP,Gender,Race,Race,Openness,O,386.154,0.0,0.1371
+GPT_NLP,Gender,Race,Interaction,Openness,O,27.31,0.0,0.0194
+GPT_NLP,Age_Group,Race,Age_Group,Extroversion,E,799.604,0.0,0.123
+GPT_NLP,Age_Group,Race,Race,Extroversion,E,273.64,0.0,0.1052
+GPT_NLP,Age_Group,Race,Interaction,Extroversion,E,11.104,0.0,0.0171
+GPT_NLP,Age_Group,Race,Age_Group,Agreeableness,A,1009.518,0.0,0.1577
+GPT_NLP,Age_Group,Race,Race,Agreeableness,A,157.52,0.0,0.0615
+GPT_NLP,Age_Group,Race,Interaction,Agreeableness,A,9.033,0.0,0.0141
+GPT_NLP,Age_Group,Race,Age_Group,Conscientiousness,C,3626.72,0.0,0.4152
+GPT_NLP,Age_Group,Race,Race,Conscientiousness,C,35.608,0.0,0.0102
+GPT_NLP,Age_Group,Race,Interaction,Conscientiousness,C,11.093,0.0,0.0127
+GPT_NLP,Age_Group,Race,Age_Group,Emotional Stability,N,1811.362,0.0,0.2405
+GPT_NLP,Age_Group,Race,Race,Emotional Stability,N,302.319,0.0,0.1003
+GPT_NLP,Age_Group,Race,Interaction,Emotional Stability,N,5.802,0.0,0.0077
+GPT_NLP,Age_Group,Race,Age_Group,Openness,O,250.389,0.0,0.0424
+GPT_NLP,Age_Group,Race,Race,Openness,O,274.832,0.0,0.1165
+GPT_NLP,Age_Group,Race,Interaction,Openness,O,5.375,0.0,0.0091

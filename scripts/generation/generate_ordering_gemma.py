@@ -21,7 +21,6 @@ ROOT = Path(__file__).parent.parent.parent
 # ==============================
 MODEL_NAME = "google/gemma-2b-it"
 OUTPUT_FILE = ROOT / "output/simulated/simulated_ordering_experiment_gemma-2b.csv"
-SAMPLE_SIZE = 1000
 BATCH_SIZE = 8
 RANDOM_SEED = 42  # MUST match GPT-4o-mini run for fair comparison
 
@@ -255,7 +254,7 @@ def main():
     print(f"\n{'='*60}")
     print(f"Model: {MODEL_NAME}")
     print(f"Output: {OUTPUT_FILE}")
-    print(f"Sample size: {SAMPLE_SIZE} | Seed: {RANDOM_SEED}")
+    print(f"Seed: {RANDOM_SEED}")
     print(f"{'='*60}\n")
 
     print("Loading model and tokenizer...")
@@ -278,12 +277,12 @@ def main():
     sanity_check(model, tokenizer, device)
 
     human_df = load_and_clean_data()
-    sampled_df = human_df.sample(n=SAMPLE_SIZE, replace=True, random_state=RANDOM_SEED).reset_index(drop=True)
+    sampled_df = human_df.sample(frac=1, random_state=RANDOM_SEED).reset_index(drop=True)
 
     print("Building prompts...")
     all_items = build_all_prompts(sampled_df, tokenizer)
     total = len(all_items)
-    print(f"  {total} total calls ({SAMPLE_SIZE} personas x 3 orderings x 50 questions)\n")
+    print(f"  {total} total calls ({len(sampled_df)} personas x 3 orderings x 50 questions)\n")
 
     all_words = []
     num_batches = math.ceil(total / BATCH_SIZE)

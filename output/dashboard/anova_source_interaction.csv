@@ -1,0 +1,46 @@
+Factor,Effect,Trait,Trait_Code,F,p_raw,eta2
+Gender,Gender,Extroversion,E,63.948,0.0,0.002
+Gender,Source,Extroversion,E,1977.277,0.0,0.0625
+Gender,Interaction,Extroversion,E,34.379,0.0,0.0022
+Gender,Gender,Agreeableness,A,1091.523,0.0,0.0319
+Gender,Source,Agreeableness,A,3141.853,0.0,0.0917
+Gender,Interaction,Agreeableness,A,252.425,0.0,0.0147
+Gender,Gender,Conscientiousness,C,159.272,0.0,0.0053
+Gender,Source,Conscientiousness,C,532.189,0.0,0.0176
+Gender,Interaction,Conscientiousness,C,8.963,0.0,0.0006
+Gender,Gender,Emotional Stability,N,463.154,0.0,0.014
+Gender,Source,Emotional Stability,N,2675.642,0.0,0.081
+Gender,Interaction,Emotional Stability,N,191.557,0.0,0.0116
+Gender,Gender,Openness,O,34.867,0.0,0.0011
+Gender,Source,Openness,O,1415.805,0.0,0.0448
+Gender,Interaction,Openness,O,327.383,0.0,0.0207
+Age_Group,Age_Group,Extroversion,E,265.191,0.0,0.0165
+Age_Group,Source,Extroversion,E,2018.256,0.0,0.0626
+Age_Group,Interaction,Extroversion,E,39.543,0.0,0.0049
+Age_Group,Age_Group,Agreeableness,A,362.249,0.0,0.0215
+Age_Group,Source,Agreeableness,A,3076.269,0.0,0.0915
+Age_Group,Interaction,Agreeableness,A,77.57,0.0,0.0092
+Age_Group,Age_Group,Conscientiousness,C,1840.276,0.0,0.1086
+Age_Group,Source,Conscientiousness,C,608.026,0.0,0.0179
+Age_Group,Interaction,Conscientiousness,C,23.662,0.0,0.0028
+Age_Group,Age_Group,Emotional Stability,N,624.535,0.0,0.0371
+Age_Group,Source,Emotional Stability,N,2755.791,0.0,0.0819
+Age_Group,Interaction,Emotional Stability,N,33.797,0.0,0.004
+Age_Group,Age_Group,Openness,O,146.039,0.0,0.0093
+Age_Group,Source,Openness,O,1401.814,0.0,0.0446
+Age_Group,Interaction,Openness,O,54.611,0.0,0.0069
+Race,Race,Extroversion,E,45.892,0.0,0.0079
+Race,Source,Extroversion,E,2000.469,0.0,0.0629
+Race,Interaction,Extroversion,E,13.844,0.0,0.0048
+Race,Race,Agreeableness,A,13.364,0.0,0.0023
+Race,Source,Agreeableness,A,2986.249,0.0,0.0916
+Race,Interaction,Agreeableness,A,11.932,0.0,0.004
+Race,Race,Conscientiousness,C,11.908,0.0,0.0022
+Race,Source,Conscientiousness,C,531.347,0.0,0.0176
+Race,Interaction,Conscientiousness,C,8.901,0.0,0.0033
+Race,Race,Emotional Stability,N,49.727,0.0,0.0084
+Race,Source,Emotional Stability,N,2654.101,0.0,0.0817
+Race,Interaction,Emotional Stability,N,12.26,0.0,0.0042
+Race,Race,Openness,O,54.135,0.0,0.0091
+Race,Source,Openness,O,1473.957,0.0,0.0451
+Race,Interaction,Openness,O,132.957,0.0,0.0448

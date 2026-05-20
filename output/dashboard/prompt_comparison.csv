@@ -1,0 +1,1151 @@
+Factor,Subgroup,Trait_Code,Trait,Source,Source_Label,Subgroup_Mean,Global_Mean,Effect,N
+Gender,Female,E,Extroversion,Human,Human,3.052,3.012,0.04,11574
+Gender,Female,A,Agreeableness,Human,Human,3.968,3.844,0.124,11574
+Gender,Female,C,Conscientiousness,Human,Human,3.362,3.345,0.017,11574
+Gender,Female,N,Emotional Stability,Human,Human,2.79,2.903,-0.113,11574
+Gender,Female,O,Openness,Human,Human,3.859,3.911,-0.052,11574
+Gender,Male,E,Extroversion,Human,Human,2.956,3.012,-0.056,7367
+Gender,Male,A,Agreeableness,Human,Human,3.654,3.844,-0.19,7367
+Gender,Male,C,Conscientiousness,Human,Human,3.32,3.345,-0.025,7367
+Gender,Male,N,Emotional Stability,Human,Human,3.086,2.903,0.183,7367
+Gender,Male,O,Openness,Human,Human,3.989,3.911,0.078,7367
+Gender,Other,E,Extroversion,Human,Human,2.411,3.012,-0.601,98
+Gender,Other,A,Agreeableness,Human,Human,3.521,3.844,-0.323,98
+Gender,Other,C,Conscientiousness,Human,Human,3.126,3.345,-0.219,98
+Gender,Other,N,Emotional Stability,Human,Human,2.573,2.903,-0.33,98
+Gender,Other,O,Openness,Human,Human,4.176,3.911,0.265,98
+Gender,Female,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.979,2.979,0.0,11854
+Gender,Female,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.132,4.113,0.019,11854
+Gender,Female,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.446,3.424,0.022,11854
+Gender,Female,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.223,3.24,-0.017,11854
+Gender,Female,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.722,3.71,0.012,11854
+Gender,Male,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.98,2.979,0.001,7767
+Gender,Male,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.084,4.113,-0.029,7767
+Gender,Male,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.392,3.424,-0.032,7767
+Gender,Male,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.266,3.24,0.026,7767
+Gender,Male,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.69,3.71,-0.02,7767
+Gender,Other,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.899,2.979,-0.08,99
+Gender,Other,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.097,4.113,-0.016,99
+Gender,Other,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.305,3.424,-0.119,99
+Gender,Other,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.228,3.24,-0.012,99
+Gender,Other,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.717,3.71,0.007,99
+Gender,Female,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.307,3.302,0.005,11854
+Gender,Female,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.201,4.149,0.052,11854
+Gender,Female,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.535,3.497,0.038,11854
+Gender,Female,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.197,3.216,-0.019,11854
+Gender,Female,O,Openness,AI_GPT4o_NLP,GPT NLP,3.851,3.793,0.058,11854
+Gender,Male,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.298,3.302,-0.004,7767
+Gender,Male,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.07,4.149,-0.079,7767
+Gender,Male,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.443,3.497,-0.054,7767
+Gender,Male,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.247,3.216,0.031,7767
+Gender,Male,O,Openness,AI_GPT4o_NLP,GPT NLP,3.702,3.793,-0.091,7767
+Gender,Other,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.134,3.302,-0.168,99
+Gender,Other,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.103,4.149,-0.046,99
+Gender,Other,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.246,3.497,-0.251,99
+Gender,Other,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.061,3.216,-0.155,99
+Gender,Other,O,Openness,AI_GPT4o_NLP,GPT NLP,3.927,3.793,0.134,99
+Gender,Female,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.196,3.203,-0.007,736
+Gender,Female,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.368,3.387,-0.019,736
+Gender,Female,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.301,3.288,0.013,736
+Gender,Female,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.04,3.041,-0.001,736
+Gender,Female,O,Openness,AI_Qwen_NLP,Qwen NLP,3.409,3.415,-0.006,736
+Gender,Male,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.213,3.203,0.01,460
+Gender,Male,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.42,3.387,0.033,460
+Gender,Male,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.267,3.288,-0.021,460
+Gender,Male,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.044,3.041,0.003,460
+Gender,Male,O,Openness,AI_Qwen_NLP,Qwen NLP,3.426,3.415,0.011,460
+Age_Group,18-25,E,Extroversion,Human,Human,2.975,3.012,-0.037,8280
+Age_Group,18-25,A,Agreeableness,Human,Human,3.821,3.844,-0.023,8280
+Age_Group,18-25,C,Conscientiousness,Human,Human,3.304,3.345,-0.041,8280
+Age_Group,18-25,N,Emotional Stability,Human,Human,2.861,2.903,-0.042,8280
+Age_Group,18-25,O,Openness,Human,Human,3.866,3.911,-0.045,8280
+Age_Group,26-34,E,Extroversion,Human,Human,3.059,3.012,0.047,3226
+Age_Group,26-34,A,Agreeableness,Human,Human,3.895,3.844,0.051,3226
+Age_Group,26-34,C,Conscientiousness,Human,Human,3.44,3.345,0.095,3226
+Age_Group,26-34,N,Emotional Stability,Human,Human,2.951,2.903,0.048,3226
+Age_Group,26-34,O,Openness,Human,Human,3.975,3.911,0.064,3226
+Age_Group,35-50,E,Extroversion,Human,Human,3.146,3.012,0.134,2618
+Age_Group,35-50,A,Agreeableness,Human,Human,3.992,3.844,0.148,2618
+Age_Group,35-50,C,Conscientiousness,Human,Human,3.581,3.345,0.236,2618
+Age_Group,35-50,N,Emotional Stability,Human,Human,3.085,2.903,0.182,2618
+Age_Group,35-50,O,Openness,Human,Human,4.004,3.911,0.093,2618
+Age_Group,50+,E,Extroversion,Human,Human,3.22,3.012,0.208,1065
+Age_Group,50+,A,Agreeableness,Human,Human,4.116,3.844,0.272,1065
+Age_Group,50+,C,Conscientiousness,Human,Human,3.659,3.345,0.314,1065
+Age_Group,50+,N,Emotional Stability,Human,Human,3.266,2.903,0.363,1065
+Age_Group,50+,O,Openness,Human,Human,3.99,3.911,0.079,1065
+Age_Group,<18,E,Extroversion,Human,Human,2.902,3.012,-0.11,3850
+Age_Group,<18,A,Agreeableness,Human,Human,3.674,3.844,-0.17,3850
+Age_Group,<18,C,Conscientiousness,Human,Human,3.106,3.345,-0.239,3850
+Age_Group,<18,N,Emotional Stability,Human,Human,2.732,2.903,-0.171,3850
+Age_Group,<18,O,Openness,Human,Human,3.87,3.911,-0.041,3850
+Age_Group,18-25,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.993,2.979,0.014,8541
+Age_Group,18-25,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.104,4.113,-0.009,8541
+Age_Group,18-25,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.386,3.424,-0.038,8541
+Age_Group,18-25,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.225,3.24,-0.015,8541
+Age_Group,18-25,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.704,3.71,-0.006,8541
+Age_Group,26-34,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.074,2.979,0.095,3308
+Age_Group,26-34,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.129,4.113,0.016,3308
+Age_Group,26-34,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.548,3.424,0.124,3308
+Age_Group,26-34,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.277,3.24,0.037,3308
+Age_Group,26-34,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.761,3.71,0.051,3308
+Age_Group,35-50,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.04,2.979,0.061,2687
+Age_Group,35-50,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.131,4.113,0.018,2687
+Age_Group,35-50,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.596,3.424,0.172,2687
+Age_Group,35-50,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.309,3.24,0.069,2687
+Age_Group,35-50,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.771,3.71,0.061,2687
+Age_Group,50+,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.894,2.979,-0.085,1108
+Age_Group,50+,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.146,4.113,0.033,1108
+Age_Group,50+,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.605,3.424,0.181,1108
+Age_Group,50+,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.394,3.24,0.154,1108
+Age_Group,50+,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.735,3.71,0.025,1108
+Age_Group,<18,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.856,2.979,-0.123,4076
+Age_Group,<18,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.097,4.113,-0.016,4076
+Age_Group,<18,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.24,3.424,-0.184,4076
+Age_Group,<18,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.154,3.24,-0.086,4076
+Age_Group,<18,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.631,3.71,-0.079,4076
+Age_Group,18-25,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.292,3.302,-0.01,8541
+Age_Group,18-25,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.151,4.149,0.002,8541
+Age_Group,18-25,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.471,3.497,-0.026,8541
+Age_Group,18-25,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.187,3.216,-0.029,8541
+Age_Group,18-25,O,Openness,AI_GPT4o_NLP,GPT NLP,3.811,3.793,0.018,8541
+Age_Group,26-34,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.452,3.302,0.15,3308
+Age_Group,26-34,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.186,4.149,0.037,3308
+Age_Group,26-34,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.603,3.497,0.106,3308
+Age_Group,26-34,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.256,3.216,0.04,3308
+Age_Group,26-34,O,Openness,AI_GPT4o_NLP,GPT NLP,3.845,3.793,0.052,3308
+Age_Group,35-50,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.358,3.302,0.056,2687
+Age_Group,35-50,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.229,4.149,0.08,2687
+Age_Group,35-50,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.713,3.497,0.216,2687
+Age_Group,35-50,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.322,3.216,0.106,2687
+Age_Group,35-50,O,Openness,AI_GPT4o_NLP,GPT NLP,3.775,3.793,-0.018,2687
+Age_Group,50+,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.24,3.302,-0.062,1108
+Age_Group,50+,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.262,4.149,0.113,1108
+Age_Group,50+,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.823,3.497,0.326,1108
+Age_Group,50+,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.554,3.216,0.338,1108
+Age_Group,50+,O,Openness,AI_GPT4o_NLP,GPT NLP,3.68,3.793,-0.113,1108
+Age_Group,<18,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.182,3.302,-0.12,4076
+Age_Group,<18,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.03,4.149,-0.119,4076
+Age_Group,<18,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.236,3.497,-0.261,4076
+Age_Group,<18,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.083,3.216,-0.133,4076
+Age_Group,<18,O,Openness,AI_GPT4o_NLP,GPT NLP,3.755,3.793,-0.038,4076
+Age_Group,18-25,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.2,3.203,-0.003,539
+Age_Group,18-25,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.38,3.387,-0.007,539
+Age_Group,18-25,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.309,3.288,0.021,539
+Age_Group,18-25,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.041,3.041,0.0,539
+Age_Group,18-25,O,Openness,AI_Qwen_NLP,Qwen NLP,3.421,3.415,0.006,539
+Age_Group,26-34,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.232,3.203,0.029,211
+Age_Group,26-34,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.413,3.387,0.026,211
+Age_Group,26-34,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.37,3.288,0.082,211
+Age_Group,26-34,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.064,3.041,0.023,211
+Age_Group,26-34,O,Openness,AI_Qwen_NLP,Qwen NLP,3.42,3.415,0.005,211
+Age_Group,35-50,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.18,3.203,-0.023,158
+Age_Group,35-50,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.402,3.387,0.015,158
+Age_Group,35-50,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.322,3.288,0.034,158
+Age_Group,35-50,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.072,3.041,0.031,158
+Age_Group,35-50,O,Openness,AI_Qwen_NLP,Qwen NLP,3.431,3.415,0.016,158
+Age_Group,50+,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.147,3.203,-0.056,60
+Age_Group,50+,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.315,3.387,-0.072,60
+Age_Group,50+,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.2,3.288,-0.088,60
+Age_Group,50+,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.087,3.041,0.046,60
+Age_Group,50+,O,Openness,AI_Qwen_NLP,Qwen NLP,3.37,3.415,-0.045,60
+Age_Group,<18,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.211,3.203,0.008,232
+Age_Group,<18,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.387,3.387,0.0,232
+Age_Group,<18,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.162,3.288,-0.126,232
+Age_Group,<18,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,2.988,3.041,-0.053,232
+Age_Group,<18,O,Openness,AI_Qwen_NLP,Qwen NLP,3.397,3.415,-0.018,232
+Race,Caucasian (European),E,Extroversion,Human,Human,3.017,3.012,0.005,10320
+Race,Caucasian (European),A,Agreeableness,Human,Human,3.854,3.844,0.01,10320
+Race,Caucasian (European),C,Conscientiousness,Human,Human,3.328,3.345,-0.017,10320
+Race,Caucasian (European),N,Emotional Stability,Human,Human,2.93,2.903,0.027,10320
+Race,Caucasian (European),O,Openness,Human,Human,4.026,3.911,0.115,10320
+Race,Caucasian (Indian),E,Extroversion,Human,Human,3.018,3.012,0.006,1455
+Race,Caucasian (Indian),A,Agreeableness,Human,Human,3.851,3.844,0.007,1455
+Race,Caucasian (Indian),C,Conscientiousness,Human,Human,3.322,3.345,-0.023,1455
+Race,Caucasian (Indian),N,Emotional Stability,Human,Human,2.782,2.903,-0.121,1455
+Race,Caucasian (Indian),O,Openness,Human,Human,3.716,3.911,-0.195,1455
+Race,Caucasian (Middle East),E,Extroversion,Human,Human,3.087,3.012,0.075,497
+Race,Caucasian (Middle East),A,Agreeableness,Human,Human,3.842,3.844,-0.002,497
+Race,Caucasian (Middle East),C,Conscientiousness,Human,Human,3.371,3.345,0.026,497
+Race,Caucasian (Middle East),N,Emotional Stability,Human,Human,2.827,2.903,-0.076,497
+Race,Caucasian (Middle East),O,Openness,Human,Human,3.806,3.911,-0.105,497
+Race,Caucasian (North African),E,Extroversion,Human,Human,3.014,3.012,0.002,391
+Race,Caucasian (North African),A,Agreeableness,Human,Human,3.837,3.844,-0.007,391
+Race,Caucasian (North African),C,Conscientiousness,Human,Human,3.333,3.345,-0.012,391
+Race,Caucasian (North African),N,Emotional Stability,Human,Human,2.926,2.903,0.023,391
+Race,Caucasian (North African),O,Openness,Human,Human,3.85,3.911,-0.061,391
+Race,Mixed Race,E,Extroversion,Human,Human,3.007,3.012,-0.005,1396
+Race,Mixed Race,A,Agreeableness,Human,Human,3.81,3.844,-0.034,1396
+Race,Mixed Race,C,Conscientiousness,Human,Human,3.3,3.345,-0.045,1396
+Race,Mixed Race,N,Emotional Stability,Human,Human,2.906,2.903,0.003,1396
+Race,Mixed Race,O,Openness,Human,Human,3.96,3.911,0.049,1396
+Race,Native American,E,Extroversion,Human,Human,3.019,3.012,0.007,200
+Race,Native American,A,Agreeableness,Human,Human,3.824,3.844,-0.02,200
+Race,Native American,C,Conscientiousness,Human,Human,3.474,3.345,0.129,200
+Race,Native American,N,Emotional Stability,Human,Human,3.03,2.903,0.127,200
+Race,Native American,O,Openness,Human,Human,3.698,3.911,-0.213,200
+Race,North East Asian,E,Extroversion,Human,Human,2.95,3.012,-0.062,185
+Race,North East Asian,A,Agreeableness,Human,Human,3.68,3.844,-0.164,185
+Race,North East Asian,C,Conscientiousness,Human,Human,3.252,3.345,-0.093,185
+Race,North East Asian,N,Emotional Stability,Human,Human,2.799,2.903,-0.104,185
+Race,North East Asian,O,Openness,Human,Human,3.745,3.911,-0.166,185
+Race,Other,E,Extroversion,Human,Human,3.073,3.012,0.061,2478
+Race,Other,A,Agreeableness,Human,Human,3.896,3.844,0.052,2478
+Race,Other,C,Conscientiousness,Human,Human,3.431,3.345,0.086,2478
+Race,Other,N,Emotional Stability,Human,Human,2.908,2.903,0.005,2478
+Race,Other,O,Openness,Human,Human,3.726,3.911,-0.185,2478
+Race,Pacific Islander,E,Extroversion,Human,Human,3.068,3.012,0.056,65
+Race,Pacific Islander,A,Agreeableness,Human,Human,3.822,3.844,-0.022,65
+Race,Pacific Islander,C,Conscientiousness,Human,Human,3.297,3.345,-0.048,65
+Race,Pacific Islander,N,Emotional Stability,Human,Human,3.071,2.903,0.168,65
+Race,Pacific Islander,O,Openness,Human,Human,3.788,3.911,-0.123,65
+Race,South East Asian,E,Extroversion,Human,Human,2.857,3.012,-0.155,1764
+Race,South East Asian,A,Agreeableness,Human,Human,3.747,3.844,-0.097,1764
+Race,South East Asian,C,Conscientiousness,Human,Human,3.354,3.345,0.009,1764
+Race,South East Asian,N,Emotional Stability,Human,Human,2.8,2.903,-0.103,1764
+Race,South East Asian,O,Openness,Human,Human,3.708,3.911,-0.203,1764
+Race,West African,E,Extroversion,Human,Human,3.098,3.012,0.086,251
+Race,West African,A,Agreeableness,Human,Human,3.974,3.844,0.13,251
+Race,West African,C,Conscientiousness,Human,Human,3.465,3.345,0.12,251
+Race,West African,N,Emotional Stability,Human,Human,3.185,2.903,0.282,251
+Race,West African,O,Openness,Human,Human,3.925,3.911,0.014,251
+Race,Caucasian (European),E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.959,2.979,-0.02,10537
+Race,Caucasian (European),A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.11,4.113,-0.003,10537
+Race,Caucasian (European),C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.436,3.424,0.012,10537
+Race,Caucasian (European),N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.257,3.24,0.017,10537
+Race,Caucasian (European),O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.712,3.71,0.002,10537
+Race,Caucasian (Indian),E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.003,2.979,0.024,1542
+Race,Caucasian (Indian),A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.083,4.113,-0.03,1542
+Race,Caucasian (Indian),C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.439,3.424,0.015,1542
+Race,Caucasian (Indian),N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.182,3.24,-0.058,1542
+Race,Caucasian (Indian),O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.713,3.71,0.003,1542
+Race,Caucasian (Middle East),E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.956,2.979,-0.023,507
+Race,Caucasian (Middle East),A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.11,4.113,-0.003,507
+Race,Caucasian (Middle East),C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.433,3.424,0.009,507
+Race,Caucasian (Middle East),N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.186,3.24,-0.054,507
+Race,Caucasian (Middle East),O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.708,3.71,-0.002,507
+Race,Caucasian (North African),E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.013,2.979,0.034,443
+Race,Caucasian (North African),A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.107,4.113,-0.006,443
+Race,Caucasian (North African),C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.442,3.424,0.018,443
+Race,Caucasian (North African),N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.199,3.24,-0.041,443
+Race,Caucasian (North African),O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.709,3.71,-0.001,443
+Race,Mixed Race,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.13,2.979,0.151,1415
+Race,Mixed Race,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.154,4.113,0.041,1415
+Race,Mixed Race,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.366,3.424,-0.058,1415
+Race,Mixed Race,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.224,3.24,-0.016,1415
+Race,Mixed Race,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.721,3.71,0.011,1415
+Race,Native American,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.886,2.979,-0.093,210
+Race,Native American,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.155,4.113,0.042,210
+Race,Native American,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.413,3.424,-0.011,210
+Race,Native American,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.241,3.24,0.001,210
+Race,Native American,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.714,3.71,0.004,210
+Race,North East Asian,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.806,2.979,-0.173,175
+Race,North East Asian,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.09,4.113,-0.023,175
+Race,North East Asian,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.462,3.424,0.038,175
+Race,North East Asian,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.218,3.24,-0.022,175
+Race,North East Asian,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.697,3.71,-0.013,175
+Race,Other,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.018,2.979,0.039,2628
+Race,Other,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.101,4.113,-0.012,2628
+Race,Other,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.405,3.424,-0.019,2628
+Race,Other,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.24,3.24,0.0,2628
+Race,Other,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.715,3.71,0.005,2628
+Race,Pacific Islander,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.096,2.979,0.117,73
+Race,Pacific Islander,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.173,4.113,0.06,73
+Race,Pacific Islander,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.368,3.424,-0.056,73
+Race,Pacific Islander,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.256,3.24,0.016,73
+Race,Pacific Islander,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.686,3.71,-0.024,73
+Race,South East Asian,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.891,2.979,-0.088,1882
+Race,South East Asian,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.129,4.113,0.016,1882
+Race,South East Asian,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.4,3.424,-0.024,1882
+Race,South East Asian,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.229,3.24,-0.011,1882
+Race,South East Asian,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.677,3.71,-0.033,1882
+Race,West African,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.203,2.979,0.224,275
+Race,West African,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.16,4.113,0.047,275
+Race,West African,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.457,3.424,0.033,275
+Race,West African,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.23,3.24,-0.01,275
+Race,West African,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.737,3.71,0.027,275
+Race,Caucasian (European),E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.245,3.302,-0.057,10537
+Race,Caucasian (European),A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.132,4.149,-0.017,10537
+Race,Caucasian (European),C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.518,3.497,0.021,10537
+Race,Caucasian (European),N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.287,3.216,0.071,10537
+Race,Caucasian (European),O,Openness,AI_GPT4o_NLP,GPT NLP,3.737,3.793,-0.056,10537
+Race,Caucasian (Indian),E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.311,3.302,0.009,1542
+Race,Caucasian (Indian),A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.079,4.149,-0.07,1542
+Race,Caucasian (Indian),C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.453,3.497,-0.044,1542
+Race,Caucasian (Indian),N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.113,3.216,-0.103,1542
+Race,Caucasian (Indian),O,Openness,AI_GPT4o_NLP,GPT NLP,3.817,3.793,0.024,1542
+Race,Caucasian (Middle East),E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.327,3.302,0.025,507
+Race,Caucasian (Middle East),A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.135,4.149,-0.014,507
+Race,Caucasian (Middle East),C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.45,3.497,-0.047,507
+Race,Caucasian (Middle East),N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.095,3.216,-0.121,507
+Race,Caucasian (Middle East),O,Openness,AI_GPT4o_NLP,GPT NLP,3.869,3.793,0.076,507
+Race,Caucasian (North African),E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.331,3.302,0.029,443
+Race,Caucasian (North African),A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.146,4.149,-0.003,443
+Race,Caucasian (North African),C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.479,3.497,-0.018,443
+Race,Caucasian (North African),N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.137,3.216,-0.079,443
+Race,Caucasian (North African),O,Openness,AI_GPT4o_NLP,GPT NLP,3.857,3.793,0.064,443
+Race,Mixed Race,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.508,3.302,0.206,1415
+Race,Mixed Race,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.238,4.149,0.089,1415
+Race,Mixed Race,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.421,3.497,-0.076,1415
+Race,Mixed Race,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.107,3.216,-0.109,1415
+Race,Mixed Race,O,Openness,AI_GPT4o_NLP,GPT NLP,3.905,3.793,0.112,1415
+Race,Native American,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.218,3.302,-0.084,210
+Race,Native American,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.237,4.149,0.088,210
+Race,Native American,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.595,3.497,0.098,210
+Race,Native American,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.25,3.216,0.034,210
+Race,Native American,O,Openness,AI_GPT4o_NLP,GPT NLP,3.928,3.793,0.135,210
+Race,North East Asian,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.217,3.302,-0.085,175
+Race,North East Asian,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.056,4.149,-0.093,175
+Race,North East Asian,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.489,3.497,-0.008,175
+Race,North East Asian,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.101,3.216,-0.115,175
+Race,North East Asian,O,Openness,AI_GPT4o_NLP,GPT NLP,3.814,3.793,0.021,175
+Race,Other,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.379,3.302,0.077,2628
+Race,Other,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.187,4.149,0.038,2628
+Race,Other,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.477,3.497,-0.02,2628
+Race,Other,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.159,3.216,-0.057,2628
+Race,Other,O,Openness,AI_GPT4o_NLP,GPT NLP,3.874,3.793,0.081,2628
+Race,Pacific Islander,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.46,3.302,0.158,73
+Race,Pacific Islander,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.247,4.149,0.098,73
+Race,Pacific Islander,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.5,3.497,0.003,73
+Race,Pacific Islander,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.282,3.216,0.066,73
+Race,Pacific Islander,O,Openness,AI_GPT4o_NLP,GPT NLP,3.838,3.793,0.045,73
+Race,South East Asian,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.332,3.302,0.03,1882
+Race,South East Asian,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.167,4.149,0.018,1882
+Race,South East Asian,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.504,3.497,0.007,1882
+Race,South East Asian,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.126,3.216,-0.09,1882
+Race,South East Asian,O,Openness,AI_GPT4o_NLP,GPT NLP,3.817,3.793,0.024,1882
+Race,West African,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.451,3.302,0.149,275
+Race,West African,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.219,4.149,0.07,275
+Race,West African,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.535,3.497,0.038,275
+Race,West African,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.165,3.216,-0.051,275
+Race,West African,O,Openness,AI_GPT4o_NLP,GPT NLP,3.889,3.793,0.096,275
+Race,Caucasian (European),E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.164,3.203,-0.039,634
+Race,Caucasian (European),A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.378,3.387,-0.009,634
+Race,Caucasian (European),C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.266,3.288,-0.022,634
+Race,Caucasian (European),N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.045,3.041,0.004,634
+Race,Caucasian (European),O,Openness,AI_Qwen_NLP,Qwen NLP,3.41,3.415,-0.005,634
+Race,Caucasian (Indian),E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.246,3.203,0.043,82
+Race,Caucasian (Indian),A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.39,3.387,0.003,82
+Race,Caucasian (Indian),C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.351,3.288,0.063,82
+Race,Caucasian (Indian),N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.05,3.041,0.009,82
+Race,Caucasian (Indian),O,Openness,AI_Qwen_NLP,Qwen NLP,3.44,3.415,0.025,82
+Race,Caucasian (North African),E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.194,3.203,-0.009,35
+Race,Caucasian (North African),A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.391,3.387,0.004,35
+Race,Caucasian (North African),C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.226,3.288,-0.062,35
+Race,Caucasian (North African),N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.029,3.041,-0.012,35
+Race,Caucasian (North African),O,Openness,AI_Qwen_NLP,Qwen NLP,3.38,3.415,-0.035,35
+Race,Mixed Race,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.27,3.203,0.067,102
+Race,Mixed Race,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.394,3.387,0.007,102
+Race,Mixed Race,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.292,3.288,0.004,102
+Race,Mixed Race,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.013,3.041,-0.028,102
+Race,Mixed Race,O,Openness,AI_Qwen_NLP,Qwen NLP,3.392,3.415,-0.023,102
+Race,Other,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.245,3.203,0.042,168
+Race,Other,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.399,3.387,0.012,168
+Race,Other,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.296,3.288,0.008,168
+Race,Other,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.029,3.041,-0.012,168
+Race,Other,O,Openness,AI_Qwen_NLP,Qwen NLP,3.428,3.415,0.013,168
+Race,South East Asian,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.253,3.203,0.05,131
+Race,South East Asian,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.402,3.387,0.015,131
+Race,South East Asian,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.327,3.288,0.039,131
+Race,South East Asian,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.057,3.041,0.016,131
+Race,South East Asian,O,Openness,AI_Qwen_NLP,Qwen NLP,3.431,3.415,0.016,131
+Country,Argentina,E,Extroversion,Human,Human,2.963,3.012,-0.049,41
+Country,Argentina,A,Agreeableness,Human,Human,3.71,3.844,-0.134,41
+Country,Argentina,C,Conscientiousness,Human,Human,2.932,3.345,-0.413,41
+Country,Argentina,N,Emotional Stability,Human,Human,2.717,2.903,-0.186,41
+Country,Argentina,O,Openness,Human,Human,4.117,3.911,0.206,41
+Country,Australia,E,Extroversion,Human,Human,3.089,3.012,0.077,963
+Country,Australia,A,Agreeableness,Human,Human,3.856,3.844,0.012,963
+Country,Australia,C,Conscientiousness,Human,Human,3.23,3.345,-0.115,963
+Country,Australia,N,Emotional Stability,Human,Human,2.919,2.903,0.016,963
+Country,Australia,O,Openness,Human,Human,3.918,3.911,0.007,963
+Country,Bangladesh,E,Extroversion,Human,Human,2.781,3.012,-0.231,42
+Country,Bangladesh,A,Agreeableness,Human,Human,3.69,3.844,-0.154,42
+Country,Bangladesh,C,Conscientiousness,Human,Human,3.188,3.345,-0.157,42
+Country,Bangladesh,N,Emotional Stability,Human,Human,2.917,2.903,0.014,42
+Country,Bangladesh,O,Openness,Human,Human,3.448,3.911,-0.463,42
+Country,Belgium,E,Extroversion,Human,Human,3.331,3.012,0.319,86
+Country,Belgium,A,Agreeableness,Human,Human,4.069,3.844,0.225,86
+Country,Belgium,C,Conscientiousness,Human,Human,3.376,3.345,0.031,86
+Country,Belgium,N,Emotional Stability,Human,Human,3.159,2.903,0.256,86
+Country,Belgium,O,Openness,Human,Human,4.012,3.911,0.101,86
+Country,Brazil,E,Extroversion,Human,Human,2.595,3.012,-0.417,174
+Country,Brazil,A,Agreeableness,Human,Human,3.486,3.844,-0.358,174
+Country,Brazil,C,Conscientiousness,Human,Human,3.018,3.345,-0.327,174
+Country,Brazil,N,Emotional Stability,Human,Human,2.655,2.903,-0.248,174
+Country,Brazil,O,Openness,Human,Human,4.072,3.911,0.161,174
+Country,Bulgaria,E,Extroversion,Human,Human,2.74,3.012,-0.272,40
+Country,Bulgaria,A,Agreeableness,Human,Human,3.47,3.844,-0.374,40
+Country,Bulgaria,C,Conscientiousness,Human,Human,3.122,3.345,-0.223,40
+Country,Bulgaria,N,Emotional Stability,Human,Human,2.86,2.903,-0.043,40
+Country,Bulgaria,O,Openness,Human,Human,3.975,3.911,0.064,40
+Country,Canada,E,Extroversion,Human,Human,3.022,3.012,0.01,911
+Country,Canada,A,Agreeableness,Human,Human,3.864,3.844,0.02,911
+Country,Canada,C,Conscientiousness,Human,Human,3.337,3.345,-0.008,911
+Country,Canada,N,Emotional Stability,Human,Human,2.976,2.903,0.073,911
+Country,Canada,O,Openness,Human,Human,3.973,3.911,0.062,911
+Country,China,E,Extroversion,Human,Human,2.905,3.012,-0.107,39
+Country,China,A,Agreeableness,Human,Human,3.751,3.844,-0.093,39
+Country,China,C,Conscientiousness,Human,Human,3.446,3.345,0.101,39
+Country,China,N,Emotional Stability,Human,Human,3.051,2.903,0.148,39
+Country,China,O,Openness,Human,Human,3.831,3.911,-0.08,39
+Country,Croatia,E,Extroversion,Human,Human,2.85,3.012,-0.162,40
+Country,Croatia,A,Agreeableness,Human,Human,3.712,3.844,-0.132,40
+Country,Croatia,C,Conscientiousness,Human,Human,3.31,3.345,-0.035,40
+Country,Croatia,N,Emotional Stability,Human,Human,2.858,2.903,-0.045,40
+Country,Croatia,O,Openness,Human,Human,3.998,3.911,0.087,40
+Country,Denmark,E,Extroversion,Human,Human,3.327,3.012,0.315,122
+Country,Denmark,A,Agreeableness,Human,Human,3.939,3.844,0.095,122
+Country,Denmark,C,Conscientiousness,Human,Human,3.294,3.345,-0.051,122
+Country,Denmark,N,Emotional Stability,Human,Human,3.236,2.903,0.333,122
+Country,Denmark,O,Openness,Human,Human,4.097,3.911,0.186,122
+Country,Egypt,E,Extroversion,Human,Human,2.86,3.012,-0.152,47
+Country,Egypt,A,Agreeableness,Human,Human,3.723,3.844,-0.121,47
+Country,Egypt,C,Conscientiousness,Human,Human,3.255,3.345,-0.09,47
+Country,Egypt,N,Emotional Stability,Human,Human,2.689,2.903,-0.214,47
+Country,Egypt,O,Openness,Human,Human,3.757,3.911,-0.154,47
+Country,Finland,E,Extroversion,Human,Human,2.938,3.012,-0.074,89
+Country,Finland,A,Agreeableness,Human,Human,3.603,3.844,-0.241,89
+Country,Finland,C,Conscientiousness,Human,Human,3.189,3.345,-0.156,89
+Country,Finland,N,Emotional Stability,Human,Human,2.79,2.903,-0.113,89
+Country,Finland,O,Openness,Human,Human,3.966,3.911,0.055,89
+Country,France,E,Extroversion,Human,Human,2.938,3.012,-0.074,128
+Country,France,A,Agreeableness,Human,Human,3.605,3.844,-0.239,128
+Country,France,C,Conscientiousness,Human,Human,3.15,3.345,-0.195,128
+Country,France,N,Emotional Stability,Human,Human,2.791,2.903,-0.112,128
+Country,France,O,Openness,Human,Human,4.01,3.911,0.099,128
+Country,Germany,E,Extroversion,Human,Human,2.968,3.012,-0.044,188
+Country,Germany,A,Agreeableness,Human,Human,3.685,3.844,-0.159,188
+Country,Germany,C,Conscientiousness,Human,Human,3.201,3.345,-0.144,188
+Country,Germany,N,Emotional Stability,Human,Human,3.027,2.903,0.124,188
+Country,Germany,O,Openness,Human,Human,4.114,3.911,0.203,188
+Country,Greece,E,Extroversion,Human,Human,2.92,3.012,-0.092,85
+Country,Greece,A,Agreeableness,Human,Human,3.827,3.844,-0.017,85
+Country,Greece,C,Conscientiousness,Human,Human,3.375,3.345,0.03,85
+Country,Greece,N,Emotional Stability,Human,Human,2.704,2.903,-0.199,85
+Country,Greece,O,Openness,Human,Human,3.985,3.911,0.074,85
+Country,Hong Kong,E,Extroversion,Human,Human,2.978,3.012,-0.034,41
+Country,Hong Kong,A,Agreeableness,Human,Human,3.737,3.844,-0.107,41
+Country,Hong Kong,C,Conscientiousness,Human,Human,3.412,3.345,0.067,41
+Country,Hong Kong,N,Emotional Stability,Human,Human,2.724,2.903,-0.179,41
+Country,Hong Kong,O,Openness,Human,Human,3.72,3.911,-0.191,41
+Country,Hungary,E,Extroversion,Human,Human,2.832,3.012,-0.18,34
+Country,Hungary,A,Agreeableness,Human,Human,3.479,3.844,-0.365,34
+Country,Hungary,C,Conscientiousness,Human,Human,3.171,3.345,-0.174,34
+Country,Hungary,N,Emotional Stability,Human,Human,2.829,2.903,-0.074,34
+Country,Hungary,O,Openness,Human,Human,4.009,3.911,0.098,34
+Country,India,E,Extroversion,Human,Human,3.025,3.012,0.013,1450
+Country,India,A,Agreeableness,Human,Human,3.844,3.844,0.0,1450
+Country,India,C,Conscientiousness,Human,Human,3.315,3.345,-0.03,1450
+Country,India,N,Emotional Stability,Human,Human,2.765,2.903,-0.138,1450
+Country,India,O,Openness,Human,Human,3.71,3.911,-0.201,1450
+Country,Indonesia,E,Extroversion,Human,Human,2.911,3.012,-0.101,167
+Country,Indonesia,A,Agreeableness,Human,Human,3.649,3.844,-0.195,167
+Country,Indonesia,C,Conscientiousness,Human,Human,3.433,3.345,0.088,167
+Country,Indonesia,N,Emotional Stability,Human,Human,2.846,2.903,-0.057,167
+Country,Indonesia,O,Openness,Human,Human,3.696,3.911,-0.215,167
+Country,Ireland,E,Extroversion,Human,Human,3.18,3.012,0.168,107
+Country,Ireland,A,Agreeableness,Human,Human,3.99,3.844,0.146,107
+Country,Ireland,C,Conscientiousness,Human,Human,3.329,3.345,-0.016,107
+Country,Ireland,N,Emotional Stability,Human,Human,2.959,2.903,0.056,107
+Country,Ireland,O,Openness,Human,Human,3.918,3.911,0.007,107
+Country,Italy,E,Extroversion,Human,Human,2.927,3.012,-0.085,274
+Country,Italy,A,Agreeableness,Human,Human,3.759,3.844,-0.085,274
+Country,Italy,C,Conscientiousness,Human,Human,3.236,3.345,-0.109,274
+Country,Italy,N,Emotional Stability,Human,Human,2.877,2.903,-0.026,274
+Country,Italy,O,Openness,Human,Human,4.01,3.911,0.099,274
+Country,Japan,E,Extroversion,Human,Human,2.841,3.012,-0.171,37
+Country,Japan,A,Agreeableness,Human,Human,3.616,3.844,-0.228,37
+Country,Japan,C,Conscientiousness,Human,Human,3.192,3.345,-0.153,37
+Country,Japan,N,Emotional Stability,Human,Human,2.878,2.903,-0.025,37
+Country,Japan,O,Openness,Human,Human,3.941,3.911,0.03,37
+Country,Kenya,E,Extroversion,Human,Human,2.828,3.012,-0.184,43
+Country,Kenya,A,Agreeableness,Human,Human,4.021,3.844,0.177,43
+Country,Kenya,C,Conscientiousness,Human,Human,3.663,3.345,0.318,43
+Country,Kenya,N,Emotional Stability,Human,Human,3.049,2.903,0.146,43
+Country,Kenya,O,Openness,Human,Human,3.774,3.911,-0.137,43
+Country,Lebanon,E,Extroversion,Human,Human,3.202,3.012,0.19,40
+Country,Lebanon,A,Agreeableness,Human,Human,3.972,3.844,0.128,40
+Country,Lebanon,C,Conscientiousness,Human,Human,3.61,3.345,0.265,40
+Country,Lebanon,N,Emotional Stability,Human,Human,3.095,2.903,0.192,40
+Country,Lebanon,O,Openness,Human,Human,3.93,3.911,0.019,40
+Country,Malaysia,E,Extroversion,Human,Human,2.881,3.012,-0.131,241
+Country,Malaysia,A,Agreeableness,Human,Human,3.717,3.844,-0.127,241
+Country,Malaysia,C,Conscientiousness,Human,Human,3.286,3.345,-0.059,241
+Country,Malaysia,N,Emotional Stability,Human,Human,2.907,2.903,0.004,241
+Country,Malaysia,O,Openness,Human,Human,3.512,3.911,-0.399,241
+Country,Mexico,E,Extroversion,Human,Human,2.838,3.012,-0.174,82
+Country,Mexico,A,Agreeableness,Human,Human,3.522,3.844,-0.322,82
+Country,Mexico,C,Conscientiousness,Human,Human,3.279,3.345,-0.066,82
+Country,Mexico,N,Emotional Stability,Human,Human,2.862,2.903,-0.041,82
+Country,Mexico,O,Openness,Human,Human,4.055,3.911,0.144,82
+Country,"Netherlands, Kingdom of the",E,Extroversion,Human,Human,3.149,3.012,0.137,132
+Country,"Netherlands, Kingdom of the",A,Agreeableness,Human,Human,3.861,3.844,0.017,132
+Country,"Netherlands, Kingdom of the",C,Conscientiousness,Human,Human,3.342,3.345,-0.003,132
+Country,"Netherlands, Kingdom of the",N,Emotional Stability,Human,Human,3.072,2.903,0.169,132
+Country,"Netherlands, Kingdom of the",O,Openness,Human,Human,4.063,3.911,0.152,132
+Country,New Zealand,E,Extroversion,Human,Human,3.032,3.012,0.02,154
+Country,New Zealand,A,Agreeableness,Human,Human,3.966,3.844,0.122,154
+Country,New Zealand,C,Conscientiousness,Human,Human,3.286,3.345,-0.059,154
+Country,New Zealand,N,Emotional Stability,Human,Human,2.99,2.903,0.087,154
+Country,New Zealand,O,Openness,Human,Human,3.953,3.911,0.042,154
+Country,Nigeria,E,Extroversion,Human,Human,3.217,3.012,0.205,35
+Country,Nigeria,A,Agreeableness,Human,Human,4.18,3.844,0.336,35
+Country,Nigeria,C,Conscientiousness,Human,Human,3.783,3.345,0.438,35
+Country,Nigeria,N,Emotional Stability,Human,Human,3.169,2.903,0.266,35
+Country,Nigeria,O,Openness,Human,Human,3.943,3.911,0.032,35
+Country,Norway,E,Extroversion,Human,Human,3.193,3.012,0.181,144
+Country,Norway,A,Agreeableness,Human,Human,3.894,3.844,0.05,144
+Country,Norway,C,Conscientiousness,Human,Human,3.29,3.345,-0.055,144
+Country,Norway,N,Emotional Stability,Human,Human,3.094,2.903,0.191,144
+Country,Norway,O,Openness,Human,Human,4.04,3.911,0.129,144
+Country,Pakistan,E,Extroversion,Human,Human,2.994,3.012,-0.018,217
+Country,Pakistan,A,Agreeableness,Human,Human,3.827,3.844,-0.017,217
+Country,Pakistan,C,Conscientiousness,Human,Human,3.308,3.345,-0.037,217
+Country,Pakistan,N,Emotional Stability,Human,Human,2.618,2.903,-0.285,217
+Country,Pakistan,O,Openness,Human,Human,3.516,3.911,-0.395,217
+Country,Philippines,E,Extroversion,Human,Human,2.807,3.012,-0.205,637
+Country,Philippines,A,Agreeableness,Human,Human,3.761,3.844,-0.083,637
+Country,Philippines,C,Conscientiousness,Human,Human,3.398,3.345,0.053,637
+Country,Philippines,N,Emotional Stability,Human,Human,2.723,2.903,-0.18,637
+Country,Philippines,O,Openness,Human,Human,3.721,3.911,-0.19,637
+Country,Poland,E,Extroversion,Human,Human,2.866,3.012,-0.146,79
+Country,Poland,A,Agreeableness,Human,Human,3.441,3.844,-0.403,79
+Country,Poland,C,Conscientiousness,Human,Human,3.034,3.345,-0.311,79
+Country,Poland,N,Emotional Stability,Human,Human,2.589,2.903,-0.314,79
+Country,Poland,O,Openness,Human,Human,4.186,3.911,0.275,79
+Country,Portugal,E,Extroversion,Human,Human,3.03,3.012,0.018,87
+Country,Portugal,A,Agreeableness,Human,Human,3.715,3.844,-0.129,87
+Country,Portugal,C,Conscientiousness,Human,Human,3.264,3.345,-0.081,87
+Country,Portugal,N,Emotional Stability,Human,Human,2.826,2.903,-0.077,87
+Country,Portugal,O,Openness,Human,Human,3.976,3.911,0.065,87
+Country,Romania,E,Extroversion,Human,Human,2.865,3.012,-0.147,135
+Country,Romania,A,Agreeableness,Human,Human,3.659,3.844,-0.185,135
+Country,Romania,C,Conscientiousness,Human,Human,3.314,3.345,-0.031,135
+Country,Romania,N,Emotional Stability,Human,Human,2.882,2.903,-0.021,135
+Country,Romania,O,Openness,Human,Human,3.999,3.911,0.088,135
+Country,Saudi Arabia,E,Extroversion,Human,Human,2.907,3.012,-0.105,43
+Country,Saudi Arabia,A,Agreeableness,Human,Human,3.909,3.844,0.065,43
+Country,Saudi Arabia,C,Conscientiousness,Human,Human,3.337,3.345,-0.008,43
+Country,Saudi Arabia,N,Emotional Stability,Human,Human,2.916,2.903,0.013,43
+Country,Saudi Arabia,O,Openness,Human,Human,3.891,3.911,-0.02,43
+Country,Serbia,E,Extroversion,Human,Human,3.206,3.012,0.194,85
+Country,Serbia,A,Agreeableness,Human,Human,3.579,3.844,-0.265,85
+Country,Serbia,C,Conscientiousness,Human,Human,3.292,3.345,-0.053,85
+Country,Serbia,N,Emotional Stability,Human,Human,2.816,2.903,-0.087,85
+Country,Serbia,O,Openness,Human,Human,4.107,3.911,0.196,85
+Country,Singapore,E,Extroversion,Human,Human,2.695,3.012,-0.317,133
+Country,Singapore,A,Agreeableness,Human,Human,3.75,3.844,-0.094,133
+Country,Singapore,C,Conscientiousness,Human,Human,3.235,3.345,-0.11,133
+Country,Singapore,N,Emotional Stability,Human,Human,2.808,2.903,-0.095,133
+Country,Singapore,O,Openness,Human,Human,3.784,3.911,-0.127,133
+Country,Slovenia,E,Extroversion,Human,Human,2.594,3.012,-0.418,34
+Country,Slovenia,A,Agreeableness,Human,Human,3.565,3.844,-0.279,34
+Country,Slovenia,C,Conscientiousness,Human,Human,3.335,3.345,-0.01,34
+Country,Slovenia,N,Emotional Stability,Human,Human,2.868,2.903,-0.035,34
+Country,Slovenia,O,Openness,Human,Human,4.003,3.911,0.092,34
+Country,South Africa,E,Extroversion,Human,Human,3.06,3.012,0.048,178
+Country,South Africa,A,Agreeableness,Human,Human,3.972,3.844,0.128,178
+Country,South Africa,C,Conscientiousness,Human,Human,3.47,3.345,0.125,178
+Country,South Africa,N,Emotional Stability,Human,Human,3.029,2.903,0.126,178
+Country,South Africa,O,Openness,Human,Human,4.038,3.911,0.127,178
+Country,Spain,E,Extroversion,Human,Human,2.868,3.012,-0.144,82
+Country,Spain,A,Agreeableness,Human,Human,3.712,3.844,-0.132,82
+Country,Spain,C,Conscientiousness,Human,Human,3.174,3.345,-0.171,82
+Country,Spain,N,Emotional Stability,Human,Human,2.963,2.903,0.06,82
+Country,Spain,O,Openness,Human,Human,4.067,3.911,0.156,82
+Country,Sri Lanka,E,Extroversion,Human,Human,3.194,3.012,0.182,31
+Country,Sri Lanka,A,Agreeableness,Human,Human,3.997,3.844,0.153,31
+Country,Sri Lanka,C,Conscientiousness,Human,Human,3.397,3.345,0.052,31
+Country,Sri Lanka,N,Emotional Stability,Human,Human,2.742,2.903,-0.161,31
+Country,Sri Lanka,O,Openness,Human,Human,3.945,3.911,0.034,31
+Country,Sweden,E,Extroversion,Human,Human,3.077,3.012,0.065,168
+Country,Sweden,A,Agreeableness,Human,Human,3.76,3.844,-0.084,168
+Country,Sweden,C,Conscientiousness,Human,Human,3.152,3.345,-0.193,168
+Country,Sweden,N,Emotional Stability,Human,Human,2.929,2.903,0.026,168
+Country,Sweden,O,Openness,Human,Human,3.98,3.911,0.069,168
+Country,Switzerland,E,Extroversion,Human,Human,3.152,3.012,0.14,40
+Country,Switzerland,A,Agreeableness,Human,Human,3.762,3.844,-0.082,40
+Country,Switzerland,C,Conscientiousness,Human,Human,3.02,3.345,-0.325,40
+Country,Switzerland,N,Emotional Stability,Human,Human,2.87,2.903,-0.033,40
+Country,Switzerland,O,Openness,Human,Human,4.262,3.911,0.351,40
+Country,Thailand,E,Extroversion,Human,Human,2.774,3.012,-0.238,42
+Country,Thailand,A,Agreeableness,Human,Human,3.69,3.844,-0.154,42
+Country,Thailand,C,Conscientiousness,Human,Human,3.24,3.345,-0.105,42
+Country,Thailand,N,Emotional Stability,Human,Human,2.874,2.903,-0.029,42
+Country,Thailand,O,Openness,Human,Human,3.638,3.911,-0.273,42
+Country,Türkiye,E,Extroversion,Human,Human,3.275,3.012,0.263,69
+Country,Türkiye,A,Agreeableness,Human,Human,3.867,3.844,0.023,69
+Country,Türkiye,C,Conscientiousness,Human,Human,3.341,3.345,-0.004,69
+Country,Türkiye,N,Emotional Stability,Human,Human,2.793,2.903,-0.11,69
+Country,Türkiye,O,Openness,Human,Human,4.007,3.911,0.096,69
+Country,United Arab Emirates,E,Extroversion,Human,Human,3.012,3.012,0.0,98
+Country,United Arab Emirates,A,Agreeableness,Human,Human,3.917,3.844,0.073,98
+Country,United Arab Emirates,C,Conscientiousness,Human,Human,3.39,3.345,0.045,98
+Country,United Arab Emirates,N,Emotional Stability,Human,Human,2.705,2.903,-0.198,98
+Country,United Arab Emirates,O,Openness,Human,Human,3.651,3.911,-0.26,98
+Country,United Kingdom of Great Britain and Northern Ireland,E,Extroversion,Human,Human,3.038,3.012,0.026,1512
+Country,United Kingdom of Great Britain and Northern Ireland,A,Agreeableness,Human,Human,3.773,3.844,-0.071,1512
+Country,United Kingdom of Great Britain and Northern Ireland,C,Conscientiousness,Human,Human,3.219,3.345,-0.126,1512
+Country,United Kingdom of Great Britain and Northern Ireland,N,Emotional Stability,Human,Human,2.751,2.903,-0.152,1512
+Country,United Kingdom of Great Britain and Northern Ireland,O,Openness,Human,Human,3.897,3.911,-0.014,1512
+Country,United States of America,E,Extroversion,Human,Human,3.038,3.012,0.026,8634
+Country,United States of America,A,Agreeableness,Human,Human,3.91,3.844,0.066,8634
+Country,United States of America,C,Conscientiousness,Human,Human,3.419,3.345,0.074,8634
+Country,United States of America,N,Emotional Stability,Human,Human,2.963,2.903,0.06,8634
+Country,United States of America,O,Openness,Human,Human,3.95,3.911,0.039,8634
+Country,Viet Nam,E,Extroversion,Human,Human,2.667,3.012,-0.345,30
+Country,Viet Nam,A,Agreeableness,Human,Human,3.55,3.844,-0.294,30
+Country,Viet Nam,C,Conscientiousness,Human,Human,3.19,3.345,-0.155,30
+Country,Viet Nam,N,Emotional Stability,Human,Human,2.91,2.903,0.007,30
+Country,Viet Nam,O,Openness,Human,Human,3.823,3.911,-0.088,30
+Country,Argentina,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.044,2.979,0.065,45
+Country,Argentina,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.144,4.113,0.031,45
+Country,Argentina,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.4,3.424,-0.024,45
+Country,Argentina,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.242,3.24,0.002,45
+Country,Argentina,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.731,3.71,0.021,45
+Country,Australia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.974,2.979,-0.005,1025
+Country,Australia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.109,4.113,-0.004,1025
+Country,Australia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.404,3.424,-0.02,1025
+Country,Australia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.252,3.24,0.012,1025
+Country,Australia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.708,3.71,-0.002,1025
+Country,Bangladesh,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.934,2.979,-0.045,41
+Country,Bangladesh,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.078,4.113,-0.035,41
+Country,Bangladesh,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.405,3.424,-0.019,41
+Country,Bangladesh,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.19,3.24,-0.05,41
+Country,Bangladesh,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.7,3.71,-0.01,41
+Country,Belgium,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.026,2.979,0.047,87
+Country,Belgium,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.128,4.113,0.015,87
+Country,Belgium,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.521,3.424,0.097,87
+Country,Belgium,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.302,3.24,0.062,87
+Country,Belgium,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.754,3.71,0.044,87
+Country,Brazil,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.054,2.979,0.075,194
+Country,Brazil,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.156,4.113,0.043,194
+Country,Brazil,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.376,3.424,-0.048,194
+Country,Brazil,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.244,3.24,0.004,194
+Country,Brazil,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.715,3.71,0.005,194
+Country,Bulgaria,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.995,2.979,0.016,39
+Country,Bulgaria,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.126,4.113,0.013,39
+Country,Bulgaria,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.446,3.424,0.022,39
+Country,Bulgaria,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.277,3.24,0.037,39
+Country,Bulgaria,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.759,3.71,0.049,39
+Country,Canada,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.939,2.979,-0.04,942
+Country,Canada,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.116,4.113,0.003,942
+Country,Canada,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.43,3.424,0.006,942
+Country,Canada,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.262,3.24,0.022,942
+Country,Canada,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.722,3.71,0.012,942
+Country,China,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.891,2.979,-0.088,44
+Country,China,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.155,4.113,0.042,44
+Country,China,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.534,3.424,0.11,44
+Country,China,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.28,3.24,0.04,44
+Country,China,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.732,3.71,0.022,44
+Country,Croatia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.063,2.979,0.084,43
+Country,Croatia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.14,4.113,0.027,43
+Country,Croatia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.5,3.424,0.076,43
+Country,Croatia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.298,3.24,0.058,43
+Country,Croatia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.74,3.71,0.03,43
+Country,Denmark,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.982,2.979,0.003,118
+Country,Denmark,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.125,4.113,0.012,118
+Country,Denmark,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.534,3.424,0.11,118
+Country,Denmark,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.312,3.24,0.072,118
+Country,Denmark,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.764,3.71,0.054,118
+Country,Egypt,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.032,2.979,0.053,50
+Country,Egypt,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.134,4.113,0.021,50
+Country,Egypt,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.51,3.424,0.086,50
+Country,Egypt,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.244,3.24,0.004,50
+Country,Egypt,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.722,3.71,0.012,50
+Country,Finland,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.775,2.979,-0.204,102
+Country,Finland,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.152,4.113,0.039,102
+Country,Finland,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.509,3.424,0.085,102
+Country,Finland,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.322,3.24,0.082,102
+Country,Finland,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.753,3.71,0.043,102
+Country,France,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.983,2.979,0.004,129
+Country,France,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.122,4.113,0.009,129
+Country,France,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.44,3.424,0.016,129
+Country,France,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.298,3.24,0.058,129
+Country,France,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.732,3.71,0.022,129
+Country,Germany,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.036,2.979,0.057,185
+Country,Germany,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.144,4.113,0.031,185
+Country,Germany,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.546,3.424,0.122,185
+Country,Germany,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.306,3.24,0.066,185
+Country,Germany,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.76,3.71,0.05,185
+Country,Greece,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.052,2.979,0.073,90
+Country,Greece,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.132,4.113,0.019,90
+Country,Greece,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.499,3.424,0.075,90
+Country,Greece,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.317,3.24,0.077,90
+Country,Greece,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.742,3.71,0.032,90
+Country,Hong Kong,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.877,2.979,-0.102,39
+Country,Hong Kong,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.103,4.113,-0.01,39
+Country,Hong Kong,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.423,3.424,-0.001,39
+Country,Hong Kong,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.2,3.24,-0.04,39
+Country,Hong Kong,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.695,3.71,-0.015,39
+Country,Hungary,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.988,2.979,0.009,42
+Country,Hungary,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.138,4.113,0.025,42
+Country,Hungary,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.45,3.424,0.026,42
+Country,Hungary,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.267,3.24,0.027,42
+Country,Hungary,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.724,3.71,0.014,42
+Country,India,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.01,2.979,0.031,1516
+Country,India,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.09,4.113,-0.023,1516
+Country,India,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.445,3.424,0.021,1516
+Country,India,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.204,3.24,-0.036,1516
+Country,India,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.722,3.71,0.012,1516
+Country,Indonesia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.825,2.979,-0.154,190
+Country,Indonesia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.151,4.113,0.038,190
+Country,Indonesia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.43,3.424,0.006,190
+Country,Indonesia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.264,3.24,0.024,190
+Country,Indonesia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.658,3.71,-0.052,190
+Country,Ireland,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.962,2.979,-0.017,106
+Country,Ireland,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.12,4.113,0.007,106
+Country,Ireland,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.412,3.424,-0.012,106
+Country,Ireland,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.27,3.24,0.03,106
+Country,Ireland,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.726,3.71,0.016,106
+Country,Italy,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.073,2.979,0.094,266
+Country,Italy,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.152,4.113,0.039,266
+Country,Italy,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.519,3.424,0.095,266
+Country,Italy,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.303,3.24,0.063,266
+Country,Italy,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.767,3.71,0.057,266
+Country,Jamaica,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.239,2.979,0.26,33
+Country,Jamaica,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.152,4.113,0.039,33
+Country,Jamaica,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.452,3.424,0.028,33
+Country,Jamaica,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.297,3.24,0.057,33
+Country,Jamaica,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.776,3.71,0.066,33
+Country,Japan,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.732,2.979,-0.247,31
+Country,Japan,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.126,4.113,0.013,31
+Country,Japan,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.6,3.424,0.176,31
+Country,Japan,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.261,3.24,0.021,31
+Country,Japan,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.755,3.71,0.045,31
+Country,Kenya,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.12,2.979,0.141,46
+Country,Kenya,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.13,4.113,0.017,46
+Country,Kenya,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.507,3.424,0.083,46
+Country,Kenya,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.285,3.24,0.045,46
+Country,Kenya,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.737,3.71,0.027,46
+Country,Lebanon,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.989,2.979,0.01,44
+Country,Lebanon,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.166,4.113,0.053,44
+Country,Lebanon,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.482,3.424,0.058,44
+Country,Lebanon,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.202,3.24,-0.038,44
+Country,Lebanon,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.755,3.71,0.045,44
+Country,Lithuania,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.89,2.979,-0.089,31
+Country,Lithuania,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.126,4.113,0.013,31
+Country,Lithuania,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.435,3.424,0.011,31
+Country,Lithuania,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.265,3.24,0.025,31
+Country,Lithuania,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.745,3.71,0.035,31
+Country,Malaysia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.862,2.979,-0.117,267
+Country,Malaysia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.113,4.113,0.0,267
+Country,Malaysia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.364,3.424,-0.06,267
+Country,Malaysia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.23,3.24,-0.01,267
+Country,Malaysia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.685,3.71,-0.025,267
+Country,Mexico,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.013,2.979,0.034,83
+Country,Mexico,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.148,4.113,0.035,83
+Country,Mexico,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.427,3.424,0.003,83
+Country,Mexico,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.255,3.24,0.015,83
+Country,Mexico,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.705,3.71,-0.005,83
+Country,"Netherlands, Kingdom of the",E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.094,2.979,0.115,142
+Country,"Netherlands, Kingdom of the",A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.142,4.113,0.029,142
+Country,"Netherlands, Kingdom of the",C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.551,3.424,0.127,142
+Country,"Netherlands, Kingdom of the",N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.268,3.24,0.028,142
+Country,"Netherlands, Kingdom of the",O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.733,3.71,0.023,142
+Country,New Zealand,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.979,2.979,0.0,164
+Country,New Zealand,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.135,4.113,0.022,164
+Country,New Zealand,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.432,3.424,0.008,164
+Country,New Zealand,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.259,3.24,0.019,164
+Country,New Zealand,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.701,3.71,-0.009,164
+Country,Nigeria,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.238,2.979,0.259,40
+Country,Nigeria,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.16,4.113,0.047,40
+Country,Nigeria,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.535,3.424,0.111,40
+Country,Nigeria,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.27,3.24,0.03,40
+Country,Nigeria,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.765,3.71,0.055,40
+Country,Norway,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.889,2.979,-0.09,127
+Country,Norway,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.159,4.113,0.046,127
+Country,Norway,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.537,3.424,0.113,127
+Country,Norway,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.3,3.24,0.06,127
+Country,Norway,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.782,3.71,0.072,127
+Country,Pakistan,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.944,2.979,-0.035,209
+Country,Pakistan,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.072,4.113,-0.041,209
+Country,Pakistan,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.363,3.424,-0.061,209
+Country,Pakistan,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.212,3.24,-0.028,209
+Country,Pakistan,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.705,3.71,-0.005,209
+Country,Philippines,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.952,2.979,-0.027,660
+Country,Philippines,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.144,4.113,0.031,660
+Country,Philippines,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.354,3.424,-0.07,660
+Country,Philippines,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.241,3.24,0.001,660
+Country,Philippines,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.662,3.71,-0.048,660
+Country,Poland,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.926,2.979,-0.053,88
+Country,Poland,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.145,4.113,0.032,88
+Country,Poland,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.486,3.424,0.062,88
+Country,Poland,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.286,3.24,0.046,88
+Country,Poland,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.739,3.71,0.029,88
+Country,Portugal,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.937,2.979,-0.042,90
+Country,Portugal,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.152,4.113,0.039,90
+Country,Portugal,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.459,3.424,0.035,90
+Country,Portugal,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.298,3.24,0.058,90
+Country,Portugal,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.739,3.71,0.029,90
+Country,Romania,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.021,2.979,0.042,139
+Country,Romania,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.128,4.113,0.015,139
+Country,Romania,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.473,3.424,0.049,139
+Country,Romania,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.299,3.24,0.059,139
+Country,Romania,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.735,3.71,0.025,139
+Country,Saudi Arabia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.958,2.979,-0.021,53
+Country,Saudi Arabia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.085,4.113,-0.028,53
+Country,Saudi Arabia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.526,3.424,0.102,53
+Country,Saudi Arabia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.211,3.24,-0.029,53
+Country,Saudi Arabia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.709,3.71,-0.001,53
+Country,Serbia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.006,2.979,0.027,103
+Country,Serbia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.143,4.113,0.03,103
+Country,Serbia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.553,3.424,0.129,103
+Country,Serbia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.321,3.24,0.081,103
+Country,Serbia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.746,3.71,0.036,103
+Country,Singapore,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.931,2.979,-0.048,141
+Country,Singapore,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.136,4.113,0.023,141
+Country,Singapore,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.462,3.424,0.038,141
+Country,Singapore,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.24,3.24,0.0,141
+Country,Singapore,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.699,3.71,-0.011,141
+Country,Slovenia,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.923,2.979,-0.056,44
+Country,Slovenia,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.132,4.113,0.019,44
+Country,Slovenia,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.473,3.424,0.049,44
+Country,Slovenia,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.307,3.24,0.067,44
+Country,Slovenia,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.707,3.71,-0.003,44
+Country,South Africa,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.064,2.979,0.085,180
+Country,South Africa,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.101,4.113,-0.012,180
+Country,South Africa,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.5,3.424,0.076,180
+Country,South Africa,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.264,3.24,0.024,180
+Country,South Africa,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.748,3.71,0.038,180
+Country,Spain,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.078,2.979,0.099,97
+Country,Spain,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.139,4.113,0.026,97
+Country,Spain,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.442,3.424,0.018,97
+Country,Spain,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.301,3.24,0.061,97
+Country,Spain,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.74,3.71,0.03,97
+Country,Sri Lanka,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.99,2.979,0.011,31
+Country,Sri Lanka,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.087,4.113,-0.026,31
+Country,Sri Lanka,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.516,3.424,0.092,31
+Country,Sri Lanka,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.239,3.24,-0.001,31
+Country,Sri Lanka,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.739,3.71,0.029,31
+Country,Sweden,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.944,2.979,-0.035,148
+Country,Sweden,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.148,4.113,0.035,148
+Country,Sweden,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.522,3.424,0.098,148
+Country,Sweden,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.306,3.24,0.066,148
+Country,Sweden,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.789,3.71,0.079,148
+Country,Switzerland,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.015,2.979,0.036,40
+Country,Switzerland,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.138,4.113,0.025,40
+Country,Switzerland,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.575,3.424,0.151,40
+Country,Switzerland,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.338,3.24,0.098,40
+Country,Switzerland,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.808,3.71,0.098,40
+Country,Thailand,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.919,2.979,-0.06,48
+Country,Thailand,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.152,4.113,0.039,48
+Country,Thailand,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.535,3.424,0.111,48
+Country,Thailand,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.306,3.24,0.066,48
+Country,Thailand,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.702,3.71,-0.008,48
+Country,Türkiye,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.076,2.979,0.097,63
+Country,Türkiye,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.119,4.113,0.006,63
+Country,Türkiye,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.438,3.424,0.014,63
+Country,Türkiye,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.2,3.24,-0.04,63
+Country,Türkiye,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.74,3.71,0.03,63
+Country,United Arab Emirates,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,3.013,2.979,0.034,108
+Country,United Arab Emirates,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.094,4.113,-0.019,108
+Country,United Arab Emirates,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.525,3.424,0.101,108
+Country,United Arab Emirates,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.222,3.24,-0.018,108
+Country,United Arab Emirates,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.724,3.71,0.014,108
+Country,United Kingdom of Great Britain and Northern Ireland,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.95,2.979,-0.029,1583
+Country,United Kingdom of Great Britain and Northern Ireland,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.09,4.113,-0.023,1583
+Country,United Kingdom of Great Britain and Northern Ireland,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.416,3.424,-0.008,1583
+Country,United Kingdom of Great Britain and Northern Ireland,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.254,3.24,0.014,1583
+Country,United Kingdom of Great Britain and Northern Ireland,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.702,3.71,-0.008,1583
+Country,United States of America,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.982,2.979,0.003,8851
+Country,United States of America,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.107,4.113,-0.006,8851
+Country,United States of America,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.4,3.424,-0.024,8851
+Country,United States of America,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.223,3.24,-0.017,8851
+Country,United States of America,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.699,3.71,-0.011,8851
+Country,Viet Nam,E,Extroversion,AI_GPT4o_Explicit,GPT Explicit,2.85,2.979,-0.129,38
+Country,Viet Nam,A,Agreeableness,AI_GPT4o_Explicit,GPT Explicit,4.163,4.113,0.05,38
+Country,Viet Nam,C,Conscientiousness,AI_GPT4o_Explicit,GPT Explicit,3.526,3.424,0.102,38
+Country,Viet Nam,N,Emotional Stability,AI_GPT4o_Explicit,GPT Explicit,3.245,3.24,0.005,38
+Country,Viet Nam,O,Openness,AI_GPT4o_Explicit,GPT Explicit,3.676,3.71,-0.034,38
+Country,Argentina,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.516,3.302,0.214,45
+Country,Argentina,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.196,4.149,0.047,45
+Country,Argentina,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.389,3.497,-0.108,45
+Country,Argentina,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.1,3.216,-0.116,45
+Country,Argentina,O,Openness,AI_GPT4o_NLP,GPT NLP,3.856,3.793,0.063,45
+Country,Australia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.476,3.302,0.174,1025
+Country,Australia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.184,4.149,0.035,1025
+Country,Australia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.405,3.497,-0.092,1025
+Country,Australia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.322,3.216,0.106,1025
+Country,Australia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.799,3.793,0.006,1025
+Country,Bangladesh,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.278,3.302,-0.024,41
+Country,Bangladesh,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.11,4.149,-0.039,41
+Country,Bangladesh,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.422,3.497,-0.075,41
+Country,Bangladesh,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.054,3.216,-0.162,41
+Country,Bangladesh,O,Openness,AI_GPT4o_NLP,GPT NLP,3.885,3.793,0.092,41
+Country,Belgium,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.372,3.302,0.07,87
+Country,Belgium,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.198,4.149,0.049,87
+Country,Belgium,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.623,3.497,0.126,87
+Country,Belgium,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.294,3.216,0.078,87
+Country,Belgium,O,Openness,AI_GPT4o_NLP,GPT NLP,3.923,3.793,0.13,87
+Country,Brazil,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.537,3.302,0.235,194
+Country,Brazil,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.205,4.149,0.056,194
+Country,Brazil,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.437,3.497,-0.06,194
+Country,Brazil,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.165,3.216,-0.051,194
+Country,Brazil,O,Openness,AI_GPT4o_NLP,GPT NLP,3.852,3.793,0.059,194
+Country,Bulgaria,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.346,3.302,0.044,39
+Country,Bulgaria,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.105,4.149,-0.044,39
+Country,Bulgaria,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.564,3.497,0.067,39
+Country,Bulgaria,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.174,3.216,-0.042,39
+Country,Bulgaria,O,Openness,AI_GPT4o_NLP,GPT NLP,3.846,3.793,0.053,39
+Country,Canada,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.282,3.302,-0.02,942
+Country,Canada,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.194,4.149,0.045,942
+Country,Canada,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.555,3.497,0.058,942
+Country,Canada,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.29,3.216,0.074,942
+Country,Canada,O,Openness,AI_GPT4o_NLP,GPT NLP,3.83,3.793,0.037,942
+Country,China,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.368,3.302,0.066,44
+Country,China,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.173,4.149,0.024,44
+Country,China,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.623,3.497,0.126,44
+Country,China,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.191,3.216,-0.025,44
+Country,China,O,Openness,AI_GPT4o_NLP,GPT NLP,3.902,3.793,0.109,44
+Country,Croatia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.286,3.302,-0.016,43
+Country,Croatia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.165,4.149,0.016,43
+Country,Croatia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.553,3.497,0.056,43
+Country,Croatia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.27,3.216,0.054,43
+Country,Croatia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.812,3.793,0.019,43
+Country,Denmark,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.328,3.302,0.026,118
+Country,Denmark,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.227,4.149,0.078,118
+Country,Denmark,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.751,3.497,0.254,118
+Country,Denmark,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.512,3.216,0.296,118
+Country,Denmark,O,Openness,AI_GPT4o_NLP,GPT NLP,3.856,3.793,0.063,118
+Country,Egypt,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.398,3.302,0.096,50
+Country,Egypt,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.114,4.149,-0.035,50
+Country,Egypt,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.43,3.497,-0.067,50
+Country,Egypt,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.064,3.216,-0.152,50
+Country,Egypt,O,Openness,AI_GPT4o_NLP,GPT NLP,3.928,3.793,0.135,50
+Country,Finland,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.097,3.302,-0.205,102
+Country,Finland,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.12,4.149,-0.029,102
+Country,Finland,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.707,3.497,0.21,102
+Country,Finland,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.478,3.216,0.262,102
+Country,Finland,O,Openness,AI_GPT4o_NLP,GPT NLP,3.824,3.793,0.031,102
+Country,France,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.391,3.302,0.089,129
+Country,France,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.173,4.149,0.024,129
+Country,France,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.434,3.497,-0.063,129
+Country,France,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.27,3.216,0.054,129
+Country,France,O,Openness,AI_GPT4o_NLP,GPT NLP,3.943,3.793,0.15,129
+Country,Germany,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.372,3.302,0.07,185
+Country,Germany,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.181,4.149,0.032,185
+Country,Germany,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.661,3.497,0.164,185
+Country,Germany,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.36,3.216,0.144,185
+Country,Germany,O,Openness,AI_GPT4o_NLP,GPT NLP,3.864,3.793,0.071,185
+Country,Greece,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.45,3.302,0.148,90
+Country,Greece,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.206,4.149,0.057,90
+Country,Greece,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.532,3.497,0.035,90
+Country,Greece,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.264,3.216,0.048,90
+Country,Greece,O,Openness,AI_GPT4o_NLP,GPT NLP,3.897,3.793,0.104,90
+Country,Hong Kong,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.359,3.302,0.057,39
+Country,Hong Kong,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.064,4.149,-0.085,39
+Country,Hong Kong,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.513,3.497,0.016,39
+Country,Hong Kong,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.146,3.216,-0.07,39
+Country,Hong Kong,O,Openness,AI_GPT4o_NLP,GPT NLP,3.751,3.793,-0.042,39
+Country,Hungary,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.321,3.302,0.019,42
+Country,Hungary,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.112,4.149,-0.037,42
+Country,Hungary,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.512,3.497,0.015,42
+Country,Hungary,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.205,3.216,-0.011,42
+Country,Hungary,O,Openness,AI_GPT4o_NLP,GPT NLP,3.888,3.793,0.095,42
+Country,India,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.318,3.302,0.016,1516
+Country,India,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.073,4.149,-0.076,1516
+Country,India,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.466,3.497,-0.031,1516
+Country,India,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.124,3.216,-0.092,1516
+Country,India,O,Openness,AI_GPT4o_NLP,GPT NLP,3.809,3.793,0.016,1516
+Country,Indonesia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.322,3.302,0.02,190
+Country,Indonesia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.154,4.149,0.005,190
+Country,Indonesia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.457,3.497,-0.04,190
+Country,Indonesia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.141,3.216,-0.075,190
+Country,Indonesia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.837,3.793,0.044,190
+Country,Ireland,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.312,3.302,0.01,106
+Country,Ireland,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.192,4.149,0.043,106
+Country,Ireland,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.443,3.497,-0.054,106
+Country,Ireland,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.26,3.216,0.044,106
+Country,Ireland,O,Openness,AI_GPT4o_NLP,GPT NLP,3.862,3.793,0.069,106
+Country,Italy,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.439,3.302,0.137,266
+Country,Italy,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.216,4.149,0.067,266
+Country,Italy,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.588,3.497,0.091,266
+Country,Italy,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.301,3.216,0.085,266
+Country,Italy,O,Openness,AI_GPT4o_NLP,GPT NLP,3.898,3.793,0.105,266
+Country,Jamaica,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.527,3.302,0.225,33
+Country,Jamaica,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.209,4.149,0.06,33
+Country,Jamaica,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.43,3.497,-0.067,33
+Country,Jamaica,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.23,3.216,0.014,33
+Country,Jamaica,O,Openness,AI_GPT4o_NLP,GPT NLP,3.839,3.793,0.046,33
+Country,Japan,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.271,3.302,-0.031,31
+Country,Japan,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.087,4.149,-0.062,31
+Country,Japan,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.629,3.497,0.132,31
+Country,Japan,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.197,3.216,-0.019,31
+Country,Japan,O,Openness,AI_GPT4o_NLP,GPT NLP,3.819,3.793,0.026,31
+Country,Kenya,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.557,3.302,0.255,46
+Country,Kenya,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.243,4.149,0.094,46
+Country,Kenya,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.607,3.497,0.11,46
+Country,Kenya,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.263,3.216,0.047,46
+Country,Kenya,O,Openness,AI_GPT4o_NLP,GPT NLP,3.922,3.793,0.129,46
+Country,Lebanon,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.398,3.302,0.096,44
+Country,Lebanon,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.166,4.149,0.017,44
+Country,Lebanon,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.514,3.497,0.017,44
+Country,Lebanon,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.08,3.216,-0.136,44
+Country,Lebanon,O,Openness,AI_GPT4o_NLP,GPT NLP,3.941,3.793,0.148,44
+Country,Lithuania,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.271,3.302,-0.031,31
+Country,Lithuania,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.129,4.149,-0.02,31
+Country,Lithuania,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.523,3.497,0.026,31
+Country,Lithuania,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.174,3.216,-0.042,31
+Country,Lithuania,O,Openness,AI_GPT4o_NLP,GPT NLP,3.897,3.793,0.104,31
+Country,Malaysia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.347,3.302,0.045,267
+Country,Malaysia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.16,4.149,0.011,267
+Country,Malaysia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.516,3.497,0.019,267
+Country,Malaysia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.156,3.216,-0.06,267
+Country,Malaysia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.822,3.793,0.029,267
+Country,Mexico,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.47,3.302,0.168,83
+Country,Mexico,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.229,4.149,0.08,83
+Country,Mexico,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.488,3.497,-0.009,83
+Country,Mexico,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.188,3.216,-0.028,83
+Country,Mexico,O,Openness,AI_GPT4o_NLP,GPT NLP,3.87,3.793,0.077,83
+Country,"Netherlands, Kingdom of the",E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.439,3.302,0.137,142
+Country,"Netherlands, Kingdom of the",A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.253,4.149,0.104,142
+Country,"Netherlands, Kingdom of the",C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.691,3.497,0.194,142
+Country,"Netherlands, Kingdom of the",N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.43,3.216,0.214,142
+Country,"Netherlands, Kingdom of the",O,Openness,AI_GPT4o_NLP,GPT NLP,3.867,3.793,0.074,142
+Country,New Zealand,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.423,3.302,0.121,164
+Country,New Zealand,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.249,4.149,0.1,164
+Country,New Zealand,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.563,3.497,0.066,164
+Country,New Zealand,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.396,3.216,0.18,164
+Country,New Zealand,O,Openness,AI_GPT4o_NLP,GPT NLP,3.862,3.793,0.069,164
+Country,Nigeria,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.468,3.302,0.166,40
+Country,Nigeria,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.16,4.149,0.011,40
+Country,Nigeria,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.573,3.497,0.076,40
+Country,Nigeria,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.18,3.216,-0.036,40
+Country,Nigeria,O,Openness,AI_GPT4o_NLP,GPT NLP,3.84,3.793,0.047,40
+Country,Norway,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.224,3.302,-0.078,127
+Country,Norway,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.207,4.149,0.058,127
+Country,Norway,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.776,3.497,0.279,127
+Country,Norway,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.522,3.216,0.306,127
+Country,Norway,O,Openness,AI_GPT4o_NLP,GPT NLP,3.884,3.793,0.091,127
+Country,Pakistan,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.259,3.302,-0.043,209
+Country,Pakistan,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.071,4.149,-0.078,209
+Country,Pakistan,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.464,3.497,-0.033,209
+Country,Pakistan,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.096,3.216,-0.12,209
+Country,Pakistan,O,Openness,AI_GPT4o_NLP,GPT NLP,3.844,3.793,0.051,209
+Country,Philippines,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.354,3.302,0.052,660
+Country,Philippines,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.228,4.149,0.079,660
+Country,Philippines,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.548,3.497,0.051,660
+Country,Philippines,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.151,3.216,-0.065,660
+Country,Philippines,O,Openness,AI_GPT4o_NLP,GPT NLP,3.811,3.793,0.018,660
+Country,Poland,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.385,3.302,0.083,88
+Country,Poland,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.112,4.149,-0.037,88
+Country,Poland,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.566,3.497,0.069,88
+Country,Poland,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.224,3.216,0.008,88
+Country,Poland,O,Openness,AI_GPT4o_NLP,GPT NLP,3.841,3.793,0.048,88
+Country,Portugal,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.442,3.302,0.14,90
+Country,Portugal,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.19,4.149,0.041,90
+Country,Portugal,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.514,3.497,0.017,90
+Country,Portugal,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.299,3.216,0.083,90
+Country,Portugal,O,Openness,AI_GPT4o_NLP,GPT NLP,3.842,3.793,0.049,90
+Country,Romania,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.207,3.302,-0.095,139
+Country,Romania,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.106,4.149,-0.043,139
+Country,Romania,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.544,3.497,0.047,139
+Country,Romania,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.2,3.216,-0.016,139
+Country,Romania,O,Openness,AI_GPT4o_NLP,GPT NLP,3.904,3.793,0.111,139
+Country,Saudi Arabia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.272,3.302,-0.03,53
+Country,Saudi Arabia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.047,4.149,-0.102,53
+Country,Saudi Arabia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.549,3.497,0.052,53
+Country,Saudi Arabia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.147,3.216,-0.069,53
+Country,Saudi Arabia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.845,3.793,0.052,53
+Country,Serbia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.358,3.302,0.056,103
+Country,Serbia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.147,4.149,-0.002,103
+Country,Serbia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.529,3.497,0.032,103
+Country,Serbia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.199,3.216,-0.017,103
+Country,Serbia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.821,3.793,0.028,103
+Country,Singapore,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.433,3.302,0.131,141
+Country,Singapore,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.113,4.149,-0.036,141
+Country,Singapore,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.52,3.497,0.023,141
+Country,Singapore,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.194,3.216,-0.022,141
+Country,Singapore,O,Openness,AI_GPT4o_NLP,GPT NLP,3.775,3.793,-0.018,141
+Country,Slovenia,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.184,3.302,-0.118,44
+Country,Slovenia,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.211,4.149,0.062,44
+Country,Slovenia,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.65,3.497,0.153,44
+Country,Slovenia,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.416,3.216,0.2,44
+Country,Slovenia,O,Openness,AI_GPT4o_NLP,GPT NLP,3.9,3.793,0.107,44
+Country,South Africa,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.538,3.302,0.236,180
+Country,South Africa,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.253,4.149,0.104,180
+Country,South Africa,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.618,3.497,0.121,180
+Country,South Africa,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.251,3.216,0.035,180
+Country,South Africa,O,Openness,AI_GPT4o_NLP,GPT NLP,3.901,3.793,0.108,180
+Country,Spain,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.557,3.302,0.255,97
+Country,Spain,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.192,4.149,0.043,97
+Country,Spain,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.459,3.497,-0.038,97
+Country,Spain,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.26,3.216,0.044,97
+Country,Spain,O,Openness,AI_GPT4o_NLP,GPT NLP,3.855,3.793,0.062,97
+Country,Sri Lanka,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.374,3.302,0.072,31
+Country,Sri Lanka,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.19,4.149,0.041,31
+Country,Sri Lanka,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.606,3.497,0.109,31
+Country,Sri Lanka,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.161,3.216,-0.055,31
+Country,Sri Lanka,O,Openness,AI_GPT4o_NLP,GPT NLP,3.855,3.793,0.062,31
+Country,Sweden,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.369,3.302,0.067,148
+Country,Sweden,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.195,4.149,0.046,148
+Country,Sweden,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.674,3.497,0.177,148
+Country,Sweden,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.449,3.216,0.233,148
+Country,Sweden,O,Openness,AI_GPT4o_NLP,GPT NLP,3.851,3.793,0.058,148
+Country,Switzerland,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.345,3.302,0.043,40
+Country,Switzerland,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.145,4.149,-0.004,40
+Country,Switzerland,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.845,3.497,0.348,40
+Country,Switzerland,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.488,3.216,0.272,40
+Country,Switzerland,O,Openness,AI_GPT4o_NLP,GPT NLP,3.767,3.793,-0.026,40
+Country,Thailand,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.408,3.302,0.106,48
+Country,Thailand,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.206,4.149,0.057,48
+Country,Thailand,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.504,3.497,0.007,48
+Country,Thailand,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.242,3.216,0.026,48
+Country,Thailand,O,Openness,AI_GPT4o_NLP,GPT NLP,3.815,3.793,0.022,48
+Country,Türkiye,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.479,3.302,0.177,63
+Country,Türkiye,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.2,4.149,0.051,63
+Country,Türkiye,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.517,3.497,0.02,63
+Country,Türkiye,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.163,3.216,-0.053,63
+Country,Türkiye,O,Openness,AI_GPT4o_NLP,GPT NLP,3.883,3.793,0.09,63
+Country,United Arab Emirates,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.411,3.302,0.109,108
+Country,United Arab Emirates,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.092,4.149,-0.057,108
+Country,United Arab Emirates,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.581,3.497,0.084,108
+Country,United Arab Emirates,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.171,3.216,-0.045,108
+Country,United Arab Emirates,O,Openness,AI_GPT4o_NLP,GPT NLP,3.863,3.793,0.07,108
+Country,United Kingdom of Great Britain and Northern Ireland,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.297,3.302,-0.005,1583
+Country,United Kingdom of Great Britain and Northern Ireland,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.126,4.149,-0.023,1583
+Country,United Kingdom of Great Britain and Northern Ireland,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.415,3.497,-0.082,1583
+Country,United Kingdom of Great Britain and Northern Ireland,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.167,3.216,-0.049,1583
+Country,United Kingdom of Great Britain and Northern Ireland,O,Openness,AI_GPT4o_NLP,GPT NLP,3.784,3.793,-0.009,1583
+Country,United States of America,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.233,3.302,-0.069,8851
+Country,United States of America,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.135,4.149,-0.014,8851
+Country,United States of America,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.481,3.497,-0.016,8851
+Country,United States of America,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.203,3.216,-0.013,8851
+Country,United States of America,O,Openness,AI_GPT4o_NLP,GPT NLP,3.744,3.793,-0.049,8851
+Country,Viet Nam,E,Extroversion,AI_GPT4o_NLP,GPT NLP,3.297,3.302,-0.005,38
+Country,Viet Nam,A,Agreeableness,AI_GPT4o_NLP,GPT NLP,4.187,4.149,0.038,38
+Country,Viet Nam,C,Conscientiousness,AI_GPT4o_NLP,GPT NLP,3.547,3.497,0.05,38
+Country,Viet Nam,N,Emotional Stability,AI_GPT4o_NLP,GPT NLP,3.171,3.216,-0.045,38
+Country,Viet Nam,O,Openness,AI_GPT4o_NLP,GPT NLP,3.803,3.793,0.01,38
+Country,Australia,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.204,3.203,0.001,49
+Country,Australia,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.329,3.387,-0.058,49
+Country,Australia,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.22,3.288,-0.068,49
+Country,Australia,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.065,3.041,0.024,49
+Country,Australia,O,Openness,AI_Qwen_NLP,Qwen NLP,3.39,3.415,-0.025,49
+Country,Canada,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.204,3.203,0.001,48
+Country,Canada,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.36,3.387,-0.027,48
+Country,Canada,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.306,3.288,0.018,48
+Country,Canada,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.033,3.041,-0.008,48
+Country,Canada,O,Openness,AI_Qwen_NLP,Qwen NLP,3.377,3.415,-0.038,48
+Country,India,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.253,3.203,0.05,83
+Country,India,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.416,3.387,0.029,83
+Country,India,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.363,3.288,0.075,83
+Country,India,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.076,3.041,0.035,83
+Country,India,O,Openness,AI_Qwen_NLP,Qwen NLP,3.445,3.415,0.03,83
+Country,Philippines,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.253,3.203,0.05,36
+Country,Philippines,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.397,3.387,0.01,36
+Country,Philippines,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.292,3.288,0.004,36
+Country,Philippines,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.081,3.041,0.04,36
+Country,Philippines,O,Openness,AI_Qwen_NLP,Qwen NLP,3.422,3.415,0.007,36
+Country,United Kingdom of Great Britain and Northern Ireland,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.221,3.203,0.018,80
+Country,United Kingdom of Great Britain and Northern Ireland,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.366,3.387,-0.021,80
+Country,United Kingdom of Great Britain and Northern Ireland,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.275,3.288,-0.013,80
+Country,United Kingdom of Great Britain and Northern Ireland,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.012,3.041,-0.029,80
+Country,United Kingdom of Great Britain and Northern Ireland,O,Openness,AI_Qwen_NLP,Qwen NLP,3.412,3.415,-0.003,80
+Country,United States of America,E,Extroversion,AI_Qwen_NLP,Qwen NLP,3.177,3.203,-0.026,552
+Country,United States of America,A,Agreeableness,AI_Qwen_NLP,Qwen NLP,3.393,3.387,0.006,552
+Country,United States of America,C,Conscientiousness,AI_Qwen_NLP,Qwen NLP,3.23,3.288,-0.058,552
+Country,United States of America,N,Emotional Stability,AI_Qwen_NLP,Qwen NLP,3.034,3.041,-0.007,552
+Country,United States of America,O,Openness,AI_Qwen_NLP,Qwen NLP,3.415,3.415,0.0,552
